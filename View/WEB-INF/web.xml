@@ -9,6 +9,8 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- This is a Servlet Dispatcher -->
   <servlet>
     <description></description>
     <display-name>GolfandSwap</display-name>
@@ -20,4 +22,24 @@
     <servlet-name>GolfandSwap</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  <!-- This is a listener -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+<!--   <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+			classpath:ie/gmit/sw/config/dao-context.xml
+			classpath:ie/gmit/sw/config/service-context.xml
+			classpath:ie/gmit/sw/config/security-context.xml
+		</param-value>
+  </context-param> -->
+  
+  <context-param>
+    <param-name>spring.profiles.active</param-name>
+    <param-value>production</param-value>
+  </context-param>
+  
 </web-app>
