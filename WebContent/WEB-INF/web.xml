@@ -9,4 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- Dispatcher Servlet configuration -->
+  <servlet>
+    <description></description>
+    <display-name>golfnswapDispatcher</display-name>
+    <servlet-name>golfnswap</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>golfnswap</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
