@@ -1,13 +1,70 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+	<title>Opening Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>Hello World.</h1>
-    <h3>Processing.............</h3>
-</body>
+<body style="background-image: url('/Golf_n_HomeSwap/WebContent/WEB-INF/media/golf.jpg'); padding: 20px;">
+
+	<!-- Header -->
+	<div class="container">
+		<div class="text-right" style="color: white; background-color: #5cb85c; 
+									   border-radius: 5px; padding: 15px;  box-shadow: 10px 5px 2px black;">
+			<h1>Golf'n Home Swap</h1>
+			<p>The exchange community for golf lovers</p>	
+		</div>
+	</div>
+	
+	<!-- Header Link -->
+	<div class="container">
+		<div class="text-right" style="width: 350px;">
+			<div class="text-center" style="background-color: black; padding: 20px; 
+											color: white;  font-size: 20px; border: 2px solid blue;">
+				<a href="#"> View Courses and Homes</a>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class="container" style="width: 400px; height: 200px;">
+		<video width="400" controls>
+			<source src="${pageContext.request.contextPath}/media/clip.mp4" type="video/mp4">
+		</video>
+	</div>
+	
+	
+	<!-- First Menu (Links) -->
+	<div class="container" style="margin: 100px auto auto auto">
+		<div class="btn-group btn-group-sl">
+			<a href="#" class="btn btn-primary">What it is</a>
+			<a href="#" class="btn btn-primary">How it Works</a>
+			<a href="#" class="btn btn-primary">Price</a>
+			<a href="#" class="btn btn-primary">FAQ</a>
+			<a href="#" class="btn btn-primary">Apply for Membership</a>
+		</div>
+	</div>
+
+	<!-- Second Menu (Buttons) -->
+	<div class="container">
+		<div class="btn-group btn-group-sl">
+			<button type="button" class="btn btn-success">Contact Us</button>
+			<button type="button" class="btn btn-success">Legal</button>
+			<button type="button" class="btn btn-success">Press</button>
+			<button type="button" class="btn btn-success">Testimonials</button>
+		</div>
+	</div>
+
+	<!-- Login Button -->
+	<div class="container">
+		<div style="float: right; margin: -45px auto auto auto ;">
+			<button type="button" class="btn btn-default btn-lg">Login</button>
+		</div>
+	</div>
+	
+	</body>
 </html>
