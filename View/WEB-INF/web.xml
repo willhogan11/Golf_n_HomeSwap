@@ -13,13 +13,13 @@
   <!-- This is a Servlet Dispatcher -->
   <servlet>
     <description></description>
-    <display-name>GolfandSwap</display-name>
-    <servlet-name>GolfandSwap</servlet-name>
+    <display-name>golfnswap</display-name>
+    <servlet-name>golfnswap</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>GolfandSwap</servlet-name>
+    <servlet-name>golfnswap</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
