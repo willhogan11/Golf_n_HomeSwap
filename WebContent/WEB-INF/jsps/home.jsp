@@ -62,7 +62,7 @@
 	<!-- Login Button -->
 	<div class="container">
 		<div style="float: right; margin: -45px auto auto auto ;">
-			<a href="${pageContext.request.contextPath}/login.jsp">
+			<a href="${pageContext.request.contextPath}/login">
 				<button type="button"  class="btn btn-default btn-lg">Login</button>
 			</a>
 		</div>
