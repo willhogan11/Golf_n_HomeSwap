@@ -30,7 +30,7 @@
 	</div>
 	
 
-
+	<!-- Video Clip Placeholder -->
 	<div class="container" style="width: 400px; height: 200px;">
 		<video width="400" controls>
 			<source src="${pageContext.request.contextPath}/res/video/clip.mp4" type="video/mp4">
@@ -62,7 +62,9 @@
 	<!-- Login Button -->
 	<div class="container">
 		<div style="float: right; margin: -45px auto auto auto ;">
-			<button type="button" class="btn btn-default btn-lg">Login</button>
+			<a href="${pageContext.request.contextPath}/login.jsp">
+				<button type="button"  class="btn btn-default btn-lg">Login</button>
+			</a>
 		</div>
 	</div>
 	
