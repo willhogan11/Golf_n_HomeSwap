@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
-<body style="background-image: url('/Golf_n_HomeSwap/WebContent/WEB-INF/media/golf.jpg'); padding: 20px;">
+<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
 
 	<!-- Header -->
 	<div class="container">
@@ -33,7 +33,7 @@
 
 	<div class="container" style="width: 400px; height: 200px;">
 		<video width="400" controls>
-			<source src="${pageContext.request.contextPath}/media/clip.mp4" type="video/mp4">
+			<source src="${pageContext.request.contextPath}/res/video/clip.mp4" type="video/mp4">
 		</video>
 	</div>
 	
