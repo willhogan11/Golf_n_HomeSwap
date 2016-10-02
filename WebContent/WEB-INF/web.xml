@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- Dispatcher Servlet configuration -->
+  <!-- Servlet Dispatcher -->
   <servlet>
     <description></description>
     <display-name>golfnswapDispatcher</display-name>
@@ -23,15 +23,14 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  
-  <!-- Will just testing  -->
-   <servlet-mapping>
+  <!-- All pages other then home.jsp will be managed by controller -->
+  <servlet-mapping>
     <servlet-name>golfnswap</servlet-name>
     <url-pattern>/login/login.jsp</url-pattern>
   </servlet-mapping>
   
-  
-  <!-- JNDI configuration -->
+  <!-- JNDI datasource configuration -->
+  <!-- Will be removed after mongodb connection -->
   <description>JNDI pulled datasource configuration</description>
   <resource-ref>
     <description>DB Connection</description>
@@ -39,6 +38,17 @@
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
+  
+  <!-- Security filter -->
+  <filter>
+    <display-name>springSecurityFilterChain</display-name>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/springSecurityFilterChain</url-pattern>
+  </filter-mapping>
   
   
 </web-app>
