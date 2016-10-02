@@ -24,6 +24,13 @@
   </servlet-mapping>
   
   
+  <!-- Will just testing  -->
+   <servlet-mapping>
+    <servlet-name>golfnswap</servlet-name>
+    <url-pattern>/login/login.jsp</url-pattern>
+  </servlet-mapping>
+  
+  
   <!-- JNDI configuration -->
   <description>JNDI pulled datasource configuration</description>
   <resource-ref>
