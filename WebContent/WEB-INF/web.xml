@@ -24,10 +24,12 @@
   </servlet-mapping>
   
   <!-- All pages other then home.jsp will be managed by controller -->
+  <!-- 
   <servlet-mapping>
     <servlet-name>golfnswap</servlet-name>
     <url-pattern>/login/login.jsp</url-pattern>
   </servlet-mapping>
+   -->
   
   <!-- JNDI datasource configuration -->
   <!-- Will be removed after mongodb connection -->
