@@ -51,7 +51,7 @@
   <context-param>
   	<param-name>contextConfigLocation</param-name>
   	<param-value>
-  		classpath:ie/gmit/sw/config/security-context.xml
+  		<!-- classpath:ie/gmit/sw/config/security-context.xml -->
   	</param-value>
   </context-param>
   
@@ -61,18 +61,4 @@
     <param-name>spring.profiles.active</param-name>
     <param-value>production</param-value>
   </context-param>
-  
-  
-  <!-- Security filter -->
-  <filter>
-    <display-name>springSecurityFilterChain</display-name>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/springSecurityFilterChain</url-pattern>
-  </filter-mapping>
-  
-  
 </web-app>
