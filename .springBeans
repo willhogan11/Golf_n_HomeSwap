@@ -9,6 +9,7 @@
 	<configs>
 		<config>WebContent/WEB-INF/golfnswap-servlet.xml</config>
 		<config>src/ie/gmit/sw/config/SpringConfig.xml</config>
+		<config>src/ie/gmit/sw/config/security-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

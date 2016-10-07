@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- User authentication -->
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="g00196984@gmit.ie"
+					authorities="admin" password="ABC1xwz!" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<!-- Access manager -->
+	<security:http use-expressions="true">
+		<security:intercept-url pattern="/whatitis" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/howitworks" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/price" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/faq" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/apply" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url pattern="/res/**" access="permitAll" />
+		<security:intercept-url pattern="/**" access="denyAll" />
+		<security:form-login login-page="/login" />
+	</security:http>
+</beans>
