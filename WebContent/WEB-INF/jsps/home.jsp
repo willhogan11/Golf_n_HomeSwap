@@ -41,11 +41,11 @@
 	<!-- First Menu (Links) -->
 	<div class="container" style="margin: 100px auto auto auto">
 		<div class="btn-group btn-group-sl">
-			<a href="#" class="btn btn-primary">What it is</a>
-			<a href="#" class="btn btn-primary">How it Works</a>
-			<a href="#" class="btn btn-primary">Price</a>
-			<a href="#" class="btn btn-primary">FAQ</a>
-			<a href="#" class="btn btn-primary">Apply for Membership</a>
+			<a href="${pageContext.request.contextPath}/whatitis" class="btn btn-primary">What it is</a>
+			<a href="${pageContext.request.contextPath}/howitworks" class="btn btn-primary">How it Works</a>
+			<a href="${pageContext.request.contextPath}/price" class="btn btn-primary">Price</a>
+			<a href="${pageContext.request.contextPath}/faq" class="btn btn-primary">FAQ</a>
+			<a href="${pageContext.request.contextPath}/apply" class="btn btn-primary">Apply for Membership</a>
 		</div>
 	</div>
 

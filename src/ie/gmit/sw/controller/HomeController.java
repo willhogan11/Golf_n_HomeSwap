@@ -15,4 +15,29 @@ public class HomeController {
 	public String showLoginPage(){
 		return "login";
 	}
+	
+	@RequestMapping("/whatitis")
+	public String showWhatitisPage(){
+		return "whatitis";
+	}
+	
+	@RequestMapping("/howitworks")
+	public String showHowitworksPage(){
+		return "howitworks";
+	}
+	
+	@RequestMapping("/price")
+	public String showPricePage(){
+		return "price";
+	}
+	
+	@RequestMapping("/faq")
+	public String showFaqPage(){
+		return "faq";
+	}
+	
+	@RequestMapping("/apply")
+	public String showApplyPage(){
+		return "apply";
+	}
 }
