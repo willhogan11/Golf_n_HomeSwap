@@ -6,17 +6,8 @@ import org.springframework.data.mongodb.core.MongoOperations;
 
 public class TestRunner {
 
+	// W.I.P
 	public static void main(String[] args) {
-		
-		// For XML
-		// ApplicationContext ctx = new GenericXmlApplicationContext("SpringConfig.xml");
-		
-		// For Annotation
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig.class);
-		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
-		
-		System.out.println(mongoOperation);
-		System.out.println(ctx);
 		
 	}
 }
