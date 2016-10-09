@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+#loginError{
+	margin-top: 20px;
+	font:normal 14px verdana;
+	color: red;
+}

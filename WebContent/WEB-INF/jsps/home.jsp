@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,9 +64,17 @@
 	<!-- Login Button -->
 	<div class="container">
 		<div style="float: right; margin: -45px auto auto auto ;">
-			<a href="${pageContext.request.contextPath}/login">
-				<button type="button"  class="btn btn-default btn-lg">Login</button>
-			</a>
+			
+	    	<sec:authorize access="!isAuthenticated()">
+	    		<a href="${pageContext.request.contextPath}/login">
+					<button type="button"  class="btn btn-default btn-lg">Login</button>
+				</a>
+	    	</sec:authorize>
+	    	<sec:authorize access="isAuthenticated()">
+		    	<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+					<button type="button"  class="btn btn-default btn-lg">Logout</button>
+				</a>
+	    	</sec:authorize>
 		</div>
 	</div>
 	

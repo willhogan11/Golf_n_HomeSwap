@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login.css" />
 	<title>Login Page</title>
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
@@ -22,7 +24,7 @@
 							     padding: 25px;
 							     background-color: white;">
 							    
-	<!-- Login form -->
+	<!-- :::::::::::::::::::::::::::::: LOGIN FORM ::::::::::::::::::::::::::::::: -->
 	<form class="form-horizontal" name='f' method="post" action='${pageContext.request.contextPath}/j_spring_security_check'>
 	  <div class="form-group">
 	  	<h4 style="text-align: center;">Login into GolfSwap</h4>
@@ -44,12 +46,24 @@
 	      </div>
 	    </div>
 	  </div>
+	  
+	    <!-- ::::::ERROR (USERNAME OR PASSWORD IS NOT CORRECT):::::: -->
+		<c:if test="${param.error != null }">
+			<div id="loginError">
+				<img alt="error" src="${pageContext.request.contextPath}/res/img/error_20.png">
+				<span>Username or password is not correct.</span>
+			</div>
+		</c:if>
+		    				
 	  <div class="form-group"> 
 	    <div class="col-sm-offset-2 col-sm-10">
 	      <button type="submit" class="btn btn-default">Login</button>
 	    </div>
 	  </div>
 	</form>
+	<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
+	
+	
 	</div>
 
 </body>
