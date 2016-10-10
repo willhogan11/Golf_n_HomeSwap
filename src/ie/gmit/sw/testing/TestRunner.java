@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-import ie.gmit.sw.config.*;
+//import ie.gmit.sw.config.*;
 
 public class TestRunner {
 
