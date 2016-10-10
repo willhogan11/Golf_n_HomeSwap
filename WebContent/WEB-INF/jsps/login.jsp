@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login.css" />
 	<title>Login Page</title>
 </head>
-<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
+<body style="background-image: url('${pageContext.request.contextPath}/res/img/GolfPic.jpg');">
 
 	<div class="container" style="position: absolute;
 							     margin: auto;
@@ -22,7 +22,7 @@
 							     border: 3px solid black;
 							     border-radius: 10px;
 							     padding: 25px;
-							     background-color: white;">
+							     background-color: white;"> 	
 							    
 	<!-- :::::::::::::::::::::::::::::: LOGIN FORM ::::::::::::::::::::::::::::::: -->
 	<form class="form-horizontal" name='f' method="post" action='${pageContext.request.contextPath}/j_spring_security_check'>

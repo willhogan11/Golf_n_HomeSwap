@@ -4,12 +4,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/data/mongo
     					http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
     					
-    <mongo:mongo host="localhost" port="27017" />
-	<mongo:db-factory dbname="golfnswap" />
+    <mongo:db-factory host="localhost" port="27017" dbname="golfnswap" />
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
