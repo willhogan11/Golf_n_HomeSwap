@@ -9,12 +9,36 @@
 						http://www.springframework.org/schema/data/mongo
     					http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
     					
-    <mongo:db-factory host="localhost" port="27017" dbname="golfnswap" />
+    <context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="ie.gmit.sw.repo"></context:component-scan>
+	
+	<context:property-placeholder
+		location="classpath:/ie/gmit/sw/config/resources/mdb.properties" />
+		
+	<mongo:mongo host="${mdb.host}" port="${mdb.port}">
+		<mongo:options
+			connections-per-host="${mdb.connectionsPerHost}"
+			threads-allowed-to-block-for-connection-multiplier="${mdb.threadsAllowedToBlockForConnectionMultiplier}"
+			connect-timeout="${mdb.connectTimeout}"
+			max-wait-time="${mdb.maxWaitTime}"
+			auto-connect-retry="${mdb.autoConnectRetry}"
+			socket-keep-alive="${mdb.socketKeepAlive}"
+			socket-timeout="${mdb.socketTimeout}"
+			slave-ok="${mdb.slaveOk}"
+			write-number="1"
+			write-timeout="0"
+			write-fsync="${mdb.slaveOk}"/>
+	</mongo:mongo>
+    					
+    <mongo:db-factory dbname="${mdb.dbname}" mongo-ref="mongo" />
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+		<constructor-arg name="mongo" ref="mongo" />
+		<constructor-arg name="databaseName" value="${mdb.dbname}" />
 	</bean>
 	
-	<mongo:repositories base-package="ie.gmit.sw.testing.repositories"/>
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor">
+	</bean>
 
 </beans>
