@@ -27,8 +27,7 @@
 	
 	<h4>You have been successfully logged out.</h4>
 	<p><a href="${pageContext.request.contextPath}/">Back home</a></p>
-	
-	
+
 	</div>
 
 </body>
