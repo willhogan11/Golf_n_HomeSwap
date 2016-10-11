@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/logout.css" />
 	<title>Login Page</title>
 </head>
-<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
+<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
 
 	<div class="container" style="position: absolute;
 							     margin: auto;
