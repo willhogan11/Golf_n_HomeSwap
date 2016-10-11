@@ -20,18 +20,58 @@
 				<div class="form-group row">
 					<label for="firstname" class="col-sm-2 col-form-label">First Name:</label>
 					<div class="col-sm-10">
-						<input type="firstname" class="form-control" 
+						<input type="text" class="form-control" 
 							   id="firstname" name="firstname" placeholder="First Name">
 					</div>
 				</div>
 			
 				<div class="form-group row">
-					<label for="surname" class="col-sm-2 col-form-label">Surname</label>
+					<label for="surname" class="col-sm-2 col-form-label">Surname:</label>
 					<div class="col-sm-10">
-						<input type="surname" class="form-control" 
+						<input type="text" class="form-control" 
 							   id="surname" name="surname" placeholder="Surname">
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label for="email" class="col-sm-2 col-form-label">Email:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" 
+							   id="email" name="email" placeholder="Email">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="email" class="col-sm-2 col-form-label">Golf Reg.Number:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" 
+							   id="golfregnum" name="golfregnum" placeholder="Golf Registration Number">
+					</div>
+				</div>
+				
+				
+				<div class="form-group row">
+					<label for="countryissued" class="col-sm-2 col-form-label">Country of Issue:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="countryissued" name="countryissued">
+							<option selected="selected">-Select-</option>
+							<option>Ireland</option>
+							<option>England</option>
+							<option>Scotland</option>
+							<option>Wales</option>
+							<option>U.S.A</option>
+						</select>
+					</div>
+				</div>
+				
+				
+				<div class="form-group row">
+					<label for="example-date-input" class="col-xs-2 col-form-label">Date of Issue:</label>
+					<div class="col-xs-10">
+						<input class="form-control" type="date" id="dateofissue" name="dateofissue">
+					</div>
+				</div>
+				
 			
 				<div class="form-group row" style="text-align: center;">
 					<div class="offset-sm-2 col-sm-10">
