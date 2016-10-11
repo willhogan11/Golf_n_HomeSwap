@@ -25,7 +25,7 @@
 							     padding: 25px;
 							     background-color: white;">
 	
-	<h4>You have been successfully loged out.</h4>
+	<h4>You have been successfully logged out.</h4>
 	<p><a href="${pageContext.request.contextPath}/">Back home</a></p>
 	
 	
