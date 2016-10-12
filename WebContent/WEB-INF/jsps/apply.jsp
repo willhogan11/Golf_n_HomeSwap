@@ -33,8 +33,6 @@
 						<input type="text" class="form-control" id="surname" name="surname" placeholder="Surname">
 					</div>
 				</div>
-				
-				<!-- 
 
 				<div class="form-group row">
 					<label for="email" class="col-sm-3 col-form-label">Email:</label>
@@ -65,6 +63,8 @@
 						</select>
 					</div>
 				</div>
+				
+				<!-- 
 
 				<div class="form-group row">
 					<label for="dateofissue" class="col-xs-3 col-form-label">Date of Issue:</label>
@@ -72,6 +72,8 @@
 						<input class="form-control" type="date" id="dateofissue" name="dateofissue">
 					</div>
 				</div>
+				
+				 -->
 
 				<div class="form-group row">
 					<label for="homeclubname" class="col-sm-3 col-form-label">Home Club Name:</label>
@@ -88,8 +90,6 @@
 							   id="homecluburl" name="homecluburl" placeholder="Home Club URL">
 					</div>
 				</div>
-				
-				 -->
 
 				<div id="submitApplication" style="text-align: center;">
 					<button type="submit" class="btn btn-primary" name="user">Submit Application</button>
