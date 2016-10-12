@@ -42,6 +42,7 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>
   		classpath:ie/gmit/sw/config/security-context.xml
+  		classpath:ie/gmit/sw/config/mongodb-context.xml
   	</param-value>
   </context-param>
   <context-param>

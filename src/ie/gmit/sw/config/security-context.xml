@@ -17,11 +17,12 @@
 	
 	<!-- Access manager -->
 	<security:http use-expressions="true">
-		<security:intercept-url pattern="/whatitis" access="hasAnyRole('admin')" />
-		<security:intercept-url pattern="/howitworks" access="hasAnyRole('admin')" />
-		<security:intercept-url pattern="/price" access="hasAnyRole('admin')" />
-		<security:intercept-url pattern="/faq" access="hasAnyRole('admin')" />
-		<security:intercept-url pattern="/apply" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/docreate" access="permitAll" />
+		<security:intercept-url pattern="/whatitis" access="permitAll" />
+		<security:intercept-url pattern="/howitworks" access="permitAll" />
+		<security:intercept-url pattern="/price" access="permitAll" />
+		<security:intercept-url pattern="/faq" access="permitAll" />
+		<security:intercept-url pattern="/apply" access="permitAll" />
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/logout" access="permitAll" />

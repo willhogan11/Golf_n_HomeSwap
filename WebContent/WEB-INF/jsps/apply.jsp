@@ -17,7 +17,7 @@
 									  padding: 25px;background-color: white;">
 			
 			<!-- Andrej This url should map to the UserController, Change the name 'docreate' here as needed from your End -->
-			<form method="post" action="${pageContext.request.contextPath}/docreate" id="applicationForm"> 
+			<form method="post" action="${pageContext.request.contextPath}/docreate" name="user" id="applicationForm"> 
 				
 				<h3 style="text-align: center;padding-bottom: 10px;">Apply for Membership</h3>
 				<div class="form-group row">
@@ -33,6 +33,8 @@
 						<input type="text" class="form-control" id="surname" name="surname" placeholder="Surname">
 					</div>
 				</div>
+				
+				<!-- 
 
 				<div class="form-group row">
 					<label for="email" class="col-sm-3 col-form-label">Email:</label>
@@ -86,9 +88,11 @@
 							   id="homecluburl" name="homecluburl" placeholder="Home Club URL">
 					</div>
 				</div>
+				
+				 -->
 
 				<div id="submitApplication" style="text-align: center;">
-					<button type="submit" class="btn btn-primary">Submit Application</button>
+					<button type="submit" class="btn btn-primary" name="user">Submit Application</button>
 				</div>
 
 			</form>
