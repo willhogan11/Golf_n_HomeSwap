@@ -1,5 +1,7 @@
 package ie.gmit.sw.repo;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -18,5 +20,12 @@ public class UserRepoImpl implements UserRepository {
 		mongoTemplate.insert(user);
 		
 		log.info("UserRepoImpl--addUser => " + user);
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> users = mongoTemplate.findAll(User.class);
+		log.info("UserRepoImpl--users.size is: " + users.size());
+		return users;
 	}
 }

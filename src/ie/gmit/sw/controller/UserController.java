@@ -31,4 +31,11 @@ public class UserController {
 		
 		return "home";
 	}
+	
+	@RequestMapping("/candidates") // For Will ==> change the name of page if its different
+	public String showCandidates(Model model){
+		model.addAttribute("users", userRepo.getAllUsers());
+		log.info("UserController--Number of users is: " + userRepo.getAllUsers().size());
+		return "candidates"; // For Will ==> change the name of page if its different
+	}
 }

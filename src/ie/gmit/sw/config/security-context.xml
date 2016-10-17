@@ -17,6 +17,7 @@
 	
 	<!-- Access manager -->
 	<security:http use-expressions="true">
+		<security:intercept-url pattern="/candidates" access="hasAnyRole('admin')" />
 		<security:intercept-url pattern="/docreate" access="permitAll" />
 		<security:intercept-url pattern="/whatitis" access="permitAll" />
 		<security:intercept-url pattern="/howitworks" access="permitAll" />
