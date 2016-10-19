@@ -45,6 +45,7 @@ td, th{
 		        <td><c:out value="${candidate.countryissued}" /></td>
 		        <td><c:out value="${candidate.homeclubname}" /></td>
 		        <td><c:out value="${candidate.homecluburl}" /></td>
+		        <td><c:out value="${candidate.useraccesslevel}" /></td>
 		        <td><button>Approve</button></td>
 		        <td><button>Decline</button></td>
 		    </tr>

@@ -12,5 +12,5 @@ package ie.gmit.sw.repo;
  */
 
 public enum UserAccessLevel {
-	ADMIN, REGISTERED, CANDIDATE, DECLINED, SUSPENDED
+	ADMIN, REGISTERED, CANDIDATE, DECLINED, SUSPENDED;
 }
