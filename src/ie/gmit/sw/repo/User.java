@@ -20,15 +20,17 @@ public class User {
 	private String homeclubname;
 	private String homecluburl;
 	private UserAccessLevel useraccesslevel; // Created an ENUM class to hold the values for [admin, registered, candidate]
+	private UserVisibility uservisibility; // Created an ENUM class to hold the values for [private, public, group]
 	
 	
-	// DEPRECATED (Now using 'accessLevel' instead of this)
+	
+	// DEPRECATED (Now using 'UserAccessLevel' instead of this)
 	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
 	
-	
-	private Boolean visibility;
+	// DEPRECATED (Now using 'UserVisibility' instead of this)
+	// private Boolean visibility;
 
-	
+
 	// Getters & Setters
 	public String getId() {
 		return id;
@@ -101,25 +103,7 @@ public class User {
 	public void setHomecluburl(String homecluburl) {
 		this.homecluburl = homecluburl;
 	}
-
-	// TO BE REMOVED, Using UserAccessLevel now instead
-//	public Boolean getRegistered() {
-//		return registered;
-//	}
-//
-//	public void setRegistered(Boolean registered) {
-//		this.registered = registered;
-//	}
-
-	public Boolean getVisibility() {
-		return visibility;
-	}
-
-	public void setVisibility(Boolean visibility) {
-		this.visibility = visibility;
-	}
-
-
+	
 	public UserAccessLevel getUseraccesslevel() {
 		return useraccesslevel;
 	}
@@ -127,4 +111,28 @@ public class User {
 	public void setUseraccesslevel(UserAccessLevel useraccesslevel) {
 		this.useraccesslevel = useraccesslevel;
 	}
+	
+	public UserVisibility getUservisibility() {
+		return uservisibility;
+	}
+
+	public void setUservisibility(UserVisibility uservisibility) {
+		this.uservisibility = uservisibility;
+	}
+
+	// TO BE REMOVED, Using UserAccessLevel now instead
+   /*public Boolean getRegistered() {
+		return registered;
+	}
+	public void setRegistered(Boolean registered) {
+		this.registered = registered;
+	}*/
+	
+	// TO BE REMOVED, Using UserVisibility now instead
+	/*public Boolean getVisibility() {
+		return visibility;
+	}
+	public void setVisibility(Boolean visibility) {
+		this.visibility = visibility;
+	}*/
 }
