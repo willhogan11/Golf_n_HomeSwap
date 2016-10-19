@@ -64,16 +64,41 @@
 					</div>
 				</div>
 				
-				<!-- 
+				
 
-				<div class="form-group row">
+				<!-- <div class="form-group row">
 					<label for="dateofissue" class="col-xs-3 col-form-label">Date of Issue:</label>
 					<div class="col-xs-7">
-						<input class="form-control" type="date" id="dateofissue" name="dateofissue">
+						<input data-provide="datepicker" class="form-control" type="date" id="dateofissue" name="dateofissue">
 					</div>
+					<script type="text/javascript">
+							$.fn.datepicker.defaults.format = "yyyy/mm/dd";
+							$('.datepicker').datepicker({
+							    startDate: '-3d'
+							});
+						</script>
 				</div>
 				
-				 -->
+		
+				<div class="container">
+				    <div class="row">
+				        <div class='col-sm-6'>
+				            <div class="form-group">
+				                <div class='input-group date' id='datepicker'>
+			                        <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+				                </div>
+				                 <script type="text/javascript">
+						        	$( ".datepicker" ).datepicker({
+						        		dateFormat: 'yyyy-mm-dd'
+						        	});
+							    </script>
+				            </div>
+				        </div>
+				       
+				    </div>
+				</div> -->
+				
+				
 
 				<div class="form-group row">
 					<label for="homeclubname" class="col-sm-3 col-form-label">Home Club Name:</label>

@@ -19,12 +19,14 @@ public class User {
 	private Date dateofissue;
 	private String homeclubname;
 	private String homecluburl;
-	private Boolean registered = false; // Flag: change to true when registered? Something like this....
+	private UserAccessLevel useraccesslevel; // Created an ENUM class to hold the values for [admin, registered, candidate]
 	
-	private Boolean visibility; // This is what Maria was saying on Monday 10th Oct.....
-								//...that if the user is registered, maybe they want to be invisible to others...
-								//...until they make a connection with someone and then they can change visibility to true..
-								// This can be tweaked to suit the application of course
+	
+	// DEPRECATED (Now using 'accessLevel' instead of this)
+	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
+	
+	
+	private Boolean visibility;
 
 	
 	// Getters & Setters
@@ -100,13 +102,14 @@ public class User {
 		this.homecluburl = homecluburl;
 	}
 
-	public Boolean getRegistered() {
-		return registered;
-	}
-
-	public void setRegistered(Boolean registered) {
-		this.registered = registered;
-	}
+	// TO BE REMOVED, Using UserAccessLevel now instead
+//	public Boolean getRegistered() {
+//		return registered;
+//	}
+//
+//	public void setRegistered(Boolean registered) {
+//		this.registered = registered;
+//	}
 
 	public Boolean getVisibility() {
 		return visibility;
@@ -116,12 +119,12 @@ public class User {
 		this.visibility = visibility;
 	}
 
-	
-	// Just for Testing, if required.
-	public String toString() {
-		return "User [id=" + id + ", firstname=" + firstname + ", surname=" + surname + ", email=" + email
-				+ ", golfregnum=" + golfregnum + ", countryissued=" + countryissued + ", dateofissue=" + dateofissue
-				+ ", homeclubname=" + homeclubname + ", homecluburl=" + homecluburl + ", registered=" + registered
-				+ ", visibility=" + visibility + "]";
+
+	public UserAccessLevel getUseraccesslevel() {
+		return useraccesslevel;
+	}
+
+	public void setUseraccesslevel(UserAccessLevel useraccesslevel) {
+		this.useraccesslevel = useraccesslevel;
 	}
 }
