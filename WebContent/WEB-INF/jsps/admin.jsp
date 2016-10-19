@@ -9,14 +9,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Candidate Approval Page</title>
+	<title>Admin Page</title>
 <style>
 td, th{
 	border: 1px dotted grey;
 }
 </style>
 </head>
-<body>
+
+
+<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
 <h1>Test</h1>
 

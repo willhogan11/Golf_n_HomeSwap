@@ -19,7 +19,7 @@ public class User {
 	private Date dateofissue;
 	private String homeclubname;
 	private String homecluburl;
-	private UserAccessLevel useraccesslevel; // Created an ENUM class to hold the values for [admin, registered, candidate]
+	private UserAccessLevel useraccesslevel; // Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended]
 	private UserVisibility uservisibility; // Created an ENUM class to hold the values for [private, public, group]
 	
 	// DEPRECATED (Now using 'UserAccessLevel' instead of this)

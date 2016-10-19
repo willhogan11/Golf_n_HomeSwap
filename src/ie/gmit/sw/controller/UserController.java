@@ -32,10 +32,11 @@ public class UserController {
 		return "home";
 	}
 	
-	@RequestMapping("/candidates") // For Will ==> change the name of page if its different
+	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
+	@RequestMapping("/admin") 
 	public String showCandidates(Model model){
 		model.addAttribute("users", userRepo.getAllUsers());
 		log.info("UserController--Number of users is: " + userRepo.getAllUsers().size());
-		return "candidates"; // For Will ==> change the name of page if its different
+		return "admin"; 
 	}
 }
