@@ -22,8 +22,6 @@ public class User {
 	private UserAccessLevel useraccesslevel; // Created an ENUM class to hold the values for [admin, registered, candidate]
 	private UserVisibility uservisibility; // Created an ENUM class to hold the values for [private, public, group]
 	
-	
-	
 	// DEPRECATED (Now using 'UserAccessLevel' instead of this)
 	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
 	

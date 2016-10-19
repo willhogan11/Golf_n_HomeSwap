@@ -17,6 +17,12 @@
 	
 	<!-- Access manager -->
 	<security:http use-expressions="true">
+	
+<!-- 	Is this the best Way to declare the 3 access level types? I know the details will be stored in Mongo....	
+		<security:intercept-url pattern="/admin" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/registered" access="hasAnyRole('registered')" />
+		<security:intercept-url pattern="/candidates" access="hasAnyRole('candidate')" /> -->
+
 		<security:intercept-url pattern="/candidates" access="hasAnyRole('admin')" />
 		<security:intercept-url pattern="/docreate" access="permitAll" />
 		<security:intercept-url pattern="/whatitis" access="permitAll" />

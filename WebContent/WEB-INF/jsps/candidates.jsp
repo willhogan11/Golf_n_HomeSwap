@@ -1,13 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Candidate Approval Page</title>
 <style>
 td, th{
 	border: 1px dotted grey;
@@ -16,28 +18,33 @@ td, th{
 </head>
 <body>
 
-<h1>Candidates Testing Page.</h1>
-<h4>This is temporary page created to test request for candidates...</h4>
-<p>Right now all existing users are retrieved from database.</p>
-<p><tt>Next step is to build handler layer to populate just not registered candidates.</tt></p>
+<h1>Test</h1>
 
 
 <table>
 	<thead>
 	    <tr>
-	        <th>User ID</th>
 	        <th>Firstname</th>
 	        <th>Surname</th>
 	        <th>Email</th>
+	        <th>Golf Reg Num</th>
+	        <th>Country Issued</th>
+	        <th>Home Club Name</th>
+	        <th>Home Club URL</th>
 	    </tr>
 	</thead>
 	<tbody>
-		<c:forEach var="user" items="${users}" >
+		<c:forEach var="candidate" items="${users}" >
 		    <tr>
-		        <td><c:out value="${user.id}" /></td>
-		        <td><c:out value="${user.firstname}" /></td>
-		        <td><c:out value="${user.surname}" /></td>
-		        <td><c:out value="${user.email}" /></td>
+		        <td><c:out value="${candidate.firstname}" /></td>
+		        <td><c:out value="${candidate.surname}" /></td>
+		        <td><c:out value="${candidate.email}" /></td>
+		        <td><c:out value="${candidate.golfregnum}" /></td>
+		        <td><c:out value="${candidate.countryissued}" /></td>
+		        <td><c:out value="${candidate.homeclubname}" /></td>
+		        <td><c:out value="${candidate.homecluburl}" /></td>
+		        <td><button>Approve</button></td>
+		        <td><button>Decline</button></td>
 		    </tr>
 	    </c:forEach>
 	</tbody>
