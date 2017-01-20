@@ -44,8 +44,12 @@
 			        <td><c:out value="${candidate.homecluburl}" /></td>
 			        <td><c:out value="${candidate.useraccesslevel}" /></td>
 			        <td><c:out value="${candidate.uservisibility}" /></td>
-			        <td><button class="btn btn-success btn-sm">Approve</button></td>
+			        
+			        <sf:form method="post" action="${pageContext.request.contextPath}/approve" commandName="user">
+			        <td><input type="submit" class="btn btn-success btn-sm" value="Approve" /></td>
 			        <td><button class="btn btn-danger btn-sm">Decline</button></td>
+			        </sf:form>
+			        
 			    </tr>
 		    </c:forEach>
 		</tbody>

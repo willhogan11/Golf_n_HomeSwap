@@ -48,6 +48,9 @@
 			<a href="${pageContext.request.contextPath}/price" class="btn btn-primary">Price</a>
 			<a href="${pageContext.request.contextPath}/faq" class="btn btn-primary">FAQ</a>
 			<a href="${pageContext.request.contextPath}/apply" class="btn btn-primary">Apply for Membership</a>
+			<sec:authorize access="hasAnyRole('hr', 'admin')">
+            	<a href="${pageContext.request.contextPath}/admin" class="btn btn-primary">Admin</a>
+            </sec:authorize>
 		</div>
 	</div>
 

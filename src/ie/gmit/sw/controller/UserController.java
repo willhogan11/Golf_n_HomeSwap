@@ -39,4 +39,16 @@ public class UserController {
 		log.info("UserController--Number of users is: " + userRepo.getAllUsers().size());
 		return "admin"; 
 	}
+	
+	// Approve user's application for membership
+	@RequestMapping(value="/approve", method=RequestMethod.POST)
+	public String approveUser(@ModelAttribute("user") User user){
+		
+		return "admin";
+	}
+	
+	@RequestMapping("/denied")
+	public String denied(){
+		return "denied";
+	}
 }

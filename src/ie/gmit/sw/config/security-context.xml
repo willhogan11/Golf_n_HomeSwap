@@ -24,6 +24,8 @@
 		<security:intercept-url pattern="/candidates" access="hasAnyRole('candidate')" /> -->
 
 		<security:intercept-url pattern="/admin" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/approve" access="hasAnyRole('admin')" />
+		<security:intercept-url pattern="/denied" access="permitAll" />
 		<security:intercept-url pattern="/docreate" access="permitAll" />
 		<security:intercept-url pattern="/whatitis" access="permitAll" />
 		<security:intercept-url pattern="/howitworks" access="permitAll" />
