@@ -36,14 +36,15 @@ public class UserController {
 	@RequestMapping("/admin") 
 	public String showCandidates(Model model){
 		model.addAttribute("users", userRepo.getAllUsers());
-		log.info("UserController--Number of users is: " + userRepo.getAllUsers().size());
+		log.info("UserController(/admin)--Number of users is: " + userRepo.getAllUsers().size());
 		return "admin"; 
 	}
 	
 	// Approve user's application for membership
 	@RequestMapping(value="/approve", method=RequestMethod.POST)
-	public String approveUser(@ModelAttribute("user") User user){
-		
+	public String approveUser(@ModelAttribute("user") User user, Model model){
+		model.addAttribute("users", userRepo.getAllUsers());
+		log.info("UserController(/approve)--Number of users is: " + userRepo.getAllUsers().size());
 		return "admin";
 	}
 	
