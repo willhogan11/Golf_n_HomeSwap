@@ -12,6 +12,10 @@
 				<security:user name="g00196984@gmit.ie"
 					authorities="admin" password="ABC1xwz!" />
 			</security:user-service>
+			<security:user-service>
+				<security:user name="g00318460@gmit.ie"
+					authorities="admin" password="1234" />
+			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
 	
