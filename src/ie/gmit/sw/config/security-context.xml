@@ -29,6 +29,11 @@
 
 		<security:intercept-url pattern="/admin" access="hasAnyRole('admin')" />
 		<security:intercept-url pattern="/approve" access="hasAnyRole('admin')" />
+		
+		<!-- 22nd Jan 2017, Edited by Will -->
+		<!-- This will be altered, i have just made this for admin visibility for testing purposes  -->
+		<security:intercept-url pattern="/dashboard" access="hasAnyRole('admin')" />
+		
 		<security:intercept-url pattern="/denied" access="permitAll" />
 		<security:intercept-url pattern="/docreate" access="permitAll" />
 		<security:intercept-url pattern="/whatitis" access="permitAll" />

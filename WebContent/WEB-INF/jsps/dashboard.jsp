@@ -19,7 +19,7 @@
 	</style>
 </head>
 
-<body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
+<body style="background-image: url('${pageContext.request.contextPath}/res/img/golfOpacity.jpg'); padding: 20px;">
 
 	<!-- Menu Container Div -->
 	<div class="container">
@@ -87,7 +87,6 @@
 			<div class="carousel-inner" role="listbox">
 
 				<div class="item active">
-					<!-- <img src="images/house1.jpg" alt="house1" width="360" height="245"> -->
 					<img src='${pageContext.request.contextPath}/res/img/house1.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 1</h3>
@@ -96,7 +95,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house2.jpg" alt="house2" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house2.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 2</h3>	
 						<p>The atmosphere of this house in Wonderful.
@@ -104,7 +103,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house3.jpg" alt="house3" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house3.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 3</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -112,7 +111,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house4.jpg" alt="house4" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house4.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 4</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -120,7 +119,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house5.jpg" alt="house5" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house5.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 5</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -128,7 +127,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house6.jpg" alt="house6" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house6.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 6</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -136,7 +135,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house7.jpg" alt="house7" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house7.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 7</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -144,7 +143,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house8.jpg" alt="house8" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house8.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 8</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -152,7 +151,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house9.jpg" alt="house9" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house9.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 9</h3>
 						<p>The atmosphere of this house in Wonderful.</p>
@@ -160,7 +159,7 @@
 				</div>
 
 				<div class="item">
-					<img src="images/house10.jpg" alt="house10" width="360" height="245">
+					<img src='${pageContext.request.contextPath}/res/img/house10.jpg'>
 					<div class="carousel-caption">
 						<h3>Tampa Bay 10</h3>
 						<p>The atmosphere of this house in Wonderful.</p>

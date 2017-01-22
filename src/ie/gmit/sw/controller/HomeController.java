@@ -45,4 +45,9 @@ public class HomeController {
 	public String showApplyPage(){
 		return "apply";
 	}
+	
+	@RequestMapping("/dashboard")
+	public String showDashboard(){
+		return "dashboard";
+	}
 }
