@@ -8,13 +8,13 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepoImpl implements UserRepository {
+public class UserRepoImpl implements UserRepository{
 	
 	private Logger log = Logger.getLogger(UserRepoImpl.class);
 	
 	@Autowired
 	private MongoTemplate mongoTemplate;
-
+	
 	@Override
 	public void addUser(User user) {
 		mongoTemplate.insert(user);
@@ -22,10 +22,16 @@ public class UserRepoImpl implements UserRepository {
 		log.info("UserRepoImpl--addUser => " + user);
 	}
 
+	
 	@Override
 	public List<User> getAllUsers() {
 		List<User> users = mongoTemplate.findAll(User.class);
 		log.info("UserRepoImpl--users.size is: " + users.size());
 		return users;
+	}
+
+	@Override
+	public User getUserById(String id) {
+		return mongoTemplate.findById(id, User.class);
 	}
 }

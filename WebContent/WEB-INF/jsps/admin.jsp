@@ -45,10 +45,10 @@
 			        <td><c:out value="${candidate.useraccesslevel}" /></td>
 			        <td><c:out value="${candidate.uservisibility}" /></td>
 			        
-			        <sf:form method="post" action="${pageContext.request.contextPath}/approve" commandName="user">
-			        <td><input type="submit" class="btn btn-success btn-sm" value="Approve" /></td>
+			        
+			        
+			        <td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-success btn-sm">Approve</button></a></td>
 			        <td><button class="btn btn-danger btn-sm">Decline</button></td>
-			        </sf:form>
 			        
 			    </tr>
 		    </c:forEach>
