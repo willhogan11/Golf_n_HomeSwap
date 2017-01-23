@@ -2,11 +2,12 @@ package ie.gmit.sw.repo;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.Repository;
 
-@Repository
-public interface UserRepository {
+public interface UserRepository extends Repository<User, Long>{
 
+	public abstract List<User> getAllUsers();
 	public void addUser(User user);
-	public List<User> getAllUsers();
+	public User getUserById(String id);
+
 }

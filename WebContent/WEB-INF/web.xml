@@ -43,6 +43,7 @@
     <param-value>
   		classpath:ie/gmit/sw/config/security-context.xml
   		classpath:ie/gmit/sw/config/mongodb-context.xml
+  		classpath:ie/gmit/sw/config/email-context.xml
   	</param-value>
   </context-param>
   <context-param>
