@@ -47,7 +47,7 @@
 			        
 			        
 			        
-			        <td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-danger btn-sm">Approve</button></a></td>
+			        <td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-success btn-sm">Approve</button></a></td>
 			        <td><button class="btn btn-danger btn-sm">Decline</button></td>
 			        
 			    </tr>
