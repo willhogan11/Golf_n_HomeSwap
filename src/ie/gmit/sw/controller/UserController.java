@@ -1,18 +1,21 @@
 package ie.gmit.sw.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ie.gmit.sw.email.EmailSender;
+import ie.gmit.sw.email.Emailable;
 import ie.gmit.sw.repo.User;
 import ie.gmit.sw.repo.UserRepository;
 
@@ -24,12 +27,12 @@ public class UserController {
 	private UserRepository userRepo;
 	
 	@Autowired
+	private MailSender mailSender;
+	
+	@Autowired
 	public void setUserRepo(@Qualifier("userRepoImpl") UserRepository userRepo){
 		this.userRepo = userRepo;
 	}
-	
-	@Autowired
-	private JavaMailSender mailSender;
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
@@ -42,36 +45,47 @@ public class UserController {
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
 	@RequestMapping("/admin") 
 	public String showCandidates(Model model){
-		model.addAttribute("users", userRepo.getAllUsers());
-		log.info("UserController(/admin)--Number of users is: " + userRepo.getAllUsers().size());
+		List<User> users = userRepo.getAllUsers();
+		model.addAttribute("users", users);
+		log.info("UserController(/admin)--Number of users is: " + users.size());
 		return "admin"; 
 	}
 	
 	// Approve user's application for membership
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
-		model.addAttribute("users", userRepo.getAllUsers());
-		log.info("UserController(/approve)--Number of users is: " + userRepo.getAllUsers().size());
 		
+		// get all users
+		List<User> users = userRepo.getAllUsers();
 		
+		// users binding
+		model.addAttribute("users", users);
+		
+		// get user that been chosen for approvement
 		User u = userRepo.getUserById(request.getParameter("u"));
 		
-		log.info("User's name is: " + u.getFirstname() + " " + u.getSurname());
-		log.info("User's email is: " + u.getEmail());
+		//**************************************************************************
+		// Change access level for user here
+		//**************************************************************************
+		// ... //
 		
+		//**************************************************************************
+		// This section is for sending email to user for confirmation of approvement.
+		//**************************************************************************
 		String message = "Memebership for user " + u.getFirstname() + " " + u.getSurname() + "is accepted and approved.";
+		String to = u.getEmail();
+		String subject = "Membership";
 		
-		//JavaEmailTest email = new JavaEmailTest("m8r-fg5nv21@mailinator.com", "Approvement", message);
+		Emailable email = new EmailSender(to, subject, message);
 		
-		String to = "willhogan11@hotmail.com";
-		String subject = "Approvement";
-		
-		SimpleMailMessage smm = new SimpleMailMessage();
-		smm.setTo(to);
-		smm.setSubject(subject);
-		smm.setText(message);
-		
-		mailSender.send(smm);
+		// Sending email
+		try{
+			mailSender.send(email.getSmm());
+			log.info("Mail sent to " + u.getEmail());
+		}catch(Exception e){
+			log.info("Error with sending");
+			log.info(e.getMessage().toString());
+		}
 		
 		return "admin";
 	}
