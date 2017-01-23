@@ -24,7 +24,7 @@ public class UserRepoImpl implements UserRepository{
 
 	
 	@Override
-	public List<User> getAllUsers() {
+	public List<User> findAllUsers() {
 		List<User> users = mongoTemplate.findAll(User.class);
 		log.info("UserRepoImpl--users.size is: " + users.size());
 		return users;

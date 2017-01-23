@@ -45,7 +45,7 @@ public class UserController {
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
 	@RequestMapping("/admin") 
 	public String showCandidates(Model model){
-		List<User> users = userRepo.getAllUsers();
+		List<User> users = userRepo.findAllUsers();
 		model.addAttribute("users", users);
 		log.info("UserController(/admin)--Number of users is: " + users.size());
 		return "admin"; 
@@ -56,7 +56,7 @@ public class UserController {
 	public String approveUser(HttpServletRequest request, Model model){
 		
 		// get all users
-		List<User> users = userRepo.getAllUsers();
+		List<User> users = userRepo.findAllUsers();
 		
 		// users binding
 		model.addAttribute("users", users);
