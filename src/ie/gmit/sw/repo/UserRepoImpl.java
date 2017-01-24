@@ -37,14 +37,14 @@ public class UserRepoImpl implements UserRepository{
 
 
 	@Override
-	public Long countUsers() {
+	public Long numberOfUsers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
-	public void deleteUser(User user) {
+	public void delUser(User user) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+#approved_label{
+	display: block;
+	padding: 5px;
+	width: 70px;
+	height: 30px;
+	font: bolder 11px sans-serif;
+	color: green;
+}

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ie.gmit.sw.email.EmailSender;
 import ie.gmit.sw.email.Emailable;
 import ie.gmit.sw.repo.User;
+import ie.gmit.sw.repo.UserAccessLevel;
 import ie.gmit.sw.repo.UserRepository;
 
 @Controller
@@ -55,12 +56,6 @@ public class UserController {
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
 		
-		// get all users
-		List<User> users = userRepo.findAllUsers();
-		
-		// users binding
-		model.addAttribute("users", users);
-		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
 		
@@ -68,6 +63,9 @@ public class UserController {
 		// Change access level for user here
 		//**************************************************************************
 		// ... //
+		u.setUseraccesslevel(UserAccessLevel.REGISTERED);
+		userRepo.updateUser(u);
+		log.info("User's access level is " + u.getUseraccesslevel());
 		
 		//**************************************************************************
 		// This section is for sending email to user for confirmation of approvement.
@@ -86,6 +84,13 @@ public class UserController {
 			log.info("Error with sending");
 			log.info(e.getMessage().toString());
 		}
+		
+		// Populate admin page with users
+		// get all users
+		List<User> users = userRepo.findAllUsers();
+		
+		// users binding
+		model.addAttribute("users", users);
 		
 		return "admin";
 	}

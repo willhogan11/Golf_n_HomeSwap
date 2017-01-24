@@ -9,7 +9,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/admin.css" />
+	
 	<title>Admin Page</title> 
 </head>
 
@@ -45,9 +47,19 @@
 			        <td><c:out value="${candidate.useraccesslevel}" /></td>
 			        <td><c:out value="${candidate.uservisibility}" /></td>
 			        
+			        <c:choose>
+			        	<c:when test="${candidate.useraccesslevel == 'CANDIDATE'}">
+			        		<td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-success btn-sm">Approve</button></a></td>
+			        	</c:when>
+			        	<c:otherwise>
+			        		<td>
+				        		<div id="approved_label">
+				        			APPROVED
+				        		</div>
+				        	</td>
+			        	</c:otherwise>
+			        </c:choose>
 			        
-			        
-			        <td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-success btn-sm">Approve</button></a></td>
 			        <td><button class="btn btn-danger btn-sm">Decline</button></td>
 			        
 			    </tr>
