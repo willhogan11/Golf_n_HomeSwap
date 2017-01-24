@@ -31,7 +31,34 @@ public class UserRepoImpl implements UserRepository{
 	}
 
 	@Override
-	public User getUserById(String id) {
+	public User findUserById(String id) {
 		return mongoTemplate.findById(id, User.class);
+	}
+
+
+	@Override
+	public Long countUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public boolean existsUser(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void updateUser(User user) {
+		mongoTemplate.save(user);
 	}
 }

@@ -62,7 +62,7 @@ public class UserController {
 		model.addAttribute("users", users);
 		
 		// get user that been chosen for approvement
-		User u = userRepo.getUserById(request.getParameter("u"));
+		User u = userRepo.findUserById(request.getParameter("u"));
 		
 		//**************************************************************************
 		// Change access level for user here
