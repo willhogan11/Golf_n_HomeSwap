@@ -79,11 +79,14 @@ public class UserController {
 		String subject = "Membership";
 		
 		// Do approve user
-		if(!UserAccessLevel.REGISTERED.equals(u.getUseraccesslevel())){
+		// if(!UserAccessLevel.REGISTERED.equals(u.getUseraccesslevel())){
+		if(!UserAccessLevel.TEMPORARY.equals(u.getUseraccesslevel())){
 			//**************************************************************************
 			// Change access level for user here
 			//**************************************************************************
-			u.setUseraccesslevel(UserAccessLevel.REGISTERED);
+			
+			// u.setUseraccesslevel(UserAccessLevel.REGISTERED);
+			u.setUseraccesslevel(UserAccessLevel.TEMPORARY);
 			userRepo.updateUser(u);
 			
 			//**************************************************************************
