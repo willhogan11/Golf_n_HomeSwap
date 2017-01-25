@@ -20,7 +20,8 @@ public enum UserAccessLevel {
 	REGISTERED ("REGISTERED"),
 	CANDIDATE ("CANDIDATE"), 
 	DECLINED ("DECLINED"),
-	SUSPENDED ("SUSPENDED");
+	SUSPENDED ("SUSPENDED"),
+	TEMPORARY ("TEMPORARY");
 	
 	private final String name;
 	
