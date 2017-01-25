@@ -1,6 +1,5 @@
 package ie.gmit.sw.repo;
 
-import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,23 +15,16 @@ public class User {
 	private String email;	
 	private String golfregnum;
 	private String countryissued;
-	private Date dateofissue;
+	private String dateofissue;
 	private String homeclubname;
 	private String homecluburl;
 	
-	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended]
+	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended, temporary]
 	   Also set default value to be CANDIDATE until approved */
 	private UserAccessLevel useraccesslevel = UserAccessLevel.CANDIDATE; 
 	
 	// Created an ENUM class to hold the values for [private, public, group], Set to private as default
 	private UserVisibility uservisibility = UserVisibility.PRIVATE; 
-	
-	
-	// DEPRECATED (Now using 'UserAccessLevel' instead of this)
-	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
-	
-	// DEPRECATED (Now using 'UserVisibility' instead of this)
-	// private Boolean visibility;
 
 
 	// Getters & Setters
@@ -84,11 +76,11 @@ public class User {
 		this.countryissued = countryissued;
 	}
 
-	public Date getDateofissue() {
+	public String getDateofissue() {
 		return dateofissue;
 	}
 
-	public void setDateofissue(Date dateofissue) {
+	public void setDateofissue(String dateofissue) {
 		this.dateofissue = dateofissue;
 	}
 
@@ -123,20 +115,4 @@ public class User {
 	public void setUservisibility(UserVisibility uservisibility) {
 		this.uservisibility = uservisibility;
 	}
-
-	// TO BE REMOVED, Using UserAccessLevel now instead
-   /*public Boolean getRegistered() {
-		return registered;
-	}
-	public void setRegistered(Boolean registered) {
-		this.registered = registered;
-	}*/
-	
-	// TO BE REMOVED, Using UserVisibility now instead
-	/*public Boolean getVisibility() {
-		return visibility;
-	}
-	public void setVisibility(Boolean visibility) {
-		this.visibility = visibility;
-	}*/
 }

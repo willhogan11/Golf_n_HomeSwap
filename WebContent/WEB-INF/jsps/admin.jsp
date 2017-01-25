@@ -28,6 +28,7 @@
 		        <th>Email</th>
 		        <th>Golf Reg Num</th>
 		        <th>Country Issued</th>
+		        <th>Date Issued</th>
 		        <th>Home Club Name</th>
 		        <th>Home Club URL</th>
 		        <th>Access Level</th>
@@ -42,6 +43,7 @@
 			        <td><c:out value="${candidate.email}" /></td>
 			        <td><c:out value="${candidate.golfregnum}" /></td>
 			        <td><c:out value="${candidate.countryissued}" /></td>
+			        <td><c:out value="${candidate.dateofissue}" /></td>
 			        <td><c:out value="${candidate.homeclubname}" /></td>
 			        <td><c:out value="${candidate.homecluburl}" /></td>
 			        <td><c:out value="${candidate.useraccesslevel}" /></td>
