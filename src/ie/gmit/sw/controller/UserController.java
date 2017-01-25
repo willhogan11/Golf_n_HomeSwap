@@ -67,6 +67,19 @@ public class UserController {
 	// Approve user's application for membership
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
+		
+		
+		
+		/* [will]
+		 * STEPS FOR ADDING A TEMP PASSWORD INTO MONGO TO BE SENT MY EMAIL WITH CONFIRMATION. 
+		 * 	1. Create an instance of the PasswordGenerator class 
+		 *  2. Get a handle on the user instance
+		 *  3. Generate the temporary password and add to mongodb (mongo.update???)
+		 *  4. Add to outgoing confirmation email 
+		 * */
+		
+		
+		
 		// get all users
 		List<User> users = userRepo.findAllUsers();
 		
