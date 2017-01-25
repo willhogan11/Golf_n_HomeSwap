@@ -9,6 +9,7 @@ public interface UserRepository extends Repository<User, Long>{
 	public List<User> findAllUsers();
 	public void addUser(User user);
 	public User findUserById(String id);
+	public User findByEmail(String email);
 	public Long numberOfUsers();
 	public void delUser(User user);
 	public boolean existsUser(String id);

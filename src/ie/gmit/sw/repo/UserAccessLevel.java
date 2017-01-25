@@ -1,6 +1,6 @@
 package ie.gmit.sw.repo;
 
-/*
+/**
  * Access Levels breakdown
  * 
  * Admin: Have access to everywhere ***(need to check with Maria if Admin need access to user profile also) ***
@@ -12,5 +12,23 @@ package ie.gmit.sw.repo;
  */
 
 public enum UserAccessLevel {
-	ADMIN, REGISTERED, CANDIDATE, DECLINED, SUSPENDED;
+	ADMIN ("ADMIN"),
+	REGISTERED ("REGISTERED"),
+	CANDIDATE ("CANDIDATE"), 
+	DECLINED ("DECLINED"),
+	SUSPENDED ("SUSPENDED");
+	
+	private final String name;
+	
+	private UserAccessLevel(String s){
+		name = s;
+	}
+	
+	public boolean equalsName(String otherName){
+		return name.equals(otherName);
+	}
+	
+	public String toString(){
+		return this.name;
+	}
 }
