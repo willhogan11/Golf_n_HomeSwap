@@ -1,6 +1,6 @@
 package ie.gmit.sw.repo;
 
-/*
+/**
  * Access Levels breakdown
  * 
  * Admin: Have access to everywhere ***(need to check with Maria if Admin need access to user profile also) ***
@@ -9,9 +9,30 @@ package ie.gmit.sw.repo;
  * Declined: We need to keep track of who has been declined without removing from the database.  
  * Suspended: If for some reason there's an issue with a member, Admin can suspend the account. We will need to add another list...
  * Temporary: If the user has not fully registered, ie changed their temp passsword, then this is their status. 
- * 	......... to the admin page that allows searches on suspended accounts also.  
+ * 	......... to the admin page that allows searches on suspended accounts also.
+ *
+ * @author Will Hogan. Modified by Andrej Lavrinovic
  */
 
 public enum UserAccessLevel {
-	ADMIN, REGISTERED, CANDIDATE, DECLINED, SUSPENDED, TEMPORARY;
+
+	ADMIN ("ADMIN"),
+	REGISTERED ("REGISTERED"),
+	CANDIDATE ("CANDIDATE"), 
+	DECLINED ("DECLINED"),
+	SUSPENDED ("SUSPENDED");
+	
+	private final String name;
+	
+	private UserAccessLevel(String s){
+		name = s;
+	}
+	
+	public boolean equalsName(String otherName){
+		return name.equals(otherName);
+	}
+	
+	public String toString(){
+		return this.name;
+	}
 }

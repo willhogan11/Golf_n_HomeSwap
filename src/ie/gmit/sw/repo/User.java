@@ -4,6 +4,14 @@ package ie.gmit.sw.repo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * This is User pojo that contains all user details including sensitive information
+ * such as authentication credentials and role for authorisation access.
+ * 
+ * @author Will Hogann
+ * @author g00196984 - Andrej Lavrinovic
+ *
+ */
 
 @Document(collection="user")
 public class User {
@@ -18,6 +26,7 @@ public class User {
 	private String dateofissue;
 	private String homeclubname;
 	private String homecluburl;
+	private String password = "";
 	
 	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended, temporary]
 	   Also set default value to be CANDIDATE until approved */
@@ -25,8 +34,20 @@ public class User {
 	
 	// Created an ENUM class to hold the values for [private, public, group], Set to private as default
 	private UserVisibility uservisibility = UserVisibility.PRIVATE; 
-
-
+	
+	// DEPRECATED (Now using 'UserAccessLevel' instead of this)
+	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
+	
+	// DEPRECATED (Now using 'UserVisibility' instead of this)
+	// private Boolean visibility;
+	
+	// Constructors
+	/**
+	 * Default constructor used for creation User entity
+	 */
+	public User() {}
+	
+	
 	// Getters & Setters
 	public String getId() {
 		return id;
@@ -115,4 +136,30 @@ public class User {
 	public void setUservisibility(UserVisibility uservisibility) {
 		this.uservisibility = uservisibility;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+
+	// TO BE REMOVED, Using UserAccessLevel now instead
+   /*public Boolean getRegistered() {
+		return registered;
+	}
+	public void setRegistered(Boolean registered) {
+		this.registered = registered;
+	}*/
+	
+	// TO BE REMOVED, Using UserVisibility now instead
+	/*public Boolean getVisibility() {
+		return visibility;
+	}
+	public void setVisibility(Boolean visibility) {
+		this.visibility = visibility;
+	}*/
 }

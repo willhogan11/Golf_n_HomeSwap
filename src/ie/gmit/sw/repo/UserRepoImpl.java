@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -60,5 +62,11 @@ public class UserRepoImpl implements UserRepository{
 	@Override
 	public void updateUser(User user) {
 		mongoTemplate.save(user);
+	}
+
+
+	@Override
+	public User findByEmail(String email) {
+		return mongoTemplate.findOne(new Query(Criteria.where("email").is(email)), User.class);
 	}
 }
