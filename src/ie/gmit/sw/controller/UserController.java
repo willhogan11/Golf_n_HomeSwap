@@ -74,7 +74,10 @@ public class UserController {
 		User u = userRepo.findUserById(request.getParameter("u"));
 
 		// set all components for sending email to the user.
-		String message = "Memebership for user " + u.getFirstname() + " " + u.getSurname() + "is accepted and approved.";
+		String message = "Membership for user " + u.getFirstname() + " " + u.getSurname() + " has been accepted and approved.";
+		
+		
+		
 		String to = u.getEmail();
 		String subject = "Membership";
 		
