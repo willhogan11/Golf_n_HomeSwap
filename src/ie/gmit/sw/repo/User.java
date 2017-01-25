@@ -27,7 +27,7 @@ public class User {
 	private Date dateofissue;
 	private String homeclubname;
 	private String homecluburl;
-	private String password;
+	private String password = "";
 	
 	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended]
 	   Also set default value to be CANDIDATE until approved */
