@@ -37,6 +37,7 @@ public class UserController {
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
+		user.setPassword(user.getPassword());
 		log.info("UserController--addUser => " + user);
 		userRepo.addUser(user);
 		
