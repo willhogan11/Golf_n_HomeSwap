@@ -35,19 +35,6 @@ public class User {
 	// Created an ENUM class to hold the values for [private, public, group], Set to private as default
 	private UserVisibility uservisibility = UserVisibility.PRIVATE; 
 	
-	
-	// Below is for Testing... Remove when fully working with mongodb....
-	
-/*	public static void main(String[] args) {
-		User user = new User();	
-		user.setFirstname("Will");
-		user.setSurname("Hogan");
-		user.setPassword(user.getPassword());
-		System.out.println(user);
-	}*/
-	
-	
-	
 	// Constructors
 	/**
 	 * Default constructor used for creation User entity
@@ -153,7 +140,7 @@ public class User {
 		this.password = password;
 	}
 	
-	// For Testing only, see main method above....
+	// For Testing only....
 	@Override
 	public String toString() {
 		return "User [firstname=" + firstname + ", surname=" + surname + ", password=" + password + "]";

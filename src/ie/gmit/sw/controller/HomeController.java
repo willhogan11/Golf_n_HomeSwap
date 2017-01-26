@@ -50,4 +50,9 @@ public class HomeController {
 	public String showDashboard(){
 		return "dashboard";
 	}
+	
+	@RequestMapping("/firsttimelogin")
+	public String showFirsttimeLogin(){
+		return "firsttimelogin";
+	}
 }
