@@ -30,6 +30,7 @@ public class UserController {
 	@Autowired
 	private MailSender mailSender;
 	
+	
 	@Autowired
 	public void setUserRepo(@Qualifier("userRepoImpl") UserRepository userRepo){
 		this.userRepo = userRepo;
@@ -69,28 +70,19 @@ public class UserController {
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
 		
-		
-		
-		/* [will]
-		 * STEPS FOR ADDING A TEMP PASSWORD INTO MONGO TO BE SENT MY EMAIL WITH CONFIRMATION. 
-		 * 	1. Create an instance of the PasswordGenerator class 
-		 *  2. Get a handle on the user instance
-		 *  3. Generate the temporary password and add to mongodb (mongo.update???)
-		 *  4. Add to outgoing confirmation email 
-		 * */
-		
-		
-		
 		// get all users
 		List<User> users = userRepo.findAllUsers();
 		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
-
+		
 		// set all components for sending email to the user.
-		String message = "Membership for user " + u.getFirstname() + " " + u.getSurname() + " has been accepted and approved.";
-		
-		
+		String message = "Hi "+ u.getFirstname() +",\n\nWelcome to Golf'n HomeSwap! "
+					   + "Your temporary password is " + u.getPassword() + "\n"
+				       + "Please click on the below link to complete registration.\n\n"
+				       + "This will be the link....\n\n"
+				       + "Thanks from all at The Golf'n HomeSwap team!";
+
 		
 		String to = u.getEmail();
 		String subject = "Membership";
