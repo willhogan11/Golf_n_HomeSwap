@@ -1,14 +1,14 @@
 package ie.gmit.sw.repo;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ie.gmit.sw.encrypt.PasswordGenerator;
 
 /**
  * This is User pojo that contains all user details including sensitive information
  * such as authentication credentials and role for authorisation access.
  * 
- * @author Will Hogann
+ * @author g0318460 -  Will Hogan
  * @author g00196984 - Andrej Lavrinovic
  *
  */
@@ -26,7 +26,7 @@ public class User {
 	private String dateofissue;
 	private String homeclubname;
 	private String homecluburl;
-	private String password = "";
+	private String password;
 	
 	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended, temporary]
 	   Also set default value to be CANDIDATE until approved */
@@ -35,11 +35,18 @@ public class User {
 	// Created an ENUM class to hold the values for [private, public, group], Set to private as default
 	private UserVisibility uservisibility = UserVisibility.PRIVATE; 
 	
-	// DEPRECATED (Now using 'UserAccessLevel' instead of this)
-	// private Boolean registered = false; // Flag: change to true when registered? Something like this....
 	
-	// DEPRECATED (Now using 'UserVisibility' instead of this)
-	// private Boolean visibility;
+	// Below is for Testing... Remove when fully working with mongodb....
+	
+/*	public static void main(String[] args) {
+		User user = new User();	
+		user.setFirstname("Will");
+		user.setSurname("Hogan");
+		user.setPassword(user.getPassword());
+		System.out.println(user);
+	}*/
+	
+	
 	
 	// Constructors
 	/**
@@ -136,30 +143,19 @@ public class User {
 	public void setUservisibility(UserVisibility uservisibility) {
 		this.uservisibility = uservisibility;
 	}
-
+	
 	public String getPassword() {
-		return password;
+		PasswordGenerator passwordGenerator = new PasswordGenerator();
+		return passwordGenerator.getPassword();
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
-	
-
-	// TO BE REMOVED, Using UserAccessLevel now instead
-   /*public Boolean getRegistered() {
-		return registered;
+	// For Testing only, see main method above....
+	@Override
+	public String toString() {
+		return "User [firstname=" + firstname + ", surname=" + surname + ", password=" + password + "]";
 	}
-	public void setRegistered(Boolean registered) {
-		this.registered = registered;
-	}*/
-	
-	// TO BE REMOVED, Using UserVisibility now instead
-	/*public Boolean getVisibility() {
-		return visibility;
-	}
-	public void setVisibility(Boolean visibility) {
-		this.visibility = visibility;
-	}*/
 }
