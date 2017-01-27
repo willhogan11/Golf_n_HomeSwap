@@ -38,7 +38,7 @@ public class UserController {
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
-		user.setPassword(user.getPassword());
+		user.setPassword();
 		log.info("UserController--addUser => " + user);
 		userRepo.addUser(user);
 		
@@ -70,8 +70,6 @@ public class UserController {
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
 		
-		// get all users
-		List<User> users = userRepo.findAllUsers();
 		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
@@ -103,6 +101,7 @@ public class UserController {
 			//**************************************************************************
 			Emailable email = new EmailSender(to, subject, message);
 			
+
 			// Sending email
 			try{
 				mailSender.send(email.getSmm());
@@ -113,7 +112,9 @@ public class UserController {
 			}
 		}
 		log.info("User's access level is " + u.getUseraccesslevel());
-		
+
+		// get all users
+		List<User> users = userRepo.findAllUsers();
 		// populate user's table.
 		model.addAttribute("users", users);
 		

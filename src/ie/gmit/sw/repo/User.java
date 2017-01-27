@@ -132,12 +132,13 @@ public class User {
 	}
 	
 	public String getPassword() {
-		PasswordGenerator passwordGenerator = new PasswordGenerator();
-		return passwordGenerator.getPassword();
+		
+		return this.password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword() {
+		PasswordGenerator passwordGenerator = new PasswordGenerator();
+		this.password = passwordGenerator.getPassword();
 	}
 	
 	// For Testing only....
