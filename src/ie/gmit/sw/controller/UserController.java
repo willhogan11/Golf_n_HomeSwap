@@ -75,12 +75,11 @@ public class UserController {
 		User u = userRepo.findUserById(request.getParameter("u"));
 		
 		// set all components for sending email to the user.
-		String message = "Hi "+ u.getFirstname() +",\n\nWelcome to Golf'n HomeSwap! "
+		String message = "Hi "+ u.getFirstname() +",\n\nWelcome to Golf'n Home Swap! "
 					   + "Your temporary password is " + u.getPassword() + "\n"
 				       + "Please click on the below link to complete registration.\n\n"
-				       + "This will be the link....\n\n"
-				       + "Thanks from all at The Golf'n HomeSwap team!";
-
+					   + "localhost:8080/golfnswap/firsttimelogin\n\n"
+				       + "Thanks, from all at The Golf'n Home Swap team!";
 		
 		String to = u.getEmail();
 		String subject = "Membership";

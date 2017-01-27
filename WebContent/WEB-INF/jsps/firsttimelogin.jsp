@@ -28,7 +28,7 @@
 	<%-- <form class="form-horizontal" name='f' method="post" action='${pageContext.request.contextPath}/j_spring_security_check'> --%>
 	<form class="form-horizontal" name='f' method="post">
 	  <div class="form-group">
-	  	<h4 style="text-align: center;">Login into GolfSwap</h4>
+	  	<h4 style="text-align: center;">You're nearly there.....</h4>
 	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="email">Email:</label>
 	    <div class="col-sm-10">
 	      <input type="email" class="form-control" id="email" placeholder="Enter Username" name="j_username" />
@@ -37,14 +37,14 @@
 	  
 	  
 	  <div class="form-group">
-	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="temppwd">Temporary Password:</label>
+	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="temppwd">Temp_Password:</label>
 	    <div class="col-sm-10"> 
 	      <input type="password" class="form-control" id="pwd" placeholder="Enter Temporary Password" name="j_tempPassword" />
 	    </div>
 	  </div>
 	  
       <div class="form-group">	
-	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="newpwd">Password:</label>
+	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="newpwd">New_Password:</label>
 	    <div class="col-sm-10"> 
 	      <input type="password" class="form-control" id="pwd" placeholder="Enter new Password" name="j_newPassword" />
 	    </div>
@@ -71,7 +71,7 @@
 	  <!--  Need to redirect to the 'dashboard.jsp' page, when user clicks this button  -->	    				
 	  <div class="form-group"> 
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">Complete Registration</button>
+	      <button type="submit" class="btn btn-success">Complete Registration</button>
 	    </div>
 	  </div>
 	</form>
