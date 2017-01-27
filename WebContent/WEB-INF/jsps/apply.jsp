@@ -23,22 +23,22 @@
 				<div class="form-group row">
 					<label for="firstname" class="col-sm-3 col-form-label">First Name:</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+						<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
 					</div>
 				</div>
 
 				<div class="form-group row">
 					<label for="surname" class="col-sm-3 col-form-label">Surname:</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" id="surname" name="surname" placeholder="Surname">
+						<input type="text" class="form-control" id="surname" name="surname" placeholder="Surname" required>
 					</div>
 				</div>
 
 				<div class="form-group row">
 					<label for="email" class="col-sm-3 col-form-label">Email:</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" 
-							   id="email" name="email" placeholder="Email">
+						<input type="email" class="form-control" 
+							   id="email" name="email" placeholder="Email" required>
 					</div>
 				</div>
 
@@ -46,20 +46,18 @@
 					<label for="golfregnum" class="col-sm-3 col-form-label">Golf Reg.Number:</label>
 					<div class="col-sm-7">
 						<input type="text" class="form-control" 
-							   id="golfregnum" name="golfregnum" placeholder="Golf Registration Number">
+							   id="golfregnum" name="golfregnum" placeholder="Golf Registration Number" required>
 					</div>
 				</div>
 
 				<div class="form-group row">
 					<label for="countryissued" class="col-sm-3 col-form-label">Country of Issue:</label>
 					<div class="col-sm-7">
-						<select class="form-control" id="countryissued" name="countryissued">
-							<option selected="selected">-Select-</option>
-							<option>Ireland</option>
+						<select class="form-control" id="countryissued" name="countryissued" required>
+							<option selected="selected">Ireland</option>
 							<option>England</option>
 							<option>Scotland</option>
 							<option>Wales</option>
-							<option>U.S.A</option>
 						</select>
 					</div>
 				</div>
@@ -69,7 +67,7 @@
 					<label for="dateofissue" class="col-sm-3 col-form-label">Date of Issue:</label>
 					<div class="col-sm-7">
 						<div class='input-group date' id='dateofissue'>
-							<input type='date' class="form-control" name="dateofissue" />
+							<input type='date' class="form-control" name="dateofissue" required />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -82,7 +80,7 @@
 					<label for="homeclubname" class="col-sm-3 col-form-label">Home Club Name:</label>
 					<div class="col-sm-7">
 						<input type="text" class="form-control" 
-							   id="homeclubname" name="homeclubname" placeholder="Home Club Name">
+							   id="homeclubname" name="homeclubname" placeholder="Home Club Name" required>
 					</div>
 				</div>
 
@@ -90,7 +88,7 @@
 					<label for="homecluburl" class="col-sm-3 col-form-label">Home Club URL:</label>
 					<div class="col-sm-7">
 						<input type="text" class="form-control" 
-							   id="homecluburl" name="homecluburl" placeholder="Home Club URL">
+							   id="homecluburl" name="homecluburl" placeholder="Home Club URL" required>
 					</div>
 				</div>
 

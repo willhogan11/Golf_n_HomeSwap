@@ -36,7 +36,7 @@
 	  <div class="form-group">
 	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="pwd">Password:</label>
 	    <div class="col-sm-10"> 
-	      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="j_password" />
+	      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="j_password" required />
 	    </div>
 	  </div>
 	  <div class="form-group"> 
@@ -57,7 +57,7 @@
 		    				
 	  <div class="form-group"> 
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">Login</button>
+	      <button type="submit" class="btn btn-success">Login</button>
 	    </div>
 	  </div>
 	</form>
