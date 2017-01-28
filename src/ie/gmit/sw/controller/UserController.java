@@ -42,7 +42,8 @@ public class UserController {
 		log.info("UserController--addUser => " + user);
 		userRepo.addUser(user);
 		
-		return "home";
+		return "successapply";
+		// return "home";
 	}
 	
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
