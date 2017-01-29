@@ -1,5 +1,6 @@
 package ie.gmit.sw.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,7 @@ public class UserController {
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
 		user.setPassword();
+		user.setDateofissue(new Date());
 		log.info("UserController--addUser => " + user);
 		userRepo.addUser(user);
 		
@@ -49,7 +51,9 @@ public class UserController {
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
 	@RequestMapping("/admin") 
 	public String showCandidates(Model model){
+		log.info("===> 1) Find all users");
 		List<User> users = userRepo.findAllUsers();
+		log.info("===> 2) Users are foud."); 
 		model.addAttribute("users", users);
 		log.info("UserController(/admin)--Number of users is: " + users.size());
 		return "admin"; 

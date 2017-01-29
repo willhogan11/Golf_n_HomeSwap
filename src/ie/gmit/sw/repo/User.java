@@ -1,5 +1,7 @@
 package ie.gmit.sw.repo;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import ie.gmit.sw.encrypt.PasswordGenerator;
@@ -23,7 +25,7 @@ public class User {
 	private String email;	
 	private String golfregnum;
 	private String countryissued;
-	private String dateofissue;
+	private Date dateofissue;
 	private String homeclubname;
 	private String homecluburl;
 	private String password;
@@ -91,11 +93,11 @@ public class User {
 		this.countryissued = countryissued;
 	}
 
-	public String getDateofissue() {
+	public Date getDateofissue() {
 		return dateofissue;
 	}
 
-	public void setDateofissue(String dateofissue) {
+	public void setDateofissue(Date dateofissue) {
 		this.dateofissue = dateofissue;
 	}
 

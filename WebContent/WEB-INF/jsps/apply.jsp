@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				
-				
+				<!-- 
 				<div class="form-group row">
 					<label for="dateofissue" class="col-sm-3 col-form-label">Date of Issue:</label>
 					<div class="col-sm-7">
@@ -74,7 +74,7 @@
 						</div>
 					</div>
 				</div>				
-				
+				 -->
 
 				<div class="form-group row">
 					<label for="homeclubname" class="col-sm-3 col-form-label">Home Club Name:</label>
