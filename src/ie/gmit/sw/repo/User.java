@@ -1,8 +1,12 @@
 package ie.gmit.sw.repo;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import ie.gmit.sw.encrypt.PasswordGenerator;
+import ie.gmit.sw.handler.Convertable;
+import ie.gmit.sw.handler.date.StringToDateConverter;
 
 /**
  * This is User pojo that contains all user details including sensitive information
@@ -23,7 +27,7 @@ public class User {
 	private String email;	
 	private String golfregnum;
 	private String countryissued;
-	private String dateofissue;
+	private Date dateofissue;
 	private String homeclubname;
 	private String homecluburl;
 	private String password;
@@ -91,12 +95,13 @@ public class User {
 		this.countryissued = countryissued;
 	}
 
-	public String getDateofissue() {
+	public Date getDateofissue() {
 		return dateofissue;
 	}
 
 	public void setDateofissue(String dateofissue) {
-		this.dateofissue = dateofissue;
+		Convertable c = new StringToDateConverter();
+		this.dateofissue = (Date)(c.convert(dateofissue));
 	}
 
 	public String getHomeclubname() {
