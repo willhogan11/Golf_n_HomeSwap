@@ -71,7 +71,6 @@ public class UserController {
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public String approveUser(HttpServletRequest request, Model model){
 		
-		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
 		
