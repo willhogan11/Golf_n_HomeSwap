@@ -5,6 +5,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import ie.gmit.sw.encrypt.PasswordGenerator;
+import ie.gmit.sw.handler.Convertable;
+import ie.gmit.sw.handler.date.StringToDateConverter;
 
 /**
  * This is User pojo that contains all user details including sensitive information
@@ -97,8 +99,9 @@ public class User {
 		return dateofissue;
 	}
 
-	public void setDateofissue(Date dateofissue) {
-		this.dateofissue = dateofissue;
+	public void setDateofissue(String dateofissue) {
+		Convertable c = new StringToDateConverter();
+		this.dateofissue = (Date)(c.convert(dateofissue));
 	}
 
 	public String getHomeclubname() {

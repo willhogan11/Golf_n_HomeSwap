@@ -6,6 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+	<script>
+		webshims.setOptions('forms-ext', {types: 'date'});
+		webshims.polyfill('forms forms-ext');
+		$.webshims.formcfg = {
+		en: {
+		    dFormat: '-',
+		    dateSigns: '-',
+		    patterns: {
+		        d: "yy-mm-dd"
+		    }
+		}
+		};
+	</script>
 	<title>Apply for Membership</title>
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
@@ -62,7 +77,6 @@
 					</div>
 				</div>
 				
-				<!-- 
 				<div class="form-group row">
 					<label for="dateofissue" class="col-sm-3 col-form-label">Date of Issue:</label>
 					<div class="col-sm-7">
@@ -73,8 +87,7 @@
 							</span>
 						</div>
 					</div>
-				</div>				
-				 -->
+				</div>
 
 				<div class="form-group row">
 					<label for="homeclubname" class="col-sm-3 col-form-label">Home Club Name:</label>
@@ -99,6 +112,7 @@
 			</form>
 		</div>
 		<!-- End Apply for Membership Form -->
+		
 
 </body>
 </html>

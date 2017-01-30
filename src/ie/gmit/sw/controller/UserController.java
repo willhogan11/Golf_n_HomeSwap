@@ -40,7 +40,8 @@ public class UserController {
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
 		user.setPassword();
-		user.setDateofissue(new Date());
+		log.info("Browser: " + user.getFirstname());
+		log.info("Date of membership issued -- " + user.getDateofissue().toString() + "\n");
 		log.info("UserController--addUser => " + user);
 		userRepo.addUser(user);
 		
