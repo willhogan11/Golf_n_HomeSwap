@@ -22,10 +22,12 @@
 #active_user{
 	width: 230px;
 	height: 30px;
-	font: bold 12px sans-serif;
+	font: bold 14px sans-serif;
 	padding: 5px 0;
 	text-align: left;
+	color: #272729;
 }
+
 #active_user span{
 	font: normal 12px sans-serif;
 }

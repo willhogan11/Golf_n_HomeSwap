@@ -26,7 +26,7 @@
     	<sec:authorize access="isAuthenticated()">
     		<div id="blockWelcome">
     			<c:if test="${email != null}">
-	    		Hi <c:out value="${username}"></c:out> <span>( <c:out value="${role}"></c:out> )</span>
+	    		Hi, <c:out value="${username}"></c:out> <span>(<c:out value="${role}"></c:out>)</span>
 	    		</c:if>
     		</div>
     	</sec:authorize>
