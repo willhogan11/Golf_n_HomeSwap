@@ -45,7 +45,7 @@
 		<security:intercept-url pattern="/approve" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/decline" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/suspend" access="hasAnyRole('ADMIN')" />
-		
+		<security:intercept-url pattern="/reactivate" access="hasAnyRole('ADMIN')" />
 		
 		<!-- ************************************************************************* -->
 		<!-- Just for testing, will need to be changed to 'REGISTERED' access -->

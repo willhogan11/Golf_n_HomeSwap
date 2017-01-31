@@ -155,7 +155,7 @@ public class UserController {
 	/* [Will] Working on a Controller that 'DECLINE's the users application, when the button is clicked on the admin page. 
 	 * - User is located
 	 * - Users application status is set to 'DECLINED'
-	 * - Emailed prepared and sent informing user
+	 * - Email prepared and sent informing user
 	 * - admin.jsp page updated with the relevant status
 	 * */
 	
@@ -206,6 +206,12 @@ public class UserController {
 	}
 	
 	
+	/* [Will] When the admin personel click the suspend button, the users account is suspended until further notice. 
+	 * - User is located
+	 * - Users application status is set to 'SUSPENDED'
+	 * - Email prepared and sent informing user
+	 * - admin.jsp page updated with the relevant status
+	 * */
 	
 	@RequestMapping(value="/suspend", method=RequestMethod.GET)
 	public String suspendUser(HttpServletRequest request, Model model) {
@@ -253,6 +259,63 @@ public class UserController {
 		return "admin";
 	}
 	
+	
+	
+	/* [Will] When the admin personel click the reactivate button, the users account is reinstated with the previous level of privileges. 
+	 * - User is located
+	 * - Users application status is set to 'APPROVED'
+	 * - Email prepared and sent informing user
+	 * - admin.jsp page updated with the relevant status
+	 * */
+	@RequestMapping(value="/reactivate", method=RequestMethod.GET)
+	public String reinstateUser(HttpServletRequest request, Model model) {
+	
+		// get user that been chosen for approvement
+		User u = userRepo.findUserById(request.getParameter("u"));
+		
+		// set all components for sending email to the user.
+		String message = "Dear User, \n\nYour account with Golf'N Home Swap has been Reactivated.\n\n"
+				       + "Thanks, from all at The Golf'n Home Swap team!";
+		
+		String to = u.getEmail();
+		String subject = "Membership";
+		
+		// reactivate user
+		//**************************************************************************
+		// Change access level for user here
+		//**************************************************************************
+		
+		
+			// N O T E::::
+			// *************   This will need to be fully changed to 'REGISTERED' when we have that implemented ********************
+			u.setUseraccesslevel(UserAccessLevel.TEMPORARY);
+			userRepo.updateUser(u);
+			
+			
+		
+		//**************************************************************************
+		// This section is for sending email to user for confirmation of approvement.
+		//**************************************************************************
+		Emailable email = new EmailSender(to, subject, message);
+		
+	
+		// Sending email
+		try{
+			mailSender.send(email.getSmm());
+			log.info("Mail sent to " + u.getEmail());
+		}catch(Exception e){
+			log.info("Error with sending");
+			log.info(e.getMessage().toString());
+		}
+		log.info("User's access level is " + u.getUseraccesslevel());
+		
+		// get all users
+		List<User> users = userRepo.findAllUsers();
+		// populate user's table.
+		model.addAttribute("users", users);
+		
+		return "admin";
+	}
 	
 	
 	

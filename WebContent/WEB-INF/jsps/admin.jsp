@@ -80,7 +80,7 @@
 			        	
 			        	<c:when test="${candidate.useraccesslevel == 'SUSPENDED'}">
 			        		<td><div id="approved_label">SUSPENDED</div></td>
-			        		<td><button class="btn btn-info btn-sm">Reinstate</button></td>
+			        		<td><a href="<c:url value='reactivate?u=${candidate.id}' />"><button class="btn btn-info btn-sm">Reactivate</button></a></td>
 			        	</c:when>
 			        	
 			        	<c:when test="${candidate.useraccesslevel == 'DECLINED'}">
