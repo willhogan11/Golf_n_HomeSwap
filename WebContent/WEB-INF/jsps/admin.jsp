@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,13 @@
 <!-- Admin interactive panel here -->
 <div id="admin_panel">
 	<div class="interactiv-panel" id="active_user">
-		Hi, Andrej Lavrinovic <span>( ADMIN )</span>
+    	<sec:authorize access="isAuthenticated()">
+    		<div id="blockWelcome">
+    			<c:if test="${email != null}">
+	    		Hi <c:out value="${username}"></c:out> <span>( <c:out value="${role}"></c:out> )</span>
+	    		</c:if>
+    		</div>
+    	</sec:authorize>
 	</div>
 	
 	<a href="${pageContext.request.contextPath}/j_spring_security_logout"><div class="interactiv-panel button" id="logout_button">Logout</div></a>
