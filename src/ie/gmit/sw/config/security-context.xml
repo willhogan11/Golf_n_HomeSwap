@@ -47,12 +47,12 @@
 		
 		
 		<!-- ************************************************************************* -->
-		<!-- Just for testing, will need to be changed to Temporary access -->
-		<security:intercept-url pattern="/firsttimelogin" access="hasAnyRole('ADMIN')" />
+		<!-- Just for testing, will need to be changed to 'REGISTERED' access -->
 		<security:intercept-url pattern="/dashboard" access="hasAnyRole('ADMIN')" />
 		<!-- ************************************************************************* -->
 
 
+		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
 		<security:intercept-url pattern="/successapply" access="permitAll" />
 		<security:intercept-url pattern="/denied" access="permitAll" />
 		<security:intercept-url pattern="/docreate" access="permitAll" />
