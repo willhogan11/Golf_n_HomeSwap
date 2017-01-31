@@ -55,9 +55,4 @@ public class HomeController {
 	public String showFirsttimeLogin(){
 		return "firsttimelogin";
 	}
-	
-	@RequestMapping("/successapply")
-	public String showSuccessApply(){
-		return "successapply";
-	}
 }

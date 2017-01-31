@@ -52,17 +52,18 @@
 			        <c:choose>
 			        	<c:when test="${candidate.useraccesslevel == 'CANDIDATE'}">
 			        		<td><a href="<c:url value='approve?u=${candidate.id}' />"><button class="btn btn-success btn-sm">Approve</button></a></td>
+			        		<td><a href="<c:url value='decline?u=${candidate.id}' />"><button class="btn btn-danger btn-sm">Decline</button></a></td>
 			        	</c:when>
-			        	<c:otherwise>
-			        		<td>
-				        		<div id="approved_label">
-				        			APPROVED
-				        		</div>
-				        	</td>
-			        	</c:otherwise>
+			        	
+			        	<c:when test="${candidate.useraccesslevel == 'TEMPORARY'}">
+			        		<td><div id="approved_label">APPROVED</div></td>
+			        		<td><button class="btn btn-warning btn-sm">Suspend</button></td>
+			        	</c:when>
+			        	
+			        	<c:when test="${candidate.useraccesslevel == 'DECLINED'}">
+			        		<td><div id="approved_label">DECLINED</div></td>
+			        	</c:when>
 			        </c:choose>
-			        
-			        <td><button class="btn btn-danger btn-sm">Decline</button></td>
 			        
 			    </tr>
 		    </c:forEach>
