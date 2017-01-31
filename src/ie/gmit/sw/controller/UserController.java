@@ -207,6 +207,55 @@ public class UserController {
 	
 	
 	
+	@RequestMapping(value="/suspend", method=RequestMethod.GET)
+	public String suspendUser(HttpServletRequest request, Model model) {
+	
+		// get user that been chosen for approvement
+		User u = userRepo.findUserById(request.getParameter("u"));
+		
+		// set all components for sending email to the user.
+		String message = "Dear User, \n\nYour account with Golf'N Home Swap has been Suspended.\n"
+				       + "For more information, please contact us on....\n\n"
+				       + "Thanks, from all at The Golf'n Home Swap team!";
+		
+		String to = u.getEmail();
+		String subject = "Membership";
+		
+		// suspend user
+		//**************************************************************************
+		// Change access level for user here
+		//**************************************************************************
+		
+		u.setUseraccesslevel(UserAccessLevel.SUSPENDED);
+		userRepo.updateUser(u);
+		
+		//**************************************************************************
+		// This section is for sending email to user for confirmation of approvement.
+		//**************************************************************************
+		Emailable email = new EmailSender(to, subject, message);
+		
+	
+		// Sending email
+		try{
+			mailSender.send(email.getSmm());
+			log.info("Mail sent to " + u.getEmail());
+		}catch(Exception e){
+			log.info("Error with sending");
+			log.info(e.getMessage().toString());
+		}
+		log.info("User's access level is " + u.getUseraccesslevel());
+		
+		// get all users
+		List<User> users = userRepo.findAllUsers();
+		// populate user's table.
+		model.addAttribute("users", users);
+		
+		return "admin";
+	}
+	
+	
+	
+	
 	@RequestMapping("/denied")
 	public String denied(){
 		return "denied";
