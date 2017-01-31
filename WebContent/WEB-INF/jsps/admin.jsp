@@ -75,7 +75,12 @@
 			        	
 			        	<c:when test="${candidate.useraccesslevel == 'TEMPORARY'}">
 			        		<td><div id="approved_label">APPROVED</div></td>
-			        		<td><button class="btn btn-warning btn-sm">Suspend</button></td>
+			        		<td><a href="<c:url value='suspend?u=${candidate.id}' />"><button class="btn btn-warning btn-sm">Suspend</button></a></td>
+			        	</c:when>
+			        	
+			        	<c:when test="${candidate.useraccesslevel == 'SUSPENDED'}">
+			        		<td><div id="approved_label">SUSPENDED</div></td>
+			        		<td><button class="btn btn-info btn-sm">Reinstate</button></td>
 			        	</c:when>
 			        	
 			        	<c:when test="${candidate.useraccesslevel == 'DECLINED'}">
