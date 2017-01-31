@@ -1,5 +1,6 @@
 package ie.gmit.sw.controller;
 
+import java.security.Principal;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,12 @@ public class UserController {
 	public void setUserRepo(@Qualifier("userRepoImpl") UserRepository userRepo){
 		this.userRepo = userRepo;
 	}
+
+	// method to identify active user.
+	// used to define is user logged in or not.
+	private String getUsername(Principal principal){
+		return principal.getName();
+	}
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
@@ -50,7 +57,27 @@ public class UserController {
 	
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
 	@RequestMapping("/admin") 
-	public String showCandidates(Model model){
+	public String showCandidates(Model model, Principal principal){
+		
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email = getUsername(principal);
+		model.addAttribute("email", email);
+		
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(email);
+		
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("role", user.getUseraccesslevel().toString());
+		
+		log.info("===> User " + user.getFirstname() + " " + user.getSurname());
+		
 		log.info("===> 1) Find all users");
 		List<User> users = userRepo.findAllUsers();
 		log.info("===> 2) Users are foud."); 
