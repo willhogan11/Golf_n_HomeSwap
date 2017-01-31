@@ -19,6 +19,17 @@
 
 <h1 style="text-align: center; color: white; font-weight: bolder;">Admin Page</h1>
 
+<!-- Admin interactive panel here -->
+<div id="admin_panel">
+	<div class="interactiv-panel" id="active_user">
+		Hi, Andrej Lavrinovic <span>( ADMIN )</span>
+	</div>
+	
+	<a href="${pageContext.request.contextPath}/j_spring_security_logout"><div class="interactiv-panel button" id="logout_button">Logout</div></a>
+	
+	<a href="${pageContext.request.contextPath}/"><div class="interactiv-panel button" id="home_button">Home</div></a>
+</div>
+
 <div class="container" style="background-color: white; padding: 10px; border: solid 2px black; width: 100%;">
 	<table class="table table-striped">
 		<thead>

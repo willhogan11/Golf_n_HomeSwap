@@ -8,3 +8,48 @@
 	font: bolder 11px sans-serif;
 	color: green;
 }
+
+#admin_panel{
+	display: block;
+	height: 70px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	top: 0px;
+	left: 900px;
+	padding-top: 30px;
+}
+
+#active_user{
+	width: 230px;
+	height: 30px;
+	font: bold 12px sans-serif;
+	padding: 5px 0;
+	text-align: left;
+}
+#active_user span{
+	font: normal 12px sans-serif;
+}
+
+#logout_button{
+	background-color: #eaeaea;
+}
+
+#home_button{
+	background-color: #eaeaea;
+}
+
+.interactiv-panel{
+	display: inline-block;
+}
+
+.button{
+	width: 100px;
+	height: 30px;
+	border: 1px solid gray;
+	border-radius: 4px;
+	font: normal 15px sans-serif;
+	padding: 5px;
+	text-align: center;
+	color: #353535;
+	cursor: pointer;
+}
