@@ -1,5 +1,7 @@
 package ie.gmit.sw.repo;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -95,8 +97,9 @@ public class User {
 		this.countryissued = countryissued;
 	}
 
-	public Date getDateofissue() {
-		return dateofissue;
+	public String getDateofissue() {
+		DateFormat df = new SimpleDateFormat("d MMM yyyy");
+		return df.format(this.dateofissue);
 	}
 
 	public void setDateofissue(String dateofissue) {
@@ -143,6 +146,12 @@ public class User {
 	public void setPassword() {
 		PasswordGenerator passwordGenerator = new PasswordGenerator();
 		this.password = passwordGenerator.getPassword();
+	}
+	
+	public String printDateOfIssue(Date dateofissue){
+		String date = null;
+		
+		return date;
 	}
 	
 	// For Testing only....
