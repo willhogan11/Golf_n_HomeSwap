@@ -55,7 +55,6 @@
 
 		<security:intercept-url pattern="/registercontroller" access="permitAll" />
 
-
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
 		<security:intercept-url pattern="/successapply" access="permitAll" />
 		<security:intercept-url pattern="/denied" access="permitAll" />
