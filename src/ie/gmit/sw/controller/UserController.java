@@ -112,6 +112,14 @@ public class UserController {
 		String email1 = getUsername(principal);
 		model.addAttribute("email", email1);
 		
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(email1);
+		
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("role", user.getUseraccesslevel().toString());
+		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
 		
@@ -180,6 +188,14 @@ public class UserController {
 		 */
 		String email1 = getUsername(principal);
 		model.addAttribute("email", email1);
+		
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(email1);
+		
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("role", user.getUseraccesslevel().toString());
 	
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
@@ -243,6 +259,14 @@ public class UserController {
 		 */
 		String email1 = getUsername(principal);
 		model.addAttribute("email", email1);
+		
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(email1);
+		
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("role", user.getUseraccesslevel().toString());
 	
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
@@ -306,6 +330,14 @@ public class UserController {
 		 */
 		String email1 = getUsername(principal);
 		model.addAttribute("email", email1);
+		
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(email1);
+		
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("role", user.getUseraccesslevel().toString());
 		
 	
 		// get user that been chosen for approvement
