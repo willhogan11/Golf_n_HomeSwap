@@ -1,28 +1,23 @@
 package ie.gmit.sw.controller;
 
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import ie.gmit.sw.email.EmailSender;
 import ie.gmit.sw.email.Emailable;
 import ie.gmit.sw.repo.User;
 import ie.gmit.sw.repo.UserAccessLevel;
 import ie.gmit.sw.repo.UserRepository;
+
 
 @Controller
 public class UserController {
@@ -360,7 +355,7 @@ public class UserController {
 		
 			// N O T E::::
 			// *************   This will need to be fully changed to 'REGISTERED' when we have that implemented ********************
-			u.setUseraccesslevel(UserAccessLevel.TEMPORARY);
+			u.setUseraccesslevel(UserAccessLevel.REGISTERED);
 			userRepo.updateUser(u);
 			
 			
@@ -397,8 +392,8 @@ public class UserController {
 		 * Steps Needed: 
 		 * 1. Get the various parameters from the 'firsttimelogin' form. [Will Completed]
 		 * 2. Check the username (email) / Password to see if they are in the database. [Will Completed]
-		 * 3. If valid, overwrite the temporary password with new password, if not inform user of issue. 
-		 * 4. Upon successful registration, redirect to the Dashboard.jsp page. 
+		 * 3. If valid, overwrite the temporary password with new password, if not inform user of issue. [Will Completed] 
+		 * 4. Upon successful registration, redirect to the Dashboard.jsp page. [Will - Issue here, redirecting to '/registercontroller' but dashboard visual.....]
 		 * */
 
 		String username = request.getParameter("j_username");
@@ -415,8 +410,6 @@ public class UserController {
 			if(user.getEmail().equals(username)) {
 				log.info("Email and username email fields are the same....");
 				
-				// Maybe exit here as it doesn't exist Andrej...
-				
 				if(user.getPassword().equals(tempPassword)){
 					log.info("Password in mongo and field password are the same....");
 					
@@ -430,7 +423,7 @@ public class UserController {
 				}
 			}
 			else {
-				// Stop page from displaying error....
+				// Stop page from displaying error....? Andrej....
 			}
 				
 		} catch (Exception e) {
@@ -439,7 +432,6 @@ public class UserController {
 		
 		return "firsttimelogin";
 	}
-	
 	
 	
 	@RequestMapping("/denied")

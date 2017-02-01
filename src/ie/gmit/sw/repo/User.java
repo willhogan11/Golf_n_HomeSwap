@@ -33,7 +33,8 @@ public class User {
 	private String homeclubname;
 	private String homecluburl;
 	private String password;
-	private String permanentPassword;
+	// private String permanentPassword;
+	
 	
 	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended, temporary]
 	   Also set default value to be CANDIDATE until approved */
@@ -144,12 +145,12 @@ public class User {
 		return this.password;
 	}
 	
-	public void setPermanentPassword(String permanentPassword) {
-		this.permanentPassword = permanentPassword;
+	public void setPermanentPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getPermanentPassword() {
-		return permanentPassword;
+		return password;
 	}
 
 	public void setPassword() {

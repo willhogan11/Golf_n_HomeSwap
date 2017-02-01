@@ -16,45 +16,20 @@
 			user-service-ref="customUserDetailsService">
 		</security:authentication-provider>
 	</security:authentication-manager>
-
-	<!-- User authentication -->
-	<!-- 
-	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="g00196984@gmit.ie"
-					authorities="admin" password="ABC1xwz!" />
-			</security:user-service>
-			<security:user-service>
-				<security:user name="g00318460@gmit.ie"
-					authorities="admin" password="1234" />
-			</security:user-service>
-		</security:authentication-provider>
-	</security:authentication-manager>
-	 -->
+	
 	
 	<!-- Access manager -->
 	<security:http use-expressions="true">
-	
-<!-- 	Is this the best Way to declare the 3 access level types? I know the details will be stored in Mongo....	
-		<security:intercept-url pattern="/admin" access="hasAnyRole('ADMIN')" />
-		<security:intercept-url pattern="/registered" access="hasAnyRole('REGISTERED')" />
-		<security:intercept-url pattern="/candidates" access="hasAnyRole('CANDIDATE')" /> -->
 
 		<security:intercept-url pattern="/admin" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/approve" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/decline" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/suspend" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/reactivate" access="hasAnyRole('ADMIN')" />
-		
-		
-		<!-- ************************************************************************* -->
-		<!-- Just for testing, will need to be changed to 'REGISTERED' access -->
 		<security:intercept-url pattern="/dashboard" access="hasAnyRole('REGISTERED')" />
-		<!-- ************************************************************************* -->
+
 
 		<security:intercept-url pattern="/registercontroller" access="permitAll" />
-
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
 		<security:intercept-url pattern="/successapply" access="permitAll" />
 		<security:intercept-url pattern="/denied" access="permitAll" />

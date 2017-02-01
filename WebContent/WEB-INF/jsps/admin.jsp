@@ -78,6 +78,11 @@
 			        		<td><a href="<c:url value='suspend?u=${candidate.id}' />"><button class="btn btn-warning btn-sm">Suspend</button></a></td>
 			        	</c:when>
 			        	
+			        	<c:when test="${candidate.useraccesslevel == 'REGISTERED'}">
+			        		<td><div id="approved_label">REGISTERED</div></td>
+			        		<td><a href="<c:url value='suspend?u=${candidate.id}' />"><button class="btn btn-warning btn-sm">Suspend</button></a></td>
+			        	</c:when>
+			        	
 			        	<c:when test="${candidate.useraccesslevel == 'SUSPENDED'}">
 			        		<td><div id="approved_label">SUSPENDED</div></td>
 			        		<td><a href="<c:url value='reactivate?u=${candidate.id}' />"><button class="btn btn-info btn-sm">Reactivate</button></a></td>
