@@ -100,7 +100,16 @@ public class UserController {
 	 */
 	// Approve user's application for membership
 	@RequestMapping(value="/approve", method=RequestMethod.GET)
-	public String approveUser(HttpServletRequest request, Model model){
+	public String approveUser(HttpServletRequest request, Model model, Principal principal){
+		
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email1 = getUsername(principal);
+		model.addAttribute("email", email1);
 		
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
