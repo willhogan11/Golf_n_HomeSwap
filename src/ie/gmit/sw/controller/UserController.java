@@ -401,10 +401,6 @@ public class UserController {
 		 * 4. Upon successful registration, redirect to the Dashboard.jsp page. 
 		 * */
 
-		
-		// User user = userRepo.findByEmail((String) result.getFieldValue("j_username"));  // .getParameter("j_username"));
-		
-		
 		String username = request.getParameter("j_username");
 		String tempPassword = request.getParameter("j_tempPassword");
 		String newPassword = request.getParameter("j_newPassword");
@@ -415,16 +411,30 @@ public class UserController {
 		
 		log.info("\nEmail username and password in mongo ==>" + user.getEmail() + " " + user.getPassword());
 	
-		if(user.getEmail().equals(username)) {
-			log.info("Email and username email fields are the same....");
-			
-			// Maybe exit here as it doesn't exist Andrej...
-			
-			if(user.getPassword().equals(tempPassword)){
-				log.info("Password in mongo and field password are the same....");
+		try {
+			if(user.getEmail().equals(username)) {
+				log.info("Email and username email fields are the same....");
 				
-				// User is valid, overwrite old password with new one and redirect to dashboard.jsp....
+				// Maybe exit here as it doesn't exist Andrej...
+				
+				if(user.getPassword().equals(tempPassword)){
+					log.info("Password in mongo and field password are the same....");
+					
+					user.setPermanentPassword(newPassword);
+					user.setUseraccesslevel(UserAccessLevel.REGISTERED);
+					userRepo.updateUser(user);
+					
+					log.info("Users new Password ==>" + user.getPermanentPassword());
+					
+					return "dashboard";
+				}
 			}
+			else {
+				// Stop page from displaying error....
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		return "firsttimelogin";
