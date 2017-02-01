@@ -12,10 +12,11 @@
 #admin_panel{
 	display: block;
 	height: 70px;
+	width: 100%; 
 	/*border: 1px solid red;*/
 	position: absolute;
 	top: 0px;
-	left: 900px;
+	text-align: right;
 	padding-top: 30px;
 }
 
