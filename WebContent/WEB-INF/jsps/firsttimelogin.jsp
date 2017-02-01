@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -25,8 +26,8 @@
 							     background-color: white;"> 	
 							    
 	<!-- :::::::::::::::::::::::::::::: FIRST TIME LOGIN FORM ::::::::::::::::::::::::::::::: -->
-	<%-- <form class="form-horizontal" name='f' method="post" action='${pageContext.request.contextPath}/j_spring_security_check'> --%>
-	<form class="form-horizontal" name='f' method="post">
+	
+	<sf:form class="form-horizontal" name='credentials' method="post" action="${pageContext.request.contextPath}/registercontroller">
 	  <div class="form-group">
 	  	<h4 style="text-align: center;">You're nearly there.....</h4>
 	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="email">Email:</label>
@@ -74,7 +75,7 @@
 	      <button type="submit" class="btn btn-success">Complete Registration</button>
 	    </div>
 	  </div>
-	</form>
+	</sf:form>
 	<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
 	
 	

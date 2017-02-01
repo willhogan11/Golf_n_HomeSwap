@@ -69,4 +69,11 @@ public class UserRepoImpl implements UserRepository{
 	public User findByEmail(String email) {
 		return mongoTemplate.findOne(new Query(Criteria.where("email").is(email)), User.class);
 	}
+	
+	
+	// Andrej i Assume we need this to check for password in mongo?? 
+	@Override
+	public User findPassword(String password) {
+		return mongoTemplate.findOne(new Query(Criteria.where("password").is(password)), User.class);
+	}
 }

@@ -47,10 +47,13 @@
 		<security:intercept-url pattern="/suspend" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/reactivate" access="hasAnyRole('ADMIN')" />
 		
+		
 		<!-- ************************************************************************* -->
 		<!-- Just for testing, will need to be changed to 'REGISTERED' access -->
-		<security:intercept-url pattern="/dashboard" access="hasAnyRole('ADMIN')" />
+		<security:intercept-url pattern="/dashboard" access="hasAnyRole('REGISTERED')" />
 		<!-- ************************************************************************* -->
+
+		<security:intercept-url pattern="/registercontroller" access="permitAll" />
 
 
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />

@@ -14,4 +14,5 @@ public interface UserRepository extends Repository<User, Long>{
 	public void delUser(User user);
 	public boolean existsUser(String id);
 	public void updateUser(User user);
+	public User findPassword(String password);
 }

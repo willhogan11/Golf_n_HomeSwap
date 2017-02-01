@@ -1,6 +1,7 @@
 package ie.gmit.sw.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -385,6 +387,47 @@ public class UserController {
 		model.addAttribute("users", users);
 		
 		return "admin";
+	}
+	
+	
+	@RequestMapping(value="/registercontroller", method=RequestMethod.POST)
+	public String registerUser(HttpServletRequest request){
+		
+		/*
+		 * Steps Needed: 
+		 * 1. Get the various parameters from the 'firsttimelogin' form. [Will Completed]
+		 * 2. Check the username (email) / Password to see if they are in the database. [Will Completed]
+		 * 3. If valid, overwrite the temporary password with new password, if not inform user of issue. 
+		 * 4. Upon successful registration, redirect to the Dashboard.jsp page. 
+		 * */
+
+		
+		// User user = userRepo.findByEmail((String) result.getFieldValue("j_username"));  // .getParameter("j_username"));
+		
+		
+		String username = request.getParameter("j_username");
+		String tempPassword = request.getParameter("j_tempPassword");
+		String newPassword = request.getParameter("j_newPassword");
+		
+		log.info("Form Params:\n" + username + "\n" + tempPassword + "\n" + newPassword);
+		
+		User user = userRepo.findByEmail(username);
+		
+		log.info("\nEmail username and password in mongo ==>" + user.getEmail() + " " + user.getPassword());
+	
+		if(user.getEmail().equals(username)) {
+			log.info("Email and username email fields are the same....");
+			
+			// Maybe exit here as it doesn't exist Andrej...
+			
+			if(user.getPassword().equals(tempPassword)){
+				log.info("Password in mongo and field password are the same....");
+				
+				// User is valid, overwrite old password with new one and redirect to dashboard.jsp....
+			}
+		}
+		
+		return "firsttimelogin";
 	}
 	
 	
