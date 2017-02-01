@@ -55,6 +55,7 @@ public class UserController {
 		return "successapply";
 	}
 	
+	
 	// Changed to Admin, Thanks Andrej. Will need more options for Maria on this page, We can speak about this later. 
 	@RequestMapping("/admin") 
 	public String showCandidates(Model model, Principal principal){
@@ -160,7 +161,16 @@ public class UserController {
 	 * */
 	
 	@RequestMapping(value="/decline", method=RequestMethod.GET)
-	public String declineUser(HttpServletRequest request, Model model) {
+	public String declineUser(HttpServletRequest request, Model model, Principal principal) {
+		
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email1 = getUsername(principal);
+		model.addAttribute("email", email1);
 	
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
@@ -214,7 +224,16 @@ public class UserController {
 	 * */
 	
 	@RequestMapping(value="/suspend", method=RequestMethod.GET)
-	public String suspendUser(HttpServletRequest request, Model model) {
+	public String suspendUser(HttpServletRequest request, Model model, Principal principal) {
+		
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email1 = getUsername(principal);
+		model.addAttribute("email", email1);
 	
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
@@ -268,7 +287,17 @@ public class UserController {
 	 * - admin.jsp page updated with the relevant status
 	 * */
 	@RequestMapping(value="/reactivate", method=RequestMethod.GET)
-	public String reinstateUser(HttpServletRequest request, Model model) {
+	public String reinstateUser(HttpServletRequest request, Model model, Principal principal) {
+		
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email1 = getUsername(principal);
+		model.addAttribute("email", email1);
+		
 	
 		// get user that been chosen for approvement
 		User u = userRepo.findUserById(request.getParameter("u"));
