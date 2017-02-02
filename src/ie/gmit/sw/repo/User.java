@@ -145,6 +145,28 @@ public class User {
 		return this.password;
 	}
 	
+	/*
+	 * Will, I understand why you used this methods,
+	 * but let me just suggest:
+	 * One of the strongest features in java is overloading.
+	 * It nicely can be used here.
+	 * 
+	 *  You need to remove getPermanentPassword as it is
+	 *  the same password in db context, and
+	 *  you need declare setPassword with parameter such as:
+	 *  
+	 *  public void setPassword(String password){
+	 *  	this.password = password;
+	 *  }
+	 *  
+	 *  that is not the same as:
+	 *  
+	 *  public void setPassword(){
+	 *  	...
+	 *  }
+	 *  
+	 *  It will perfectly and nicely work.
+	 */
 	public void setPermanentPassword(String password) {
 		this.password = password;
 	}
