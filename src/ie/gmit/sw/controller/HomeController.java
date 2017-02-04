@@ -55,4 +55,9 @@ public class HomeController {
 	public String showFirsttimeLogin(){
 		return "firsttimelogin";
 	}
+	
+	@RequestMapping("/addhomewizard")
+	public String showaddHomeWizard(){
+		return "addhomewizard";
+	}
 }
