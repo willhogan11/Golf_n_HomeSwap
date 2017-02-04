@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+#msg{
+	width: 270px;
+	border: 1px solid red;
+	margin: 0px;
+	opacity: 0.9;
+	background-color: #ffdbdb;
+	padding: 5px 5px;
+	font: normal 13px sans-serif;
+	color: red;
+}

@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/login.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/firsttimelogin.css" />
 	<title>New User Login</title>
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
@@ -19,11 +19,15 @@
 							     bottom: 0;
 							     left: 0;
 							     width: 380px;
-							     height: 430px;
+							     height: 500px;
 							     border: 3px solid black;
 							     border-radius: 10px;
 							     padding: 25px;
-							     background-color: white;"> 	
+							     background-color: white;"> 
+							  
+	<c:if test="${error != null}">	
+    	<div id="msg"><c:out value="${error}" /></div>
+    </c:if>						  	
 							    
 	<!-- :::::::::::::::::::::::::::::: FIRST TIME LOGIN FORM ::::::::::::::::::::::::::::::: -->
 	
