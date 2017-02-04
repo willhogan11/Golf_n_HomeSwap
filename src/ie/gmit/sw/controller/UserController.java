@@ -391,7 +391,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/registercontroller", method=RequestMethod.POST)
+	@RequestMapping(value="/dashboard", method=RequestMethod.POST)
 	public String registerUser(HttpServletRequest request, Model model){
 		
 		/*
@@ -411,16 +411,15 @@ public class UserController {
 		User user = userRepo.findByEmail(username);
 		
 		if(user != null && user.getPassword().equals(tempPassword)){
+
 			log.info("Email and username email fields are the same....");
+			log.info("Password in mongo and field password are the same....");
 			
+			user.setPassword(newPassword);
+			user.setUseraccesslevel(UserAccessLevel.REGISTERED);
+			userRepo.updateUser(user);
 			
-				log.info("Password in mongo and field password are the same....");
-				
-				user.setPassword(newPassword);
-				user.setUseraccesslevel(UserAccessLevel.REGISTERED);
-				userRepo.updateUser(user);
-				
-				log.info("Users new Password ==>" + user.getPassword());
+			log.info("Users new Password ==>" + user.getPassword());
 		}
 		else{
 			String message = "Username or temporary password is not match. Try again.";
@@ -430,13 +429,6 @@ public class UserController {
 		
 		return "dashboard";
 	}
-	
-	/*
-	@RequestMapping(value="/firsttimelogin")
-	public String showFirstTimeLogin(){
-		return "firsttimelogin";
-	}
-	*/
 	
 	
 	@RequestMapping("/denied")

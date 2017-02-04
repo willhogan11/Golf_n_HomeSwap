@@ -26,14 +26,15 @@
 		<security:intercept-url pattern="/decline" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/suspend" access="hasAnyRole('ADMIN')" />
 		<security:intercept-url pattern="/reactivate" access="hasAnyRole('ADMIN')" />
-		<security:intercept-url pattern="/dashboard" access="hasAnyRole('REGISTERED')" />
-		
 		
 		<!-- FOR TESTING, will need to be changed to 'REGISTERED' only when finished -->
 		<security:intercept-url pattern="/addhomewizard" access="permitAll" />
 		<!-- *********************************************************************** -->
-
-		<security:intercept-url pattern="/registercontroller" access="permitAll" />
+		
+		<!-- Some kind of security check neede here to see if user is Registered? -->
+		<security:intercept-url pattern="/dashboard" access="permitAll" />
+		
+		
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
 		<security:intercept-url pattern="/successapply" access="permitAll" />
 		<security:intercept-url pattern="/denied" access="permitAll" />
