@@ -167,6 +167,8 @@ public class User {
 	 *  
 	 *  It will perfectly and nicely work.
 	 */
+	
+	/*
 	public void setPermanentPassword(String password) {
 		this.password = password;
 	}
@@ -174,16 +176,15 @@ public class User {
 	public String getPermanentPassword() {
 		return password;
 	}
+	*/
 
 	public void setPassword() {
 		PasswordGenerator passwordGenerator = new PasswordGenerator();
 		this.password = passwordGenerator.getPassword();
 	}
 	
-	public String printDateOfIssue(Date dateofissue){
-		String date = null;
-		
-		return date;
+	public void setPassword(String password){
+		this.password = password;
 	}
 	
 	// For Testing only....

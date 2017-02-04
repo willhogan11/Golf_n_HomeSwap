@@ -12,6 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.mongodb.MongoException;
+
 import ie.gmit.sw.email.EmailSender;
 import ie.gmit.sw.email.Emailable;
 import ie.gmit.sw.repo.User;
@@ -404,33 +407,25 @@ public class UserController {
 		
 		User user = userRepo.findByEmail(username);
 		
-		log.info("\nEmail username and password in mongo ==>" + user.getEmail() + " " + user.getPassword());
-	
-		try {
-			if(user.getEmail().equals(username)) {
-				log.info("Email and username email fields are the same....");
+		if(user != null){
+			log.info("Email and username email fields are the same....");
+			
+			// 1) check temporary password
+			if(user.getPassword().equals(tempPassword)){
+				log.info("Password in mongo and field password are the same....");
 				
-				if(user.getPassword().equals(tempPassword)){
-					log.info("Password in mongo and field password are the same....");
-					
-					user.setPermanentPassword(newPassword);
-					user.setUseraccesslevel(UserAccessLevel.REGISTERED);
-					userRepo.updateUser(user);
-					
-					log.info("Users new Password ==>" + user.getPermanentPassword());
-					
-					return "dashboard";
-				}
-			}
-			else {
-				// Stop page from displaying error....? Andrej....
-			}
+				user.setPassword(newPassword);
+				user.setUseraccesslevel(UserAccessLevel.REGISTERED);
+				userRepo.updateUser(user);
 				
-		} catch (Exception e) {
-			e.printStackTrace();
+				log.info("Users new Password ==>" + user.getPassword());
+			}
+		}
+		else{
+			return "denied";
 		}
 		
-		return "firsttimelogin";
+		return "dashboard";
 	}
 	
 	
