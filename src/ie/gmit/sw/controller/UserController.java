@@ -1,8 +1,11 @@
 package ie.gmit.sw.controller;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -420,7 +423,7 @@ public class UserController {
 				log.info("Users new Password ==>" + user.getPassword());
 		}
 		else{
-			String message = "Username or temporary password is not match.";
+			String message = "Username or temporary password is not match. Try again.";
 			model.addAttribute("error", message);
 			return "firsttimelogin";
 		}

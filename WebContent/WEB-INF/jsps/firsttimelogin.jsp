@@ -12,22 +12,10 @@
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
 
-	<div class="container" style="position: absolute;
-							     margin: auto;
-							     top: 0;
-							     right: 0;
-							     bottom: 0;
-							     left: 0;
-							     width: 380px;
-							     height: 500px;
-							     border: 3px solid black;
-							     border-radius: 10px;
-							     padding: 25px;
-							     background-color: white;"> 
-							  
-	<c:if test="${error != null}">	
-    	<div id="msg"><c:out value="${error}" /></div>
-    </c:if>						  	
+
+				  
+
+	<div class="container"> 	
 							    
 	<!-- :::::::::::::::::::::::::::::: FIRST TIME LOGIN FORM ::::::::::::::::::::::::::::::: -->
 	
@@ -82,7 +70,11 @@
 	</sf:form>
 	<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
 	
-	
+						  
+	<c:if test="${error != null}">	
+    	<div id="msg"><c:out value="${error}" /></div>
+    </c:if>	
+    			
 	</div>
 
 </body>
