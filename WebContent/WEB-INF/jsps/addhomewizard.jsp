@@ -14,13 +14,29 @@
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
 	<div class="container">
-		<h1>Steps to adding a Home....</h1>
-	
+		<ul class="pagination">
+			<li><a href="#" style="color: green; font-weight: bold;">1. Watch Tutorial ></a></li>
+			<li><a href="#">2. Home Type ></a></li>
+			<li><a href="#">3. Home Details ></a></li>
+			<li><a href="#">4. Location ></a></li>
+			<li><a href="#">5. Availability ></a></li>
+			<li><a href="#">6. Add Photos ></a></li>
+		 </ul>
+		
+		<div class="jumbotron">
+			<h1>Step 1:</h1>
+			<h4>Watch the tutorial wizard below to help you add your home</h4>
+		</div>
+		
 		<!-- Video Clip Placeholder -->
 		<div class="container" style="width: 400px; height: 200px;">
 			<video width="400" controls>
 				<source src="${pageContext.request.contextPath}/res/video/clip.mp4" type="video/mp4">
 			</video>
+		</div>
+		
+		<div class="pull-right">
+			<button type="button" class="btn-lg btn-default">Skip Tutorial</button>
 		</div>
 	</div>	
 
