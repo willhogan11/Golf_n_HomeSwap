@@ -32,8 +32,8 @@
 		<!-- *********************************************************************** -->
 		
 		<!-- Some kind of security check neede here to see if user is Registered? -->
-		<security:intercept-url pattern="/dashboard" access="permitAll" />
-		
+		<!-- <security:intercept-url pattern="/dashboard" access="permitAll" /> -->
+		<security:intercept-url pattern="/dashboard" access="hasAnyRole('REGISTERED')" />
 		
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
 		<security:intercept-url pattern="/successapply" access="permitAll" />
