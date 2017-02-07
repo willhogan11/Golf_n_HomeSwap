@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html>
@@ -13,21 +14,9 @@
 
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
-	<div class="container">
-		<ul class="pagination">
-			<li><a href="#" style="color: green; font-weight: bold;">1. Watch Tutorial ></a></li>
-			<li><a href="#">2. Home Type ></a></li>
-			<li><a href="#">3. Home Details ></a></li>
-			<li><a href="#">4. Location ></a></li>
-			<li><a href="#">5. Availability ></a></li>
-			<li><a href="#">6. Add Photos ></a></li>
-		 </ul>
-		
-		<div class="jumbotron">
-			<h1>Step 1:</h1>
-			<h4>Watch the tutorial wizard below to help you add your home</h4>
-		</div>
-		
+	<div class="container" style="margin: 100px;">
+		<h1 style="color: white; text-align: center;">Add a Home...</h1>
+			
 		<!-- Video Clip Placeholder -->
 		<div class="container" style="width: 400px; height: 200px;">
 			<video width="400" controls>
@@ -36,7 +25,7 @@
 		</div>
 		
 		<div class="pull-right">
-			<button type="button" class="btn-lg btn-default">Skip Tutorial</button>
+			<a href="${pageContext.request.contextPath}/addhome" class="btn-lg btn-default" role="button">Skip Tutorial</a>
 		</div>
 	</div>	
 

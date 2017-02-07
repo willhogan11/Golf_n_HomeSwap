@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -46,14 +47,10 @@
 				<div class="col-xs-6">
 					<label for="">Bedrooms:</label>
 					<select class="form-control" id="bedrooms">
-						<!--<c:forEach var="i" begin="0" end="10">
-							<option>${i}</option>
-						</c:forEach>-->					
 						<option selected="selected">Select...</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>					
 					</select>
 				</div>
 				<div class="col-xs-6">
@@ -81,14 +78,10 @@
 				<div class="col-xs-6">
 					<label for="">Bathrooms:</label>
 					<select class="form-control" id="bathrooms">
-						<!--<c:forEach var="i" begin="0" end="10">
-							<option>${i}</option>
-						</c:forEach>-->
 						<option selected="selected">Select...</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
 					</select>
 				</div>
 			</div>
@@ -97,16 +90,10 @@
 				<div class="col-xs-6">
 					<label for="">Sleeps:</label>
 					<select class="form-control" id="sleeps">
-						<!--<c:forEach var="i" begin="0" end="10">
-							<option>${i}</option>
-						</c:forEach>-->
 						<option selected="selected">Select...</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
 					</select>
 				</div>
 				<div class="col-xs-6">
