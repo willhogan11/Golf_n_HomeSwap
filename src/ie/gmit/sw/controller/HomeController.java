@@ -60,4 +60,9 @@ public class HomeController {
 	public String showaddHomeWizard(){
 		return "addhomewizard";
 	}
+	
+	@RequestMapping("/addhome")
+	public String showaddHome(){
+		return "addhome";
+	}
 }

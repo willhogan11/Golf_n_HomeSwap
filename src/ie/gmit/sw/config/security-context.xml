@@ -29,6 +29,7 @@
 		
 		<!-- FOR TESTING, will need to be changed to 'REGISTERED' only when finished -->
 		<security:intercept-url pattern="/addhomewizard" access="permitAll" />
+		<security:intercept-url pattern="/addhome" access="permitAll" />
 		<!-- *********************************************************************** -->
 		
 		<!-- Some kind of security check neede here to see if user is Registered? -->
