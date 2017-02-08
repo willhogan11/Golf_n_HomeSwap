@@ -391,7 +391,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/dashboard", method=RequestMethod.POST)
+	@RequestMapping(value="/userhome", method=RequestMethod.POST)
 	public String registerUser(HttpServletRequest request, Model model){
 		
 		/*
@@ -427,7 +427,7 @@ public class UserController {
 			return "firsttimelogin";
 		}
 		
-		return "dashboard";
+		return "home";
 	}
 	
 	

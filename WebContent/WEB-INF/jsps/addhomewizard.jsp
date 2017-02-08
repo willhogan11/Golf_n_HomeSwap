@@ -15,7 +15,10 @@
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
 	<div class="container" style="margin: 100px;">
-		<h1 style="color: white; text-align: center;">Add a Home...</h1>
+	
+		<div style="color: white; text-align: center;" class="page-header">
+			<h1>Add a Home</h1>      
+		</div>
 			
 		<!-- Video Clip Placeholder -->
 		<div class="container" style="width: 400px; height: 200px;">
