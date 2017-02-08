@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/home.css">
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">
 
@@ -22,13 +24,29 @@
 	</div>
 	
 	<!-- Header Link -->
-	<div class="container">
-		<div class="text-right" style="width: 350px;">
-			<div class="text-center" style="background-color: black; padding: 20px; 
-											color: white;  font-size: 20px; border: 2px solid blue;">
-				<a href="#"> View Courses and Homes</a>
+	
+	<!-- User panel is here -->
+	<div id="user-panel"  class="container">
+		<div style="display: inline-block;">
+			<div class="text-right" style="width: 350px;">
+				<div class="text-center" style="background-color: black; padding: 20px; 
+												color: white;  font-size: 20px; border: 2px solid blue;">
+					<a href="#"> View Courses and Homes</a>
+				</div>
 			</div>
 		</div>
+		
+		<!-- Active-user panel here -->
+		
+		<sec:authorize access="isAuthenticated()">
+			<div id="active-user">
+	    		<div id="blockWelcome">
+	    			<c:if test="${email != null}">
+		    			Welcome, <c:out value="${username}"></c:out> <span>(<c:out value="${role}"></c:out>)</span>
+		    		</c:if>
+	    		</div>
+    		</div>
+    	</sec:authorize>
 	</div>
 	
 

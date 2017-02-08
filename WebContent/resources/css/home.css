@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+#user-panel{
+	border: 0px solid red;
+}
+
+#active-user{
+	border: 0px solid green;
+	display: inline-block;
+	margin-top: 20px;
+	float: right;
+}
+
+div#blockWelcome{
+	font: bold 14px sans-serif;
+}
+
+div#blockWelcome span{
+	font-weight: normal;
+}

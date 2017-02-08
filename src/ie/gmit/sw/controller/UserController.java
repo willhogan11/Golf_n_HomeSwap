@@ -392,7 +392,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/userhome", method=RequestMethod.POST)
-	public String registerUser(HttpServletRequest request, Model model){
+	public String registerUser(HttpServletRequest request, Model model, Principal principal){
 		
 		/*
 		 * Steps Needed: 
