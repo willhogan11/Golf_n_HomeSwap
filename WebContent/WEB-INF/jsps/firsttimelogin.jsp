@@ -19,7 +19,7 @@
 							    
 	<!-- :::::::::::::::::::::::::::::: FIRST TIME LOGIN FORM ::::::::::::::::::::::::::::::: -->
 	
-	<sf:form class="form-horizontal" name='credentials' method="post" action="${pageContext.request.contextPath}/dashboard">
+	<sf:form class="form-horizontal" name='credentials' method="post" action="${pageContext.request.contextPath}/userhome">
 	  <div class="form-group">
 	  	<h4 style="text-align: center;">You're nearly there.....</h4>
 	    <label style="padding-right: 50px;" class="control-label col-sm-3" for="email">Email:</label>
