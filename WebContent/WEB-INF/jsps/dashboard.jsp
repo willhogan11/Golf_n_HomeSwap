@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,6 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/dashboard.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
@@ -25,6 +28,24 @@
 	<div class="container">
 		
 		<!-- Div for top right menu -->
+		
+		<!-- 
+			 Here is block which displays user's name.
+			 isAuthenticated() should always return true as this page
+			 is available for authenticated users only.
+			 Still better to have it checked to reduce
+			 risk for any form of vulnerabilities.  
+		-->
+		<sec:authorize access="isAuthenticated()">
+			<div class="pull-left" id="user-panel">
+	    		<div id="blockWelcome">
+	    			<c:if test="${email != null}">
+		    			Welcome, <c:out value="${username}"></c:out>
+		    		</c:if>
+	    		</div>
+    		</div>
+    	</sec:authorize>
+		
 		<div class="pull-right">	
 			<a href="Destinations.html">
 				<button type="button" class="btn btn-default btn-lg">

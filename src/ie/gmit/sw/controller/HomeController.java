@@ -90,7 +90,32 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/dashboard")
-	public String showDashboard(){
+	public String showDashboard(Model model, Principal principal){
+
+		/*
+		 * Authentication section is here
+		 * if user is logged in or otherwise do something on jsp page
+		 * 
+		 * User need to be recognised and displayed
+		 */
+		String email = null;
+		try{
+			email = getUsername(principal);
+			
+			log.info("Logged user's email: " + email);
+
+			// retrieving user infoattributeValue
+			User user = userRepo.findByEmail(email);
+			log.info("User: " + user.toString());
+			// bind user information
+			String username = user.getFirstname() + " " + user.getSurname();
+			model.addAttribute("username", username);
+			model.addAttribute("email", email);
+		}catch(NullPointerException npe){
+			model.addAttribute("email", null);
+		}
+
+		
 		return "dashboard";
 	}
 	
