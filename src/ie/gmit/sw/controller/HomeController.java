@@ -85,7 +85,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/apply")
-	public String showApplyPage(){
+	public String showApplyPage(Model model){
+		model.addAttribute("userEmailIsNotUnique", null);
 		return "apply";
 	}
 	

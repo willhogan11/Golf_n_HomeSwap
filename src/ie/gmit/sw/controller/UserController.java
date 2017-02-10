@@ -48,7 +48,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/docreate", method=RequestMethod.POST)
-	public String addUser(@ModelAttribute("user") User user){
+	public String addUser(@ModelAttribute("user") User user, Model model){
+		
+		// 1) Validate email: must be unique
+		
+		User u = userRepo.findByEmail(user.getEmail());
+		
+		if(u != null){
+			model.addAttribute("userEmailIsNotUnique", "User with provided email is allready exists.");
+			log.info("User " + u.getEmail() + " is allready exists.");
+			return "apply";
+		}
+		
 		user.setPassword();
 		log.info("Browser: " + user.getFirstname());
 		log.info("Date of membership issued -- " + user.getDateofissue().toString() + "\n");

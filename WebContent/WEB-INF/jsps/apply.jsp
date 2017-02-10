@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -6,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/apply.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
 	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
 	<script>
@@ -52,8 +54,17 @@
 				<div class="form-group row">
 					<label for="email" class="col-sm-3 col-form-label">Email:</label>
 					<div class="col-sm-7">
-						<input type="email" class="form-control" 
+						<c:choose>
+							<c:when test="${userEmailIsNotUnique != null}">
+								<input type="email" class="form-control" 
+							   id="email" name="email" placeholder="Email" required
+							   style="border: 1px solid red;">
+							</c:when>
+							<c:otherwise>
+								<input type="email" class="form-control" 
 							   id="email" name="email" placeholder="Email" required>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 
@@ -110,6 +121,12 @@
 				</div>
 
 			</form>
+			
+			<c:if test="${userEmailIsNotUnique != null}">
+				<div id="errorMessage">
+					<c:out value="${userEmailIsNotUnique}" />
+				</div>
+			</c:if>
 		</div>
 		<!-- End Apply for Membership Form -->
 		
