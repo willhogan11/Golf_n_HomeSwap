@@ -24,8 +24,8 @@
 			<li><a href="#">5. Add Photos ></a></li>
 		</ul>
 	</div>
-		
-		
+	
+	
 	<div class="container" style="position: absolute;
 								  margin: auto;
 								  top: 0;
