@@ -26,23 +26,240 @@
 		</ul>
 	</div>
 	
+	<!-- <div id="formswap"> -->
 	
-	<div class="container" style="position: absolute;
-								  margin: auto;
-								  top: 0;
-								  right: 0;
-								  bottom: 0;
-								  left: 0;
-								  width: 700px;
-								  height: 300px;
-								  border: 3px solid black;
-								  border-radius: 10px;
-								  padding: 15px;
-								  background-color: white;"> 	
+	<div class="container" id="form1"> 	
 		
 
 		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
 		<form class="form-horizontal" id="addHome" name='addHome' method="" action="">
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Bedrooms:</label>
+					<select class="form-control" id="bedrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>					
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Type of Property:</label>
+					<select class="form-control" id="typeOfProp">
+						<option selected="selected">Select...</option>
+						<option>Bungalow</option>
+						<option>Semi-Detached</option>
+						<option>Terraced</option>
+						<option>Dormer</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Pet Friendly:</label>
+					<select class="form-control" id="petFriendly">
+						<option selected="selected">Select...</option>
+						<option>Yes</option>
+						<option>No</option>
+						<option>I Don't Mind</option>
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Bathrooms:</label>
+					<select class="form-control" id="bathrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Sleeps:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Privacy Options:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Private (Show to me only)</option>
+						<option>Public (Show to all members)</option>
+						<option>Protected (Show to selected members)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div>
+				<button type="button" class="btn btn-success" id="next">Next Step</button>
+			</div>
+		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
+
+	</div>
+	
+	
+	<div class="container" id="form2"> 	
+		
+
+		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Bedrooms:</label>
+					<select class="form-control" id="bedrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>					
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Type of Property:</label>
+					<select class="form-control" id="typeOfProp">
+						<option selected="selected">Select...</option>
+						<option>Bungalow</option>
+						<option>Semi-Detached</option>
+						<option>Terraced</option>
+						<option>Dormer</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Pet Friendly:</label>
+					<select class="form-control" id="petFriendly">
+						<option selected="selected">Select...</option>
+						<option>Yes</option>
+						<option>No</option>
+						<option>I Don't Mind</option>
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Bathrooms:</label>
+					<select class="form-control" id="bathrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Sleeps:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Privacy Options:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Private (Show to me only)</option>
+						<option>Public (Show to all members)</option>
+						<option>Protected (Show to selected members)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div>
+				<button type="button" class="btn btn-success" id="next">Next Step</button>
+			</div>
+		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
+
+	</div>
+	
+	
+	
+	<div class="container" id="form3"> 	
+		
+
+		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Bedrooms:</label>
+					<select class="form-control" id="bedrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>					
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Type of Property:</label>
+					<select class="form-control" id="typeOfProp">
+						<option selected="selected">Select...</option>
+						<option>Bungalow</option>
+						<option>Semi-Detached</option>
+						<option>Terraced</option>
+						<option>Dormer</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Pet Friendly:</label>
+					<select class="form-control" id="petFriendly">
+						<option selected="selected">Select...</option>
+						<option>Yes</option>
+						<option>No</option>
+						<option>I Don't Mind</option>
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Bathrooms:</label>
+					<select class="form-control" id="bathrooms">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-xs-6">
+					<label for="">Sleeps:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Select...</option>
+						<c:forEach var="i" begin="0" end="10">
+							<option>${i}</option>
+						</c:forEach>	
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<label for="">Privacy Options:</label>
+					<select class="form-control" id="sleeps">
+						<option selected="selected">Private (Show to me only)</option>
+						<option>Public (Show to all members)</option>
+						<option>Protected (Show to selected members)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div>
+				<button type="button" class="btn btn-success" id="next">Next Step</button>
+			</div>
+		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
+
+	</div>
+	
+	
+	
+	<div class="container" id="form4"> 	
+		
+
+		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
 			
 			<div class="form-group">
 				<div class="col-xs-6">
@@ -108,13 +325,16 @@
 			</div>
 			
 			<div>
-				<button type="submit" class="btn btn-success">Next Step</button>
+				<button type="submit" class="btn btn-success">Add Home</button>
 			</div>
 
 		</form>
 		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
 
 	</div>
+	
+	<!-- </div> -->
+	
 
 </body>
 </html>

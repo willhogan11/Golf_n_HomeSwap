@@ -134,6 +134,11 @@ public class HomeController {
 	public String showaddHome(){
 		return "addhome";
 	}
+	
+	@RequestMapping("/homepagecopy")
+	public String showhomepagecopy(){
+		return "homepagecopy";
+	}
 
 	// method to identify active user.
 	// used to define is user logged in or not.

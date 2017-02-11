@@ -30,7 +30,7 @@
 		<!-- FOR TESTING, will need to be changed to 'REGISTERED' only when finished -->
 		<security:intercept-url pattern="/addhomewizard" access="permitAll" />
 		<security:intercept-url pattern="/addhome" access="permitAll" />
-		
+		<security:intercept-url pattern="/homepagecopy" access="permitAll" />
 		<security:intercept-url pattern="/userhome" access="permitAll" />
 		
 		<!-- *********************************************************************** -->
