@@ -14,6 +14,8 @@
 </head>
 
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
+	
+	<div id="js" style="background-color: white; height: 30px;"></div>
 
 	<div style="text-align:center; color: white;" class="container">
 		<h1>Add a Home:</h1>
@@ -26,13 +28,13 @@
 		</ul>
 	</div>
 	
-	<!-- <div id="formswap"> -->
 	
-	<div class="container" id="form1"> 	
+	<form class="form-horizontal" id="addHome" name='addHome' method="" action="">
+	
+	<div id="formswap">
+	
+		<div class="container" id="form1">
 		
-
-		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
-		<form class="form-horizontal" id="addHome" name='addHome' method="" action="">
 			<div class="form-group">
 				<div class="col-xs-6">
 					<label for="">Bedrooms:</label>
@@ -97,17 +99,13 @@
 			</div>
 			
 			<div>
-				<button type="button" class="btn btn-success" id="next">Next Step</button>
+				<button type="button" class="btn btn-success" id="next1">Next Step</button>
 			</div>
-		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
-
-	</div>
+			
 	
-	
-	<div class="container" id="form2"> 	
+		</div>
 		
-
-		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
+		<div class="container" id="form2"> 	
 			<div class="form-group">
 				<div class="col-xs-6">
 					<label for="">Bedrooms:</label>
@@ -172,18 +170,15 @@
 			</div>
 			
 			<div>
-				<button type="button" class="btn btn-success" id="next">Next Step</button>
+				<button type="button" class="btn btn-success" id="next2">Next Step</button>
 			</div>
-		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
-
-	</div>
 	
-	
-	
-	<div class="container" id="form3"> 	
+		</div>
 		
-
-		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
+		
+		
+		<div class="container" id="form3"> 	
+			
 			<div class="form-group">
 				<div class="col-xs-6">
 					<label for="">Bedrooms:</label>
@@ -248,19 +243,15 @@
 			</div>
 			
 			<div>
-				<button type="button" class="btn btn-success" id="next">Next Step</button>
+				<button type="button" class="btn btn-success" id="next3">Next Step</button>
 			</div>
-		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
-
-	</div>
 	
-	
-	
-	<div class="container" id="form4"> 	
+		</div>
 		
-
-		<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
-			
+		
+		
+		<div class="container" id="form4"> 	
+				
 			<div class="form-group">
 				<div class="col-xs-6">
 					<label for="">Bedrooms:</label>
@@ -327,13 +318,15 @@
 			<div>
 				<button type="submit" class="btn btn-success">Add Home</button>
 			</div>
-
-		</form>
-		<!-- ::::::::::::::::::::::::::::: END FORM :::::::::::::::::::::::::::::::::: -->
-
-	</div>
 	
-	<!-- </div> -->
+		</div>
+		
+	
+	</div>
+
+	</form>
+	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/formswapping.js"></script>
 	
 
 </body>
