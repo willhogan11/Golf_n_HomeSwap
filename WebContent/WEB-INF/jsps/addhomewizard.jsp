@@ -14,11 +14,24 @@
 
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
-	<div class="container" style="margin: 100px;">
-	
-		<div style="color: white; text-align: center;" class="page-header">
+	<div style="color: white; text-align: center;">
 			<h1>Add a Home</h1>      
 		</div>
+
+	<div class="container" style="position: absolute;
+								  margin: auto;
+								  top: 0;
+								  right: 0;
+								  bottom: 0;
+								  left: 0;
+								  width: 600px;
+								  height: 380px;
+								  border: 3px solid black;
+								  border-radius: 10px;
+								  padding: 15px;
+								  background-color: white;"> 	
+	
+		
 			
 		<!-- Video Clip Placeholder -->
 		<div class="container" style="width: 400px; height: 200px;">
@@ -27,8 +40,8 @@
 			</video>
 		</div>
 		
-		<div class="pull-right">
-			<a href="${pageContext.request.contextPath}/addhome" class="btn-lg btn-default" role="button">Skip Tutorial</a>
+		<div style="text-align: center; margin-top: 50px;">
+			<a href="${pageContext.request.contextPath}/addhome" class="btn btn-success" role="button">Skip Tutorial</a>
 		</div>
 	</div>	
 
