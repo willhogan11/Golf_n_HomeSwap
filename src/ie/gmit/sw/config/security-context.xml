@@ -32,6 +32,8 @@
 		<security:intercept-url pattern="/addhome" access="permitAll" />
 		<security:intercept-url pattern="/homepagecopy" access="permitAll" />
 		<security:intercept-url pattern="/userhome" access="permitAll" />
+		<security:intercept-url pattern="/TempHomeDetails" access="permitAll" />
+		<security:intercept-url pattern="/addlocation" access="permitAll" />
 		
 		<!-- *********************************************************************** -->
 		
