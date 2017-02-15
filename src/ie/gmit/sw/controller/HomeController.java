@@ -149,6 +149,11 @@ public class HomeController {
 	public String showaddlocation(){
 		return "addlocation";
 	}
+	
+	@RequestMapping("/availability")
+	public String show(){
+		return "availability";
+	}
 
 	// method to identify active user.
 	// used to define is user logged in or not.
