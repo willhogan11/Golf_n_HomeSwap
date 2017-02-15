@@ -35,6 +35,7 @@
 		<security:intercept-url pattern="/TempHomeDetails" access="permitAll" />
 		<security:intercept-url pattern="/addlocation" access="permitAll" /> 
 		<security:intercept-url pattern="/availability" access="permitAll" />
+		<security:intercept-url pattern="/addphotos" access="permitAll" />
 		
 		<!-- *********************************************************************** -->
 		

@@ -151,8 +151,13 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/availability")
-	public String show(){
+	public String showavailability(){
 		return "availability";
+	}
+	
+	@RequestMapping("/addphotos")
+	public String showaddphotos(){
+		return "addphotos";
 	}
 
 	// method to identify active user.
