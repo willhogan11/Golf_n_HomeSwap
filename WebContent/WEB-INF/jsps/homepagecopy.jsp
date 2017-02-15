@@ -29,11 +29,11 @@
 	</div>
 	
 	
-	<form class="form-horizontal" id="addHome" name='addHome' method="" action="">
+	<form class="form-horizontal" id="addHome" name='addHome' method="post" action="">
 	
 	<div id="formswap">
 	
-		<div class="container" id="form1">
+		<div class="container form" id="form1">
 		
 			<div class="form-group">
 				<div class="col-xs-6">

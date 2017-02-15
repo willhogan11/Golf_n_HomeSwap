@@ -46,7 +46,9 @@
 				</div>
 			</div>
 					  		  
- 		  <div style="text-align: center; margin-top: 10px;"><button type="button" class="btn btn-success" id="next3">Next Step</button></div>
+ 		  <div style="text-align: center; margin-top: 10px;">
+ 		  		<button type="button" class="btn btn-success" id="next3">Next Step</button>
+ 		  </div>
     </div>
     
     

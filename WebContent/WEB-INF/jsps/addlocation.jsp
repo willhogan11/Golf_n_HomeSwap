@@ -31,7 +31,7 @@
 								  padding: 15px;
 								  background-color: white;"> 	
 								  
-								  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+							<input id="pac-input" class="controls" type="text" placeholder="Enter a location">
 	
 							<div class="container" id="map">
 								
