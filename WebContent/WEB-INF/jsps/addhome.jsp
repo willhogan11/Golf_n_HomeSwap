@@ -11,42 +11,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtko2ncKToOp2KYet1Oigq2wTuWzH2zBs&libraries=places&callback=initMap"async defer></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addlocation.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addphotos.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/homepage.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/addlocation.css" />
 	<title>Add a Home</title>
-	
-	<script type="text/javascript">
-	
-	// Reference: https://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
-	$(function() {
-
-		  // We can attach the `fileselect` event to all file inputs on the page
-		  $(document).on('change', ':file', function() {
-		    var input = $(this),
-		        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-		        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-		    input.trigger('fileselect', [numFiles, label]);
-		  });
-
-		  // We can watch for our custom `fileselect` event like this
-		  $(document).ready( function() {
-		      $(':file').on('fileselect', function(event, numFiles, label) {
-
-		          var input = $(this).parents('.input-group').find(':text'),
-		              log = numFiles > 1 ? numFiles + ' files selected' : label;
-
-		          if( input.length ) {
-		              input.val(log);
-		          } else {
-		              if( log ) alert(log);
-		          }
-
-		      });
-		  });
-		  
-		});
-	</script>
 	
 </head>
 
@@ -80,13 +49,14 @@
 				<div class="col-xs-12" class="form-group">
 				<label for="title">Title:</label>
 				<input placeholder="e.g A Stunning architect design mews house" type="text" 
-					   class="form-control" name="title" id="title">
+					   class="form-control" name="title" id="title" required>
 				</div>
 				
 				<div class="col-xs-12" class="form-group">
 					<br>
 					<label for="comment">More about your home and neighbourhood:</label>
-					<textarea placeholder="e.g. Our stunning home has a wonderful....." class="form-control" rows="5" name="moreinfoabouthome" id="moreinfoabouthome"></textarea>
+					<textarea placeholder="e.g. Our stunning home has a wonderful....." class="form-control" rows="5" 
+							  name="moreinfoabouthome" id="moreinfoabouthome" required></textarea>
 				</div>
 		
 				<label for="features">Features:</label>
@@ -143,8 +113,8 @@
 					<div class="col-xs-6">
 						<label for="">Bedrooms:</label>
 						<select class="form-control" id="bedrooms">
-							<option selected="selected">Select...</option>
-							<c:forEach var="i" begin="0" end="10">
+							<!-- <option selected="selected">Select...</option> -->
+							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
 							</c:forEach>					
 						</select>
@@ -174,8 +144,8 @@
 					<div class="col-xs-6">
 						<label for="">Bathrooms:</label>
 						<select class="form-control" id="bathrooms">
-							<option selected="selected">Select...</option>
-							<c:forEach var="i" begin="0" end="10">
+							<!-- <option selected="selected">Select...</option> -->
+							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
 							</c:forEach>	
 						</select>
@@ -186,8 +156,8 @@
 					<div class="col-xs-6">
 						<label for="">Sleeps:</label>
 						<select class="form-control" id="sleeps">
-							<option selected="selected">Select...</option>
-							<c:forEach var="i" begin="0" end="10">
+							<!-- <option selected="selected">Select...</option> -->
+							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
 							</c:forEach>	
 						</select>
@@ -214,7 +184,7 @@
 			 -->
 			<div class="container form" id="form3">
 			
-				<input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+				<input id="pac-input" class="controls" type="text" placeholder="Enter a location" required>
 	
 				<div class="container" id="map">
 					
@@ -271,14 +241,36 @@
 			
 			
 			<!-- 
-			5) Location - this is the third step of home adding completion form.
+			(5 Add photos of your Home
+			-->
+			<!-- Reference: https://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3 -->
+			
+			<!-- <h1 style="text-align: center;">Add Photos</h1> --> 
+			
+			<div id="form5" class="container" style="position: absolute; margin: auto; top: 0; right: 0; bottom: 0;
+	  		     left: 0; width: 500px; height: 250px; border: 3px solid black; border-radius: 10px; padding: 15px; background-color: white;"> 
+	            <h3>Add one or more photos</h3>
+	            <div class="input-group">
+	                <label class="input-group-btn">
+	                    <span class="btn btn-primary">
+	                        Browse&hellip; <input type="file" style="display: none;" multiple>
+	                    </span>
+	                </label>
+	                <input type="text" class="form-control" readonly>
+	            </div>
+	             <div style="text-align: center; margin-top: 20px;"><button type="button" class="btn btn-success" id="next5">Add Photos and Finish</button></div>
+	        </div>
+	
+
+	<!-- 		<!-- 
+			
 			 -->
 			<div class="container form" id="form5">
 						  		  
 	 		  	<div style="text-align: center; margin-top: 10px;">
 	 		  		<button type="submit" class="btn btn-success" id="addHouse">Add House</button>
 	 		  	</div>
-			</div>
+			</div> -->
 			
 		</div>
 	
