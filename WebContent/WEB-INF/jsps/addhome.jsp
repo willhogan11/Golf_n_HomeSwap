@@ -9,9 +9,45 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtko2ncKToOp2KYet1Oigq2wTuWzH2zBs&libraries=places&callback=initMap"async defer></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addlocation.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/homepage.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/addlocation.css" />
 	<title>Add a Home</title>
+	
+	<script type="text/javascript">
+	
+	// Reference: https://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
+	$(function() {
+
+		  // We can attach the `fileselect` event to all file inputs on the page
+		  $(document).on('change', ':file', function() {
+		    var input = $(this),
+		        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+		        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		    input.trigger('fileselect', [numFiles, label]);
+		  });
+
+		  // We can watch for our custom `fileselect` event like this
+		  $(document).ready( function() {
+		      $(':file').on('fileselect', function(event, numFiles, label) {
+
+		          var input = $(this).parents('.input-group').find(':text'),
+		              log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+		          if( input.length ) {
+		              input.val(log);
+		          } else {
+		              if( log ) alert(log);
+		          }
+
+		      });
+		  });
+		  
+		});
+	</script>
+	
 </head>
 
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
