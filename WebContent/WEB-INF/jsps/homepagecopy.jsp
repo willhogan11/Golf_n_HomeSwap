@@ -19,12 +19,12 @@
 
 	<div style="text-align:center; color: white;" class="container">
 		<h1>Add a Home:</h1>
-		<ul class="pagination">
-			<li><a href="#" style="color: green; font-weight: bold;">1. Home Type ></a></li>
-			<li><a href="#">2. Home Details ></a></li>
-			<li><a href="#">3. Location ></a></li>
-			<li><a href="#">4. Availability ></a></li>
-			<li><a href="#">5. Add Photos ></a></li>
+		<ul class="pagination" id="bookmarks">
+			<li>1. Home Type ></li>
+			<li id="b2">2. Home Details ></li>
+			<li>3. Location ></li>
+			<li>4. Availability ></li>
+			<li>5. Add Photos ></li>
 		</ul>
 	</div>
 	

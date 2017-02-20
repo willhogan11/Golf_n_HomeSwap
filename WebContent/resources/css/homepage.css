@@ -17,7 +17,7 @@
 #form1{
 	visibility: visible;
 	width: 700px;
-	height: 420px;
+	height: 300px;
 }
 
 #form2{
@@ -42,6 +42,14 @@
 	visibility: hidden;
 	width: 750px;
 	height: 300px;
+}
+
+.pagination li{
+	display: inlineblock;
+	padding: 5px 10px;
+	border: 1px dotted gray;
+	background-color: white;
+	color: black;
 }
 
 
