@@ -25,12 +25,12 @@
 
 	<div style="text-align:center; color: white;" class="container">
 		<h1>Add a Home:</h1>
-		<ul class="pagination" div="nav">
-			<li><a id="nav1" href="#" style="color: green; font-weight: bold;">1. Home Type ></a></li>
-			<li><a id="nav2" href="#">2. Home Details ></a></li>
-			<li><a id="nav3" href="#">3. Location ></a></li>
-			<li><a id="nav4" href="#">4. Availability ></a></li>
-			<li><a id="nav5" href="#">5. Add Photos ></a></li>
+		<ul class="pagination" id="bookmarks">
+			<li>1. Home Type ></li>
+			<li>2. Home Details ></li>
+			<li>3. Location ></li>
+			<li>4. Availability ></li>
+			<li>5. Add Photos ></li>
 		</ul>
 	</div>
 	
@@ -241,14 +241,13 @@
 			
 			
 			<!-- 
-			(5 Add photos of your Home
+			5) Add photos of your Home
 			-->
 			<!-- Reference: https://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3 -->
 			
 			<!-- <h1 style="text-align: center;">Add Photos</h1> --> 
 			
-			<div id="form5" class="container" style="position: absolute; margin: auto; top: 0; right: 0; bottom: 0;
-	  		     left: 0; width: 500px; height: 250px; border: 3px solid black; border-radius: 10px; padding: 15px; background-color: white;"> 
+			<div id="form5" class="container form"> 
 	            <h3>Add one or more photos</h3>
 	            <div class="input-group">
 	                <label class="input-group-btn">
@@ -258,19 +257,12 @@
 	                </label>
 	                <input type="text" class="form-control" readonly>
 	            </div>
-	             <div style="text-align: center; margin-top: 20px;"><button type="button" class="btn btn-success" id="next5">Add Photos and Finish</button></div>
+	            
+	            <!-- Submit button -->
+				<div style="text-align: center; margin-top: 20px;">
+					<button type="submit" class="btn btn-success" id="addHouse">Add Photos and Finish</button>
+				</div>
 	        </div>
-	
-
-	<!-- 		<!-- 
-			
-			 -->
-			<div class="container form" id="form5">
-						  		  
-	 		  	<div style="text-align: center; margin-top: 10px;">
-	 		  		<button type="submit" class="btn btn-success" id="addHouse">Add House</button>
-	 		  	</div>
-			</div> -->
 			
 		</div>
 	

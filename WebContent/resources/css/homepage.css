@@ -17,7 +17,7 @@
 #form1{
 	visibility: visible;
 	width: 700px;
-	height: 300px;
+	height: 450px;
 }
 
 #form2{
@@ -41,12 +41,13 @@
 #form5{
 	visibility: hidden;
 	width: 750px;
-	height: 300px;
+	height: 200px;
 }
 
 .pagination li{
 	display: inlineblock;
 	padding: 5px 10px;
+	width: 150px;
 	border: 1px dotted gray;
 	background-color: white;
 	color: black;

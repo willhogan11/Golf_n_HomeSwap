@@ -76,23 +76,19 @@
 		form3.style.visibility = "hidden";
 		form4.style.visibility = "visible";
 		form5.style.visibility = "hidden";
-		
-
-		ch[3].style.fontWeight = "bold";
-		ch[3].style.backgroundColor = "#cfcfcf";
 	});
 	
 	
-	next4.addEventListener("click", function(){ 
+	next4.addEventListener("click", function(){
+
+		bArr.push(ch[9]);
+		add_style(bArr);
+		
 		form1.style.visibility = "hidden";
 		form2.style.visibility = "hidden";
 		form3.style.visibility = "hidden";
 		form4.style.visibility = "hidden";
 		form5.style.visibility = "visible";
-		
-
-		ch[3].style.fontWeight = "bold";
-		ch[3].style.backgroundColor = "#cfcfcf";
 	});
 	
 }
