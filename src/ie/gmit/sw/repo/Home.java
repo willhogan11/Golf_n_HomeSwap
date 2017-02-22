@@ -27,20 +27,6 @@ public class Home {
 	private int bathrooms;
 	private int sleeps;
 	private UserVisibility uservisibility;
-	
-	
-	/* We need to discuss the best way to implement "homeFeatures" below, i'm sure there is something more efficient with Spring
-	/* Essentially, the user can have multiple features in their home, e.g. Balcony AND pool and when the user ticks the boxes to add them, 
-	 * we need to be able to store them and add them accordingly. 
-	 * 
-	 * I have commented out the main method below, but for testing it allows multiple values to ba added from the enum to the arraylist.
-	 * We could just return the list using getters and setters or delegate methods etc, when done. Again, Andrej you may see a better way. 
-	 * */
-	
-	
-	// private List<HomeFeatures> homeFeatures;
-	
-	
 	private boolean garden;
 	private boolean balcony;
 	private boolean pool;
@@ -51,12 +37,7 @@ public class Home {
 	private boolean aircon;
 	private boolean equipforkids;
 	private boolean disabledaccess;
-
-	private String zipCode;
-	private String address1;
-	private String address2;
-	private String address3;
-	private String address4;
+	private String address;
 	private Date availableFrom;
 	private Date availableTo;
 	private InputStream photo;
@@ -67,22 +48,6 @@ public class Home {
 		super();
 	}
 	
-	
-	// Testing only, uncomment as required.... 
-	/*public static void main(String[] args) {
-		
-		List<HomeFeatures> homeFeatures;
-		
-		homeFeatures = new ArrayList<HomeFeatures>();
-		homeFeatures.add(HomeFeatures.AIRCON);
-		homeFeatures.add(HomeFeatures.BALCONY);
-		homeFeatures.add(HomeFeatures.WIFI);
-		
-		for (HomeFeatures hf : homeFeatures) {
-			System.out.println("Users Home has : " + hf);
-		}
-	}*/
-
 
 	// Getters and Setters for above instance variables
 	public String getId() {
@@ -164,16 +129,6 @@ public class Home {
 		this.homeDetails = homeDetails;
 	}
 
-
-//	public List<HomeFeatures> getHomeFeatures() {
-//		return homeFeatures;
-//	}
-//
-//
-//	public void setHomeFeatures(List<HomeFeatures> homeFeatures) {
-//		this.homeFeatures = homeFeatures;
-//	}
-	
 	
 	public UserVisibility getUservisibility() {
 		return uservisibility;
@@ -184,53 +139,13 @@ public class Home {
 	}
 
 
-	public String getZipCode() {
-		return zipCode;
+	public String getAddress() {
+		return address;
 	}
 
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
-
-
-	public String getAddress1() {
-		return address1;
-	}
-
-
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
-
-
-	public String getAddress2() {
-		return address2;
-	}
-
-
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
-
-
-	public String getAddress3() {
-		return address3;
-	}
-
-
-	public void setAddress3(String address3) {
-		this.address3 = address3;
-	}
-
-
-	public String getAddress4() {
-		return address4;
-	}
-
-
-	public void setAddress4(String address4) {
-		this.address4 = address4;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 
