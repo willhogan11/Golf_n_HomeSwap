@@ -36,7 +36,7 @@
 	
 	
 	<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
-	<sf:form class="form-horizontal" id="addHome" name='addHome' method="post" action="">
+	<sf:form class="form-horizontal" name='addHome' method="post" action="${pageContext.request.contextPath}/docreatehome">
 	
 		<!-- 'formswap' is the main container for all blocks with forms -->
 		<div id="formswap">
@@ -49,51 +49,51 @@
 				<div class="col-xs-12" class="form-group">
 				<label for="title">Title:</label>
 				<input placeholder="e.g A Stunning architect design mews house" type="text" 
-					   class="form-control" name="title" id="title" required>
+					   class="form-control" name="title" id="title" >
 				</div>
 				
 				<div class="col-xs-12" class="form-group">
 					<br>
 					<label for="comment">More about your home and neighbourhood:</label>
 					<textarea placeholder="e.g. Our stunning home has a wonderful....." class="form-control" rows="5" 
-							  name="moreinfoabouthome" id="moreinfoabouthome" required></textarea>
+							  name="homeDetails" id="homeDetails" ></textarea>
 				</div>
 		
 				<label for="features">Features:</label>
 				<div class="col-xs-12">
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Garden&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="garden" type="checkbox" value="">Garden&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Balcony&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="balcony" type="checkbox" value="">Balcony&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Pool&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="pool" type="checkbox" value="">Pool&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Cleaner&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-				</div>
-				<div class="col-xs-12">
-					<label class="checkbox-inline">
-						<input type="checkbox" value="">Wifi&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input type="checkbox" value="">Cable T.V.&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input type="checkbox" value="">Gym&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input type="checkbox" value="">Air Conditioning&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="cleaner" type="checkbox" value="">Cleaner&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 				</div>
 				<div class="col-xs-12">
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Equipment for Kids&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="wifi" type="checkbox" value="">Wifi&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input type="checkbox" value="">Disabled Access&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="cabletv" type="checkbox" value="">Cable T.V.&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="gym" type="checkbox" value="">Gym&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="aircon" type="checkbox" value="">Air Conditioning&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+				</div>
+				<div class="col-xs-12">
+					<label class="checkbox-inline">
+						<input name="equipforkids" type="checkbox" value="">Equipment for Kids&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="disabledaccess" type="checkbox" value="">Disabled Access&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 				</div>
 	
@@ -112,7 +112,7 @@
 				<div class="form-group">
 					<div class="col-xs-6">
 						<label for="">Bedrooms:</label>
-						<select class="form-control" id="bedrooms">
+						<select class="form-control" id="bedrooms" name="bedrooms">
 							<!-- <option selected="selected">Select...</option> -->
 							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
@@ -121,7 +121,7 @@
 					</div>
 					<div class="col-xs-6">
 						<label for="">Type of Property:</label>
-						<select class="form-control" id="typeOfProp">
+						<select class="form-control" id="propertyType" name="propertyType">
 							<option selected="selected">Select...</option>
 							<option>Bungalow</option>
 							<option>Semi-Detached</option>
@@ -134,7 +134,7 @@
 				<div class="form-group">
 					<div class="col-xs-6">
 						<label for="">Pet Friendly:</label>
-						<select class="form-control" id="petFriendly">
+						<select class="form-control" id="petFriendly" name="petFriendly">
 							<option selected="selected">Select...</option>
 							<option>Yes</option>
 							<option>No</option>
@@ -143,7 +143,7 @@
 					</div>
 					<div class="col-xs-6">
 						<label for="">Bathrooms:</label>
-						<select class="form-control" id="bathrooms">
+						<select class="form-control" id="bathrooms" name="bathrooms">
 							<!-- <option selected="selected">Select...</option> -->
 							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
@@ -155,7 +155,7 @@
 				<div class="form-group">
 					<div class="col-xs-6">
 						<label for="">Sleeps:</label>
-						<select class="form-control" id="sleeps">
+						<select class="form-control" id="sleeps" name="sleeps">
 							<!-- <option selected="selected">Select...</option> -->
 							<c:forEach var="i" begin="1" end="10">
 								<option>${i}</option>
@@ -184,7 +184,7 @@
 			 -->
 			<div class="container form" id="form3">
 			
-				<input id="pac-input" class="controls" type="text" placeholder="Enter a location" required>
+				<input id="pac-input" class="controls" type="text" placeholder="Enter a location">
 	
 				<div class="container" id="map">
 					
@@ -214,7 +214,7 @@
 					<label for="dateofissue" class="col-sm-3 col-form-label">Available From:</label>
 					<div class="col-sm-7">
 						<div class='input-group date' id='availablefrom'>
-							<input type='date' class="form-control" name="availablefrom" required />
+							<input type='date' class="form-control" name="availablefrom"  />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -226,7 +226,7 @@
 					<label for="dateofissue" class="col-sm-3 col-form-label">Available To:</label>
 					<div class="col-sm-7">
 						<div class='input-group date' id='availableto'>
-							<input type='date' class="form-control" name="availableto" required />
+							<input type='date' class="form-control" name="availableto"  />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>

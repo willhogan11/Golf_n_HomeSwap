@@ -22,6 +22,8 @@ public class Home {
 
 	@Id
 	private String id;
+	private String title;
+	private String homeDetails;
 	private int bedrooms;
 	private PropertyType propertyType;
 	private boolean petFriendly;
@@ -31,8 +33,8 @@ public class Home {
 	// Andrej: Would the below be required again? as we have already mentioned this in the user pojo....
 	// private UserVisibility uservisibility
 	
-	private String title;
-	private String homeDetails;
+	
+	
 	
 	
 	/* We need to discuss the best way to implement "homeFeatures" below, i'm sure there is something more efficient with Spring
@@ -43,7 +45,11 @@ public class Home {
 	 * We could just return the list using getters and setters or delegate methods etc, when done. Again, Andrej you may see a better way. 
 	 * */
 	
-	private List<HomeFeatures> homeFeatures;
+	
+	// private List<HomeFeatures> homeFeatures;
+	
+	
+	private boolean garden;
 	
 	
 	
@@ -160,14 +166,14 @@ public class Home {
 	}
 
 
-	public List<HomeFeatures> getHomeFeatures() {
-		return homeFeatures;
-	}
-
-
-	public void setHomeFeatures(List<HomeFeatures> homeFeatures) {
-		this.homeFeatures = homeFeatures;
-	}
+//	public List<HomeFeatures> getHomeFeatures() {
+//		return homeFeatures;
+//	}
+//
+//
+//	public void setHomeFeatures(List<HomeFeatures> homeFeatures) {
+//		this.homeFeatures = homeFeatures;
+//	}
 
 
 	public String getZipCode() {
