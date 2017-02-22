@@ -119,6 +119,14 @@ public class HomeController {
 		
 		return "dashboard";
 	}
+
+	@RequestMapping("/docreatehome")
+	public String createHome(){
+		
+		
+		
+		return "dashboard";
+	}
 	
 	@RequestMapping("/firsttimelogin")
 	public String showFirsttimeLogin(){
@@ -159,6 +167,8 @@ public class HomeController {
 	public String showaddphotos(){
 		return "addphotos";
 	}
+	
+	
 
 	// method to identify active user.
 	// used to define is user logged in or not.

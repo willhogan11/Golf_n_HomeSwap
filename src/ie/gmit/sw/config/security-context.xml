@@ -36,6 +36,7 @@
 		<security:intercept-url pattern="/addlocation" access="permitAll" /> 
 		<security:intercept-url pattern="/availability" access="permitAll" />
 		<security:intercept-url pattern="/addphotos" access="permitAll" />
+		<security:intercept-url pattern="/docreatehome" access="permitAll" />
 		
 		<!-- *********************************************************************** -->
 		
