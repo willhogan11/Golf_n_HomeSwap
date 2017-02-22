@@ -40,8 +40,6 @@ public class User {
 	   Also set default value to be CANDIDATE until approved */
 	private UserAccessLevel useraccesslevel = UserAccessLevel.CANDIDATE; 
 	
-	// Created an ENUM class to hold the values for [private, public, group], Set to private as default
-	private UserVisibility uservisibility = UserVisibility.PRIVATE; 
 	
 	// Constructors
 	/**
@@ -131,14 +129,6 @@ public class User {
 
 	public void setUseraccesslevel(UserAccessLevel useraccesslevel) {
 		this.useraccesslevel = useraccesslevel;
-	}
-	
-	public UserVisibility getUservisibility() {
-		return uservisibility;
-	}
-
-	public void setUservisibility(UserVisibility uservisibility) {
-		this.uservisibility = uservisibility;
 	}
 	
 	public String getPassword() {

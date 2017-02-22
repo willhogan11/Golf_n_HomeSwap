@@ -1,10 +1,7 @@
 package ie.gmit.sw.repo;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -29,12 +26,7 @@ public class Home {
 	private boolean petFriendly;
 	private int bathrooms;
 	private int sleeps;
-	
-	// Andrej: Would the below be required again? as we have already mentioned this in the user pojo....
-	// private UserVisibility uservisibility
-	
-	
-	
+	private UserVisibility uservisibility;
 	
 	
 	/* We need to discuss the best way to implement "homeFeatures" below, i'm sure there is something more efficient with Spring
@@ -50,9 +42,16 @@ public class Home {
 	
 	
 	private boolean garden;
-	
-	
-	
+	private boolean balcony;
+	private boolean pool;
+	private boolean cleaner;
+	private boolean wifi;
+	private boolean cabletv;
+	private boolean gym;
+	private boolean aircon;
+	private boolean equipforkids;
+	private boolean disabledaccess;
+
 	private String zipCode;
 	private String address1;
 	private String address2;
@@ -174,6 +173,15 @@ public class Home {
 //	public void setHomeFeatures(List<HomeFeatures> homeFeatures) {
 //		this.homeFeatures = homeFeatures;
 //	}
+	
+	
+	public UserVisibility getUservisibility() {
+		return uservisibility;
+	}
+
+	public void setUservisibility(UserVisibility uservisibility) {
+		this.uservisibility = uservisibility;
+	}
 
 
 	public String getZipCode() {
@@ -253,6 +261,105 @@ public class Home {
 
 	public void setPhoto(InputStream photo) {
 		this.photo = photo;
+	}
+	
+	public boolean isGarden() {
+		return garden;
+	}
+
+
+	public void setGarden(boolean garden) {
+		this.garden = garden;
+	}
+
+
+	public boolean isBalcony() {
+		return balcony;
+	}
+
+
+	public void setBalcony(boolean balcony) {
+		this.balcony = balcony;
+	}
+
+
+	public boolean isPool() {
+		return pool;
+	}
+
+
+	public void setPool(boolean pool) {
+		this.pool = pool;
+	}
+
+
+	public boolean isCleaner() {
+		return cleaner;
+	}
+
+
+	public void setCleaner(boolean cleaner) {
+		this.cleaner = cleaner;
+	}
+
+
+	public boolean isWifi() {
+		return wifi;
+	}
+
+
+	public void setWifi(boolean wifi) {
+		this.wifi = wifi;
+	}
+
+
+	public boolean isCabletv() {
+		return cabletv;
+	}
+
+
+	public void setCabletv(boolean cabletv) {
+		this.cabletv = cabletv;
+	}
+
+
+	public boolean isGym() {
+		return gym;
+	}
+
+
+	public void setGym(boolean gym) {
+		this.gym = gym;
+	}
+
+
+	public boolean isAircon() {
+		return aircon;
+	}
+
+
+	public void setAircon(boolean aircon) {
+		this.aircon = aircon;
+	}
+
+
+	public boolean isEquipforkids() {
+		return equipforkids;
+	}
+
+
+	public void setEquipforkids(boolean equipforkids) {
+		this.equipforkids = equipforkids;
+	}
+
+
+	public boolean isDisabledaccess() {
+		return disabledaccess;
+	}
+
+
+	public void setDisabledaccess(boolean disabledaccess) {
+		this.disabledaccess = disabledaccess;
 	}
 	
 }
