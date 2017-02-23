@@ -38,7 +38,7 @@ public class User {
 	
 	/* Created an ENUM class to hold the values for [admin, registered, candidate, declined, suspended, temporary]
 	   Also set default value to be CANDIDATE until approved */
-	private UserAccessLevel useraccesslevel = UserAccessLevel.CANDIDATE; 
+	private UserAccessLevel useraccesslevel = UserAccessLevel.CANDIDATE;
 	
 	
 	// Constructors

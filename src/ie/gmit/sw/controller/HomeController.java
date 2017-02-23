@@ -123,11 +123,10 @@ public class HomeController {
 	}
 
 	@RequestMapping("/docreatehome")
-	public String createHome(@ModelAttribute("addHome") Home home, Model model){
+	public String createHome(@ModelAttribute("home") Home home, Model model){
 		
-		log.info("Testing for controller");
-		log.info("Home title >>> " + home.getTitle());
-		log.info("Home details >>> " + home.getHomeDetails());
+		log.info("Testing for controller >>> success");
+		log.info("Home >>> \n" + home.toString());
 		
 		return "dashboard";
 	}

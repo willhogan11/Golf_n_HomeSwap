@@ -15,8 +15,6 @@
 	
 	var bookmarks = document.getElementById("bookmarks");
 	var ch = bookmarks.childNodes;
-	var childrenNumber = ch.length;
-	document.getElementById("js").innerHTML = "Number of Blocks within the formswap is: " + childrenNumber;
 	
 	var bArr = new Array(ch[1]);
 	bArr[0].style.fontWeight = "bold";
@@ -53,6 +51,7 @@
 	});
 	
 
+	
 	next2.addEventListener("click", function(){
 
 		bArr.push(ch[5]);
@@ -64,6 +63,7 @@
 		form4.style.visibility = "hidden";
 		form5.style.visibility = "hidden";
 	});
+	
 	
 
 	next3.addEventListener("click", function(){

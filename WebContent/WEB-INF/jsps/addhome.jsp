@@ -21,7 +21,6 @@
 
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
-<div id="js" style="background-color: white; height: 30px;"></div>
 
 	<div style="text-align:center; color: white;" class="container">
 		<h1>Add a Home:</h1>
@@ -36,7 +35,7 @@
 	
 	
 	<!-- :::::::::::::::::::::::::::::: ADD HOME FORM ::::::::::::::::::::::::::::::: -->
-	<sf:form class="form-horizontal" name='addHome' method="post" action="${pageContext.request.contextPath}/docreatehome">
+	<sf:form class="form-horizontal" name='home' method="post" action="${pageContext.request.contextPath}/docreatehome">
 	
 		<!-- 'formswap' is the main container for all blocks with forms -->
 		<div id="formswap">
@@ -62,45 +61,45 @@
 				<label for="features">Features:</label>
 				<div class="col-xs-12">
 					<label class="checkbox-inline">
-						<input name="garden" type="checkbox" value="">Garden&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="garden" type="checkbox" value="true">Garden&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input name="balcony" type="checkbox" value="">Balcony&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="balcony" type="checkbox" value="true">Balcony&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input name="pool" type="checkbox" value="">Pool&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="pool" type="checkbox" value="true">Pool&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input name="cleaner" type="checkbox" value="">Cleaner&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-				</div>
-				<div class="col-xs-12">
-					<label class="checkbox-inline">
-						<input name="wifi" type="checkbox" value="">Wifi&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input name="cabletv" type="checkbox" value="">Cable T.V.&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input name="gym" type="checkbox" value="">Gym&nbsp;&nbsp;&nbsp;&nbsp;
-					</label>
-					<label class="checkbox-inline">
-						<input name="aircon" type="checkbox" value="">Air Conditioning&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="cleaner" type="checkbox" value="true">Cleaner&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 				</div>
 				<div class="col-xs-12">
 					<label class="checkbox-inline">
-						<input name="equipforkids" type="checkbox" value="">Equipment for Kids&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="wifi" type="checkbox" value="true">Wifi&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 					<label class="checkbox-inline">
-						<input name="disabledaccess" type="checkbox" value="">Disabled Access&nbsp;&nbsp;&nbsp;&nbsp;
+						<input name="cabletv" type="checkbox" value="true">Cable T.V.&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="gym" type="checkbox" value="true">Gym&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="aircon" type="checkbox" value="true">Air Conditioning&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+				</div>
+				<div class="col-xs-12">
+					<label class="checkbox-inline">
+						<input name="equipforkids" type="checkbox" value="true">Equipment for Kids&nbsp;&nbsp;&nbsp;&nbsp;
+					</label>
+					<label class="checkbox-inline">
+						<input name="disabledaccess" type="checkbox" value="true">Disabled Access&nbsp;&nbsp;&nbsp;&nbsp;
 					</label>
 				</div>
 	
 				<div class="pull-right">
 					<button type="button" class="btn btn-success" id="next1">Next Step</button>
 				</div>
-			
+				
 			</div>
 			
 			
@@ -122,11 +121,14 @@
 					<div class="col-xs-6">
 						<label for="">Type of Property:</label>
 						<select class="form-control" id="propertyType" name="propertyType">
-							<option selected="selected">Select...</option>
-							<option>Bungalow</option>
-							<option>Semi-Detached</option>
-							<option>Terraced</option>
-							<option>Dormer</option>
+							<option selected="selected" value="NOT_SPECIFIED">Select...</option>
+							<option value="BUNGALOW">Bungalow</option>
+							<option value="SEMI_DETACHED">Semi-Detached</option>
+							<option value="TERRACED">Terraced</option>
+							<option value="FLAT">Flat</option>
+							<option value="END_OF_TERRACE">End_Of_Terrace</option>
+							<option value="COTTAGE">Cottage</option>
+							<option value="DETACHED">Detached</option>
 						</select>
 					</div>
 				</div>
@@ -135,10 +137,9 @@
 					<div class="col-xs-6">
 						<label for="">Pet Friendly:</label>
 						<select class="form-control" id="petFriendly" name="petFriendly">
-							<option selected="selected">Select...</option>
-							<option>Yes</option>
-							<option>No</option>
-							<option>I Don't Mind</option>
+							<option selected="selected" value="false">Select...</option>
+							<option value="true">Yes</option>
+							<option value="false">No</option>
 						</select>
 					</div>
 					<div class="col-xs-6">
@@ -164,17 +165,26 @@
 					</div>
 					<div class="col-xs-6">
 						<label for="">Privacy Options:</label>
-						<select class="form-control" id="sleeps">
-							<option selected="selected">Private (Show to me only)</option>
-							<option>Public (Show to all members)</option>
-							<option>Protected (Show to selected members)</option>
+						<select class="form-control" name="homevisibility">
+							<option selected="selected" value="PRIVATE">Private (Show to me only)</option>
+							<option value="PUBLIC">Public (Show to all members)</option>
+							<option value="GROUP">Protected (Show to selected members)</option>
 						</select>
 					</div>
 				</div>
 				
+				
+	            <!-- ********************TESTING********************** -->
+	            <!-- Submit button -->
+				<div style="text-align: center; margin-top: 20px;">
+					<button type="submit" class="btn btn-success" id="addHouse">Add Photos and Finish</button>
+				</div>
+				
+				
 				<div>
 					<button type="button" class="btn btn-success" id="next2">Next Step</button>
 				</div>
+				
 				
 			</div>
 			
