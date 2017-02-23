@@ -10,19 +10,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/apply.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
 	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
-	<script>
-		webshims.setOptions('forms-ext', {types: 'date'});
-		webshims.polyfill('forms forms-ext');
-		$.webshims.formcfg = {
-		en: {
-		    dFormat: '-',
-		    dateSigns: '-',
-		    patterns: {
-		        d: "yy-mm-dd"
-		    }
-		}
-		};
-	</script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/webshim.js"></script>
 	<title>Apply for Membership</title>
 </head>
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg'); padding: 20px;">

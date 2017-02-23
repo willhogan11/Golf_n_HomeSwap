@@ -12,6 +12,8 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtko2ncKToOp2KYet1Oigq2wTuWzH2zBs&libraries=places&callback=initMap"async defer></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addlocation.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addphotos.js"></script>
+	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/webshim.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/homepage.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/addlocation.css" />
@@ -222,8 +224,8 @@
 			  	<div class="form-group row">
 					<label for="dateofissue" class="col-sm-3 col-form-label">Available From:</label>
 					<div class="col-sm-7">
-						<div class='input-group date' id='availablefrom'>
-							<input type='date' class="form-control" name="availablefrom"  />
+						<div class='input-group date' id='availableFrom'>
+							<input type='date' class="form-control" name="availableFrom"  />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -234,8 +236,8 @@
 				<div class="form-group row">
 					<label for="dateofissue" class="col-sm-3 col-form-label">Available To:</label>
 					<div class="col-sm-7">
-						<div class='input-group date' id='availableto'>
-							<input type='date' class="form-control" name="availableto"  />
+						<div class='input-group date' id='availableTo'>
+							<input type='date' class="form-control" name="availableTo"  />
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
 							</span>

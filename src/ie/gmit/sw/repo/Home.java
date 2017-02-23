@@ -1,9 +1,13 @@
 package ie.gmit.sw.repo;
 
-import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ie.gmit.sw.handler.Convertable;
+import ie.gmit.sw.handler.date.StringToDateConverter;
+
 
 /**
  * This is Home pojo that contains each users home details  
@@ -38,10 +42,10 @@ public class Home {
 	private boolean equipforkids = false;
 	private boolean disabledaccess = false;
 	private String address;
+	private Date availableFrom;
+	private Date availableTo;
 	
-	
-	//private Date availableFrom;
-	//private Date availableTo;
+
 	//private InputStream photo;
 	
 	
@@ -150,27 +154,30 @@ public class Home {
 	}
 
 
+	public String getAvailableFrom() {
+		DateFormat df = new SimpleDateFormat("d MMM yyyy");
+		return df.format(this.availableFrom);
+	}
+
+
+	public void setAvailableFrom(String availableFrom) {
+		Convertable c = new StringToDateConverter();
+		this.availableFrom = (Date)(c.convert(availableFrom));
+	}
+
+
+	public String getAvailableTo() {
+		DateFormat df = new SimpleDateFormat("d MMM yyyy");
+		return df.format(this.availableTo);
+	}
+
+
+	public void setAvailableTo(String availableTo) {
+		Convertable c = new StringToDateConverter();
+		this.availableTo = (Date)(c.convert(availableTo));
+	}
+
 	
-//	public Date getAvailableFrom() {
-//		return availableFrom;
-//	}
-//
-//
-//	public void setAvailableFrom(Date availableFrom) {
-//		this.availableFrom = availableFrom;
-//	}
-//
-//
-//	public Date getAvailableTo() {
-//		return availableTo;
-//	}
-//
-//
-//	public void setAvailableTo(Date availableTo) {
-//		this.availableTo = availableTo;
-//	}
-//
-//
 //	public InputStream getPhoto() {
 //		return photo;
 //	}
@@ -281,7 +288,6 @@ public class Home {
 	}
 
 
-	
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -290,13 +296,12 @@ public class Home {
 	 */
 	@Override
 	public String toString() {
-		return "Home [id=" + id + ", title=" + title + ", homeDetails=" + homeDetails + ", bedrooms=" + bedrooms
-				+ ", propertyType=" + propertyType + ", petFriendly=" + petFriendly + ", bathrooms=" + bathrooms
-				+ ", sleeps=" + sleeps + ", homevisibility=" + homevisibility + ", garden=" + garden + ", balcony="
-				+ balcony + ", pool=" + pool + ", cleaner=" + cleaner + ", wifi=" + wifi + ", cabletv=" + cabletv
-				+ ", gym=" + gym + ", aircon=" + aircon + ", equipforkids=" + equipforkids + ", disabledaccess="
-				+ disabledaccess + ", address=" + address + "]";
+		return "Home [title=" + title + ", homeDetails=" + homeDetails + ", bedrooms=" + bedrooms + ", propertyType="
+				+ propertyType + ", petFriendly=" + petFriendly + ", bathrooms=" + bathrooms + ", sleeps=" + sleeps
+				+ ", homevisibility=" + homevisibility + ", garden=" + garden + ", balcony=" + balcony + ", pool="
+				+ pool + ", cleaner=" + cleaner + ", wifi=" + wifi + ", cabletv=" + cabletv + ", gym=" + gym
+				+ ", aircon=" + aircon + ", equipforkids=" + equipforkids + ", disabledaccess=" + disabledaccess
+				+ ", address=" + address + ", availableFrom=" + availableFrom + ", availableTo=" + availableTo + "]";
 	}
 
-	
 }
