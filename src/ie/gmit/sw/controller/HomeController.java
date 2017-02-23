@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ie.gmit.sw.repo.Home;
 import ie.gmit.sw.repo.User;
 import ie.gmit.sw.repo.UserRepository;
 
@@ -121,9 +123,11 @@ public class HomeController {
 	}
 
 	@RequestMapping("/docreatehome")
-	public String createHome(){
+	public String createHome(@ModelAttribute("addHome") Home home, Model model){
 		
-		
+		log.info("Testing for controller");
+		log.info("Home title >>> " + home.getTitle());
+		log.info("Home details >>> " + home.getHomeDetails());
 		
 		return "dashboard";
 	}
