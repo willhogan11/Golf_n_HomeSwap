@@ -194,17 +194,16 @@
 			 -->
 			<div class="container form" id="form3">
 			
-				<input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+				<input name="address" id="pac-input" class="controls" type="text" placeholder="Enter a location">
 	
 				<div class="container" id="map">
 					
 				</div>
 			
 				<div id="infowindow-content">
-				  <span id="place-name"  class="title"></span><br>Place ID 
+				  <span id="place-name" class="title"></span><br>Place ID 
 				  <span id="place-id"></span><br>
 				  <span id="place-address"></span>
-				  
 				</div>
 				
 				<div style="text-align: center; margin-top: 10px;">
