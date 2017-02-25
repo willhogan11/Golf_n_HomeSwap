@@ -44,6 +44,7 @@ public class Home {
 	private String address;
 	private Date availableFrom;
 	private Date availableTo;
+	private String userEmail;
 	
 
 	//private InputStream photo;
@@ -54,6 +55,14 @@ public class Home {
 	
 
 	// Getters and Setters for above instance variables
+	public String getUserEmail(){
+		return this.userEmail;
+	}
+	
+	public void setUserEmail(String userEmail){
+		this.userEmail = userEmail;
+	}
+	
 	public String getId() {
 		return id;
 	}

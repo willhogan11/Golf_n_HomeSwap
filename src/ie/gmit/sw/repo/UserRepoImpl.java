@@ -47,15 +47,13 @@ public class UserRepoImpl implements UserRepository{
 
 	@Override
 	public void delUser(User user) {
-		// TODO Auto-generated method stub
-		
+		mongoTemplate.remove(Home.class);
 	}
 
 
 	@Override
 	public boolean existsUser(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		return mongoTemplate.exists(new Query(Criteria.where("id").is(id)), User.class);
 	}
 
 
