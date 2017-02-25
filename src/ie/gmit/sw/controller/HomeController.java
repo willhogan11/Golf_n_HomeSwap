@@ -124,7 +124,6 @@ public class HomeController {
 		}catch(NullPointerException npe){
 			model.addAttribute("email", null);
 		}
-
 		
 		return "dashboard";
 	}
@@ -135,11 +134,20 @@ public class HomeController {
 		log.info("Testing for controller >>> success");
 		log.info("Home >>> \n" + home.toString());
 		
-		// 1) Find user email
-		// String userEmail = getUsername(principal);
+		// 1.1) Find user email
+		String userEmail = getUsername(principal);
+		
+		// 1.2) Get user info
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(userEmail);
+		log.info("User: " + user.toString());
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("email", userEmail);
 		
 		// 2) Link home to the user
-		home.setUserEmail("user@mail.com");
+		home.setUserEmail(userEmail);
 		
 		// 3) Add home to the db:
 		homeRepo.addHome(home);

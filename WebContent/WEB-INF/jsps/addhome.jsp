@@ -175,14 +175,6 @@
 					</div>
 				</div>
 				
-				
-	            <!-- ********************TESTING********************** -->
-	            <!-- Submit button -->
-				<div style="text-align: center; margin-top: 20px;">
-					<button type="submit" class="btn btn-success" id="addHouse">Add Photos and Finish</button>
-				</div>
-				
-				
 				<div>
 					<button type="button" class="btn btn-success" id="next2">Next Step</button>
 				</div>

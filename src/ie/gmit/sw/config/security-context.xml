@@ -29,19 +29,19 @@
 		
 		<!-- FOR TESTING, will need to be changed to 'REGISTERED' only when finished -->
 		<security:intercept-url pattern="/addhomewizard" access="permitAll" />
-		<security:intercept-url pattern="/addhome" access="permitAll" />
+		<security:intercept-url pattern="/addhome" access="hasAnyRole('ADMIN', 'REGISTERED')" />
 		<security:intercept-url pattern="/homepagecopy" access="permitAll" />
 		<security:intercept-url pattern="/userhome" access="permitAll" />
 		<security:intercept-url pattern="/TempHomeDetails" access="permitAll" />
 		<security:intercept-url pattern="/addlocation" access="permitAll" /> 
 		<security:intercept-url pattern="/availability" access="permitAll" />
 		<security:intercept-url pattern="/addphotos" access="permitAll" />
-		<security:intercept-url pattern="/docreatehome" access="permitAll" />
+		<security:intercept-url pattern="/docreatehome" access="hasAnyRole('ADMIN', 'REGISTERED')" />
 		
 		<!-- *********************************************************************** -->
 		
 		<!-- Some kind of security check neede here to see if user is Registered? -->
-		<security:intercept-url pattern="/dashboard" access="hasAnyRole('REGISTERED')" />
+		<security:intercept-url pattern="/dashboard" access="hasAnyRole('ADMIN', 'REGISTERED')" />
 		
 		
 		<security:intercept-url pattern="/firsttimelogin" access="permitAll" />
