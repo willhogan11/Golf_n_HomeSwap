@@ -1,6 +1,7 @@
 package ie.gmit.sw.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -157,9 +158,13 @@ public class HomeController {
 	
 	
 	@RequestMapping("/usershomes")
-	public String showUsersHomes(){
+	public String showUsersHomes(Principal principal, Home home, Model model){
+				
+		List<Home> homes = homeRepo.findAllHomes(); 
+		model.addAttribute("homes", homes);
 		
-		// Details for viewing the users homes.....
+		// Testing....
+		log.info("Home: " + homes);
 		
 		return "usershomes";
 	}
