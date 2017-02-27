@@ -12,6 +12,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtko2ncKToOp2KYet1Oigq2wTuWzH2zBs&libraries=places&callback=initMap"async defer></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addlocation.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/addphotos.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
 	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/webshim.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -174,14 +175,6 @@
 						</select>
 					</div>
 				</div>
-				
-				
-	            <!-- ********************TESTING********************** -->
-	            <!-- Submit button -->
-				<div style="text-align: center; margin-top: 20px;">
-					<button type="submit" class="btn btn-success" id="addHouse">Add Photos and Finish</button>
-				</div>
-				
 				
 				<div>
 					<button type="button" class="btn btn-success" id="next2">Next Step</button>

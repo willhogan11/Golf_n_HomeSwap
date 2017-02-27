@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ie.gmit.sw.repo.Home;
+import ie.gmit.sw.repo.HomeRepository;
 import ie.gmit.sw.repo.User;
 import ie.gmit.sw.repo.UserRepository;
 
@@ -19,10 +20,16 @@ public class HomeController {
 
 	private static Logger log = Logger.getLogger(HomeController.class);
 	private UserRepository userRepo;
+	private HomeRepository homeRepo;
 
 	@Autowired
 	public void setUserRepo(@Qualifier("userRepoImpl") UserRepository userRepo){
 		this.userRepo = userRepo;
+	}
+
+	@Autowired
+	public void setHomeRepo(@Qualifier("homeRepoImpl") HomeRepository homeRepo){
+		this.homeRepo = homeRepo;
 	}
 
 	@RequestMapping("/")
@@ -117,16 +124,33 @@ public class HomeController {
 		}catch(NullPointerException npe){
 			model.addAttribute("email", null);
 		}
-
 		
 		return "dashboard";
 	}
 
 	@RequestMapping("/docreatehome")
-	public String createHome(@ModelAttribute("home") Home home, Model model){
+	public String createHome(@ModelAttribute("home") Home home, Model model, Principal principal){
 		
 		log.info("Testing for controller >>> success");
 		log.info("Home >>> \n" + home.toString());
+		
+		// 1.1) Find user email
+		String userEmail = getUsername(principal);
+		
+		// 1.2) Get user info
+		// retrieving user infoattributeValue
+		User user = userRepo.findByEmail(userEmail);
+		log.info("User: " + user.toString());
+		// bind user information
+		String username = user.getFirstname() + " " + user.getSurname();
+		model.addAttribute("username", username);
+		model.addAttribute("email", userEmail);
+		
+		// 2) Link home to the user
+		home.setUserEmail(userEmail);
+		
+		// 3) Add home to the db:
+		homeRepo.addHome(home);
 		
 		return "dashboard";
 	}

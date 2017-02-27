@@ -40,7 +40,7 @@
 			<div class="pull-left" id="user-panel">
 	    		<div id="blockWelcome">
 	    			<c:if test="${email != null}">
-		    			Welcome, <c:out value="${username}"></c:out>
+		    			Welcome, <span><c:out value="${username}"></c:out></span>
 		    		</c:if>
 	    		</div>
     		</div>

@@ -1,5 +1,14 @@
 @CHARSET "UTF-8";
 
 #blockWelcome{
-	font-size: 16px;
+	display: block;
+	border: 0px solid red;
+	margin-top: 20px;
+	font: italic normal 13px sans-serif;
+	color: 00003b;
+}
+
+#blockWelcome span{
+	font: italic bold 14px calibri;
+	color: #181818;
 }
