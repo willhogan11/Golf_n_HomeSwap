@@ -47,6 +47,13 @@
     	</sec:authorize>
 		
 		<div class="pull-right">	
+			<sec:authorize access="hasAnyRole('REGISTERED')">
+				<a href="${pageContext.request.contextPath}/">
+					<button type="button" class="btn btn-default btn-lg">
+						<span class="glyphicon glyphicon-arrow-left"></span> Main Menu 
+					</button>
+				</a>	
+			</sec:authorize>
 			<a href="Destinations.html">
 				<button type="button" class="btn btn-default btn-lg">
 					<span class="glyphicon glyphicon-plane"></span> Destinations 

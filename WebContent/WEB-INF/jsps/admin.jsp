@@ -50,7 +50,6 @@
 		        <th>Home Club Name</th>
 		        <th>Home Club URL</th>
 		        <th>Access Level</th>
-		        <th>Visibility</th>
 		    </tr>
 		</thead>
 		<tbody>
@@ -65,7 +64,6 @@
 			        <td><c:out value="${candidate.homeclubname}" /></td>
 			        <td><c:out value="${candidate.homecluburl}" /></td>
 			        <td><c:out value="${candidate.useraccesslevel}" /></td>
-			        <td><c:out value="${candidate.uservisibility}" /></td>
 			        
 			        <c:choose>
 			        	<c:when test="${candidate.useraccesslevel == 'CANDIDATE'}">

@@ -73,15 +73,6 @@
             	<a href="${pageContext.request.contextPath}/dashboard" class="btn btn-primary">Dashboard</a>
             </sec:authorize>
             
-            
-            <!-- This can be uncommented, when the user has completed the Add a Home steps outlined in the 'addhomewizard.jsp' page, 
-                 Which will make a [Dashboard button visible when they login] -->
-	            <%-- <sec:authorize access="hasAnyRole('hr', 'REGISTERED')">
-	            	<a href="${pageContext.request.contextPath}/dashboard" class="btn btn-primary">Dashboard</a>
-	            </sec:authorize> --%>
-            <!-- ******************************************************************************************************************* -->
-            
-            
 		</div>
 	</div>
 
