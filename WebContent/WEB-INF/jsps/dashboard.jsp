@@ -64,7 +64,16 @@
 			</a>	
 			<a href="Account.html">
 				<button type="button" class="btn btn-default btn-lg">
-					<span class="glyphicon glyphicon-user"></span> Account 
+					<span class="glyphicon glyphicon-user"></span> 
+					<sec:authorize access="isAuthenticated()">
+						<div class="pull-left" id="user-panel">
+				    		<div id="blockWelcome">
+				    			<c:if test="${email != null}">
+					    			<c:out value="${username}"></c:out>
+					    		</c:if>
+				    		</div>
+			    		</div>
+    				</sec:authorize>
 				</button>
 			</a>
 		</div>
