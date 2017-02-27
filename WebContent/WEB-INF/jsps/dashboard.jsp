@@ -54,6 +54,15 @@
 					</button>
 				</a>	
 			</sec:authorize>
+			
+			<sec:authorize access="hasAnyRole('REGISTERED')">
+				<a href="${pageContext.request.contextPath}/usershomes">
+					<button type="button" class="btn btn-default btn-lg">
+						<span class="glyphicon glyphicon-home"></span> Your Homes
+					</button>
+				</a>	
+			</sec:authorize>
+			
 			<a href="Destinations.html">
 				<button type="button" class="btn btn-default btn-lg">
 					<span class="glyphicon glyphicon-plane"></span> Destinations 

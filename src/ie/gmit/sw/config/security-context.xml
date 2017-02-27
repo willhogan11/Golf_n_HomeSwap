@@ -32,6 +32,7 @@
 		<security:intercept-url pattern="/addhome" access="hasAnyRole('ADMIN', 'REGISTERED')" />
 		<security:intercept-url pattern="/userhome" access="permitAll" />
 		<security:intercept-url pattern="/docreatehome" access="hasAnyRole('ADMIN', 'REGISTERED')" />
+		<security:intercept-url pattern="/usershomes" access="hasAnyRole('ADMIN', 'REGISTERED')" />
 		
 		<!-- *********************************************************************** -->
 		

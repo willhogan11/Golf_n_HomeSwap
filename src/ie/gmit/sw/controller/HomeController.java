@@ -155,6 +155,16 @@ public class HomeController {
 		return "dashboard";
 	}
 	
+	
+	@RequestMapping("/usershomes")
+	public String showUsersHomes(){
+		
+		// Details for viewing the users homes.....
+		
+		return "usershomes";
+	}
+	
+	
 	@RequestMapping("/firsttimelogin")
 	public String showFirsttimeLogin(){
 		return "firsttimelogin";
