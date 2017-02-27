@@ -64,7 +64,7 @@ public class HomeRepoImpl implements HomeRepository{
 	 */
 	@Override
 	public List<Home> findByUserEmail(String email) {
-		return mongoTemplate.find(new Query(Criteria.where("email").is(email)), Home.class);
+		return mongoTemplate.find(new Query(Criteria.where("userEmail").is(email)), Home.class);
 	}
 
 	/*

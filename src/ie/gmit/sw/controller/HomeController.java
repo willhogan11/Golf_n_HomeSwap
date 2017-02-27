@@ -159,12 +159,14 @@ public class HomeController {
 	
 	@RequestMapping("/usershomes")
 	public String showUsersHomes(Principal principal, Home home, Model model){
-				
-		List<Home> homes = homeRepo.findAllHomes(); 
+		
+		String userEmail = getUsername(principal);
+		log.info("Principal : " + userEmail);
+		
+		List<Home> homes = homeRepo.findByUserEmail(userEmail);
 		model.addAttribute("homes", homes);
 		
-		// Testing....
-		log.info("Home: " + homes);
+		log.info("homes : " + homes);
 		
 		return "usershomes";
 	}
