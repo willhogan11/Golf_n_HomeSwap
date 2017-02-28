@@ -90,15 +90,14 @@
 	<!-- Login Button -->
 	<div class="container">
 		<div style="float: right; margin: -45px auto auto auto ;">
-			
 	    	<sec:authorize access="!isAuthenticated()">
 	    		<a href="${pageContext.request.contextPath}/login">
-					<button type="button"  class="btn btn-default btn-lg">Login</button>
+					<button type="button" class="btn btn-default">Login</button>
 				</a>
 	    	</sec:authorize>
 	    	<sec:authorize access="isAuthenticated()">
 		    	<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-					<button type="button"  class="btn btn-default btn-lg">Logout</button>
+					<button type="button" class="btn btn-default">Logout</button>
 				</a>
 	    	</sec:authorize>
 		</div>

@@ -37,6 +37,7 @@
 			 risk for any form of vulnerabilities.  
 		-->
 		
+		<!-- No real need for this now, as the users details are now displayed on the Account button below -->
 			<%-- <sec:authorize access="isAuthenticated()">
 				<div class="pull-left" id="user-panel">
 		    		<div id="blockWelcome">
@@ -46,6 +47,39 @@
 		    		</div>
 	    		</div>
 	    	</sec:authorize> --%>
+	    	
+	    	
+    	  <div class="pull-right">
+	   		<div class="dropdown">
+			    <button class="btn btn-default btn-block dropdown-toggle" type="button" data-toggle="dropdown" style="height: 35px;"> 
+			    	&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>
+					<sec:authorize access="isAuthenticated()">
+						<div class="pull-left" id="user-panel">
+				    		<div style="width: auto; text-align: center;">
+				    			<c:if test="${email != null}">
+					    			<c:out value="${username}"></c:out>
+					    		</c:if>
+				    		</div>
+			    		</div>
+    				</sec:authorize>
+		    	</button>
+			    <ul class="dropdown-menu">
+		    		<li>
+		    			<a href="#">Test Option 1</a>
+		    		</li>
+		    		<li>
+		    			<a href="#">Test Option 2</a>
+		    		</li>
+		    		<li>
+		    			<sec:authorize access="isAuthenticated()">
+					    	<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+								<button type="button" class="btn btn-default btn-sm">Logout</button>
+							</a>
+				    	</sec:authorize>
+		    		</li>
+			    </ul>
+		    </div>
+	    </div>
     	
     	<div class="pull-right">
 	   		<div class="dropdown">
@@ -74,10 +108,11 @@
 			    </ul>
 		    </div>
 	    </div>
+	    
+	  
     	
 		
 		<div class="pull-right">
-
 			<sec:authorize access="hasAnyRole('REGISTERED')">
 				<a href="${pageContext.request.contextPath}/">	 
 					<button type="button" class="btn btn-default">
@@ -87,37 +122,25 @@
 			</sec:authorize>
 			
 			<a href="Destinations.html">
-				<button type="button" class="btn btn-default">
+				<button type="button" class="btn btn-default disabled">
 					<span class="glyphicon glyphicon-plane"></span> Destinations 
 				</button>
 			</a>	
 			<a href="HomeProfile1.html">
-				<button type="button" class="btn btn-default">
+				<button type="button" class="btn btn-default disabled">
 					<span class="glyphicon glyphicon-home"></span> Home Profile 
 				</button>
 			</a>			
 			<a href="Messaging.html">
-				<button type="button" class="btn btn-default">
+				<button type="button" class="btn btn-default disabled">
 					<span class="glyphicon glyphicon-envelope"></span> Messages 
 				</button>
 			</a>	
-			<a href="Account.html">
-				<button type="button" class="btn btn-default" style="height: 35px;">
-					<span class="glyphicon glyphicon-user"></span>
-					<sec:authorize access="isAuthenticated()">
-						<div class="pull-left" id="user-panel">
-				    		<div style="width: 75px; text-align: center;">
-				    			<c:if test="${email != null}">
-					    			<c:out value="${username}"></c:out>
-					    		</c:if>
-				    		</div>
-			    		</div>
-    				</sec:authorize>
-				</button>
-			</a>
 		</div>
 		<!-- End Div for top right menu -->
-	
+		
+
+		
 	</div>
 	<!-- End Menu Container Div -->
 	
@@ -247,6 +270,6 @@
 		</a>		
 	</div>
 	<!-- End Slide Container Div -->
-
+	</div>
 </body>
 </html>
