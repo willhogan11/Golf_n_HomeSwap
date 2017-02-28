@@ -21,7 +21,7 @@
 <div class="pull-left">	
 	<a href="${pageContext.request.contextPath}/dashboard">
 		<button type="button" class="btn btn-default btn-sm">
-			<span class="glyphicon glyphicon-arrow-left"></span> Dashboard 
+			<span class="glyphicon glyphicon-hand-left"></span> Dashboard 
 		</button>
 	</a>	
 </div>

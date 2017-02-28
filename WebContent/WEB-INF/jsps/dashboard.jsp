@@ -36,29 +36,52 @@
 			 Still better to have it checked to reduce
 			 risk for any form of vulnerabilities.  
 		-->
-		<sec:authorize access="isAuthenticated()">
-			<div class="pull-left" id="user-panel">
-	    		<div id="blockWelcome">
-	    			<c:if test="${email != null}">
-		    			Welcome, <span><c:out value="${username}"></c:out></span>
-		    		</c:if>
-	    		</div>
-    		</div>
-    	</sec:authorize>
 		
-		<div class="pull-right">	
+			<%-- <sec:authorize access="isAuthenticated()">
+				<div class="pull-left" id="user-panel">
+		    		<div id="blockWelcome">
+		    			<c:if test="${email != null}">
+			    			Welcome, <span><c:out value="${username}"></c:out></span>
+			    		</c:if>
+		    		</div>
+	    		</div>
+	    	</sec:authorize> --%>
+    	
+    	<div class="pull-right">
+	   		<div class="dropdown">
+			    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Home Options
+			    	<span class="glyphicon glyphicon-collapse-down"></span>
+		    	</button>
+			    <ul class="dropdown-menu">
+			      <li>
+			      	  <sec:authorize access="hasAnyRole('REGISTERED')">
+					      <a href="${pageContext.request.contextPath}/usershomes">
+							<button type="button" class="btn btn-default btn-sm">
+								<span class="glyphicon glyphicon-search"></span> Your Homes
+							</button>
+						  </a>	
+					  </sec:authorize>
+				  </li>
+			      <li>
+			      	  <sec:authorize access="hasAnyRole('REGISTERED')">
+					      <a href="${pageContext.request.contextPath}/addhomewizard">
+							<button type="button" class="btn btn-default btn-sm">
+								<span class="glyphicon glyphicon-plus"></span> Add a home
+							</button>
+						  </a>	
+					  </sec:authorize>
+				  </li>
+			    </ul>
+		    </div>
+	    </div>
+    	
+		
+		<div class="pull-right">
+
 			<sec:authorize access="hasAnyRole('REGISTERED')">
-				<a href="${pageContext.request.contextPath}/">
+				<a href="${pageContext.request.contextPath}/">	 
 					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-arrow-left"></span> Main Menu 
-					</button>
-				</a>	
-			</sec:authorize>
-			
-			<sec:authorize access="hasAnyRole('REGISTERED')">
-				<a href="${pageContext.request.contextPath}/usershomes">
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-home"></span> Your Homes
+						<span class="glyphicon glyphicon-hand-left"></span> Main Menu 
 					</button>
 				</a>	
 			</sec:authorize>
@@ -79,11 +102,11 @@
 				</button>
 			</a>	
 			<a href="Account.html">
-				<button type="button" class="btn btn-default">
-					<span class="glyphicon glyphicon-user"></span> 
+				<button type="button" class="btn btn-default" style="height: 35px;">
+					<span class="glyphicon glyphicon-user"></span>
 					<sec:authorize access="isAuthenticated()">
 						<div class="pull-left" id="user-panel">
-				    		<div id="blockWelcome">
+				    		<div style="width: 75px; text-align: center;">
 				    			<c:if test="${email != null}">
 					    			<c:out value="${username}"></c:out>
 					    		</c:if>
