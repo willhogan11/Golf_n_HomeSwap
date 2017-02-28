@@ -49,7 +49,7 @@
 		<div class="pull-right">	
 			<sec:authorize access="hasAnyRole('REGISTERED')">
 				<a href="${pageContext.request.contextPath}/">
-					<button type="button" class="btn btn-default btn-lg">
+					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-arrow-left"></span> Main Menu 
 					</button>
 				</a>	
@@ -57,29 +57,29 @@
 			
 			<sec:authorize access="hasAnyRole('REGISTERED')">
 				<a href="${pageContext.request.contextPath}/usershomes">
-					<button type="button" class="btn btn-default btn-lg">
+					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-home"></span> Your Homes
 					</button>
 				</a>	
 			</sec:authorize>
 			
 			<a href="Destinations.html">
-				<button type="button" class="btn btn-default btn-lg">
+				<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-plane"></span> Destinations 
 				</button>
 			</a>	
 			<a href="HomeProfile1.html">
-				<button type="button" class="btn btn-default btn-lg">
+				<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-home"></span> Home Profile 
 				</button>
 			</a>			
 			<a href="Messaging.html">
-				<button type="button" class="btn btn-default btn-lg">
+				<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-envelope"></span> Messages 
 				</button>
 			</a>	
 			<a href="Account.html">
-				<button type="button" class="btn btn-default btn-lg">
+				<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-user"></span> 
 					<sec:authorize access="isAuthenticated()">
 						<div class="pull-left" id="user-panel">

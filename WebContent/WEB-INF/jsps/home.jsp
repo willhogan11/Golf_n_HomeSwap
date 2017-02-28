@@ -71,6 +71,7 @@
             </sec:authorize>
             <sec:authorize access="hasAnyRole('REGISTERED')">
             	<a href="${pageContext.request.contextPath}/dashboard" class="btn btn-primary">Dashboard</a>
+            	<a href="${pageContext.request.contextPath}/addhomewizard" class="btn btn-primary">Add a home</a>
             </sec:authorize>
             
 		</div>
