@@ -65,10 +65,10 @@
 		    	</button>
 			    <ul class="dropdown-menu">
 		    		<li>
-		    			<a href="#">Test Option 1</a>
+		    			<a href="#">Option 1</a>
 		    		</li>
 		    		<li>
-		    			<a href="#">Test Option 2</a>
+		    			<a href="#">Option 2</a>
 		    		</li>
 		    		<li>
 		    			<sec:authorize access="isAuthenticated()">

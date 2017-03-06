@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/homepage.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/addlocation.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/headerStyle.css" />
 	<title>Add a Home</title>
 	
 </head>
@@ -26,7 +27,7 @@
 
 
 	<div style="text-align:center; color: white;" class="container">
-		<h1>Add a Home:</h1>
+		<h1 class="headerStyle">Add a Home</h1>
 		<ul class="pagination" id="bookmarks">
 			<li>1. Home Type ></li>
 			<li>2. Home Details ></li>

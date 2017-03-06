@@ -37,7 +37,7 @@
 		<!-- Video Clip Placeholder -->
 		<div class="container" style="width: 400px; height: 200px;">
 			<video width="400" controls>
-				<source src="${pageContext.request.contextPath}/res/video/clip.mp4" type="video/mp4">
+				<source src="${pageContext.request.contextPath}/res/video/AddHomeTutorial.mp4" type="video/mp4">
 			</video>
 		</div>
 		

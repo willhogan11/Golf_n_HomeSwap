@@ -18,8 +18,8 @@
 	<div class="container">
 		<div class="text-right" style="color: white; background-color: #5cb85c; 
 									   border-radius: 5px; padding: 15px;  box-shadow: 10px 5px 2px black;">
-			<h1>Golf'n Home Swap</h1>
-			<p>The exchange community for golf lovers</p>	
+			<h1 style="text-shadow: 3px 3px black; font-size: 50px;">Golf'n Home Swap</h1>
+			<h5>The exchange community for golf lovers</h5>	
 		</div>
 	</div>
 	
