@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/res/css/headerStyle.css" />
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	<title>Add Home Wizard</title>
 </head>
@@ -15,7 +16,7 @@
 <body style="background-image: url('${pageContext.request.contextPath}/res/img/golf.jpg');">
 
 	<div style="color: white; text-align: center;">
-			<h1>Add a Home</h1>      
+			<h1 class="headerStyle">Add a Home Wizard</h1>      
 		</div>
 
 	<div class="container" style="position: absolute;

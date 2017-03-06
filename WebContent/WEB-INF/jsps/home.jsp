@@ -53,7 +53,7 @@
 	<!-- Video Clip Placeholder -->
 	<div class="container" style="width: 400px; height: 200px;">
 		<video width="400" controls>
-			<source src="${pageContext.request.contextPath}/res/video/clip.mp4" type="video/mp4">
+			<source src="${pageContext.request.contextPath}/res/video/WelcomeVideoPlaceholder.mp4" type="video/mp4">
 		</video>
 	</div>
 	
@@ -92,12 +92,16 @@
 		<div style="float: right; margin: -45px auto auto auto ;">
 	    	<sec:authorize access="!isAuthenticated()">
 	    		<a href="${pageContext.request.contextPath}/login">
-					<button type="button" class="btn btn-default">Login</button>
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-log-in"></span>  Login
+					</button>
 				</a>
 	    	</sec:authorize>
 	    	<sec:authorize access="isAuthenticated()">
 		    	<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-					<button type="button" class="btn btn-default">Logout</button>
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-log-out"></span>  Logout
+					</button>
 				</a>
 	    	</sec:authorize>
 		</div>

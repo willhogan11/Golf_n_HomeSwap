@@ -73,7 +73,9 @@
 		    		<li>
 		    			<sec:authorize access="isAuthenticated()">
 					    	<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-								<button type="button" class="btn btn-default btn-sm">Logout</button>
+								<button type="button" class="btn btn-default btn-sm">
+									<span class="glyphicon glyphicon-log-out"></span>  Logout
+								</button>
 							</a>
 				    	</sec:authorize>
 		    		</li>

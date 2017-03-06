@@ -57,7 +57,9 @@
 		    				
 	  <div class="form-group"> 
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-success">Login</button>
+	      <button type="submit" class="btn btn-success">
+	      	<span class="glyphicon glyphicon-log-in"></span>  Login
+      	  </button>
 	    </div>
 	  </div>
 	</form>
