@@ -76,3 +76,21 @@ The below are the key features of the system and how they work;
 * **Documentation** – Another learning outcome from this project was the importance of documentation. This may seem obvious, but without properly documenting your project, it makes things extremely difficult for anybody else to understand what’s happening. Everything in this project has been documented. This might be for example using GitHub to commit, comment and branch specific versions of the project, or simply keeping track of a weekly diary which detailed what tasks were completed each week. It might also have been the detailed, in code comments used to explain how each part of the system works. All this makes it much easier for several reasons. For the current developers working on this project, who need to refresh what’s happening at certain points of the application or for the next set of developers who will be involved in the handover process.
 
 * **Problem Solving Skills** – This is one learning outcome, that has made an impact. What was realised as the project progressed, was that there may be any one problem, but there are many ways in which to solve it. In software development, it’s easy to overlook a simple problem and look for something more complex, that takes a person down a never-ending rabbit hole. To avoid this, each problem was analysed, broken down into its simplest form, where an equally simple, but agreeable solution was offered.
+
+### Launching
+
+“Golf’n Swap” project is web application which is running on the web server. The Tomcat which is a run environment (web server) requires some application structure be followed. The basic layout for application must have:
+
+1.	WEB_INF/web.xml - The Web *Application Deployment Descriptor* for the application. This is an XML file describing the servlets and other components that make up the application, along with any initialization parameters and container-managed security constraints.
+
+2.	WEB_INF/classes - This directory contains any Java class files (and associated resources) required for the application, including both servlet and non-servlet classes, that are not combined into JAR files. If the classes are organized into Java packages, it must be reflected in the directory hierarchy under /WEB-INF/classes/.
+
+3.	/WEB-INF/lib/ - This directory contains JAR files that contain Java class files (and associated resources) required for the application, such as third party class libraries.
+
+To deploy the project the war file need to be built using eclipse. Then war file need to be placed into <apache-tomcat>/webapps/ directory. The name for war file need to be clear as it will be used in project launching. When it is done the web server can be started by launching the <apache-tomcat>/bin/startup.bat for Windows based or <apache-tomcat>/bin/startup.sh for Linux based platforms. The Tomcat will create project directory itself and export the necessary file into it.
+
+The Mongo DB server also need to be installed and run. The detailed instruction how to install and run Mongodb server for different platforms is [here](https://docs.mongodb.com/v3.0/installation/).
+
+When Tomcat with project in the container and Mongo db are running then everything is ready to start “Golf’n Swap” web application. As tomcat’s open port is 8080 for default configuration then to launch the web application there is need to enter **localhost:8080/<name_of_war_file>** in the browser’s address bar, for example: **localhost:8080/golfnswap** .
+
+The “Golf’n Swap” project is running on the remote server as well. There is Amazon AWS service is used to deploy this system. The address for using project online is [http://52.214.71.85:8080/golfnswap](http://52.214.71.85:8080/golfnswap) .
