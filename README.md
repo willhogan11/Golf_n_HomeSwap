@@ -79,18 +79,19 @@ The below are the key features of the system and how they work;
 
 ### Launching
 
-“Golf’n Swap” project is web application which is running on the web server. The Tomcat which is a run environment (web server) requires some application structure be followed. The basic layout for application must have:
+The Golf’n Home Swap project is a web application which is running on a Tomcat web server. Tomcat, which is a run environment (web server) requires some application structure to be followed. The basic layout for the application must have the following;
 
-1.	WEB_INF/web.xml - The Web *Application Deployment Descriptor* for the application. This is an XML file describing the servlets and other components that make up the application, along with any initialization parameters and container-managed security constraints.
+1.	WEB_INF/web.xml - The Web *Application Deployment Descriptor* for the application. This is an XML file describing the servlets and other components that make up the application, along with any initialisation parameters and container-managed security constraints.
 
-2.	WEB_INF/classes - This directory contains any Java class files (and associated resources) required for the application, including both servlet and non-servlet classes, that are not combined into JAR files. If the classes are organized into Java packages, it must be reflected in the directory hierarchy under /WEB-INF/classes/.
+2.	WEB_INF/classes - This directory contains any Java class files (and associated resources) required for the application, including both servlet and non-servlet classes, that are not combined into JAR files. If the classes are organised into Java packages, it must be reflected in the directory hierarchy under /WEB-INF/classes/.
 
-3.	/WEB-INF/lib/ - This directory contains JAR files that contain Java class files (and associated resources) required for the application, such as third party class libraries.
+3.	/WEB-INF/lib/ - This directory contains JAR files that contain Java class files (and associated resources) required for the application, such as third-party class libraries.
 
-To deploy the project the war file need to be built using eclipse. Then war file need to be placed into <apache-tomcat>/webapps/ directory. The name for war file need to be clear as it will be used in project launching. When it is done the web server can be started by launching the <apache-tomcat>/bin/startup.bat for Windows based or <apache-tomcat>/bin/startup.sh for Linux based platforms. The Tomcat will create project directory itself and export the necessary file into it.
+To deploy the project a war file needs to be built using eclipse. This war file needs to be placed into the <apache-tomcat>/webapps/ directory. The name for the war file needs to be clear as it will be used when the application launches. When it is done the web server can be started by launching the <apache-tomcat>/bin/startup.bat for Windows-based or <apache-tomcat>/bin/startup.sh for Linux based platforms. Tomcat will create the project directory itself and export the necessary files into it.
 
-The Mongo DB server also need to be installed and run. The detailed instruction how to install and run Mongodb server for different platforms is [here](https://docs.mongodb.com/v3.0/installation/).
+The Mongo DB server will also need to be installed and run. Detailed instructions as to how to install and run a MongoDB server for different platforms is documented [here](https://docs.mongodb.com/v3.0/installation/).
 
-When Tomcat with project in the container and Mongo db are running then everything is ready to start “Golf’n Swap” web application. As tomcat’s open port is 8080 for default configuration then to launch the web application there is need to enter **localhost:8080/<name_of_war_file>** in the browser’s address bar, for example: **localhost:8080/golfnswap** .
+When Tomcat is running within the project container and MongoDB are running then everything is ready to start the Golf’n Home Swap web application. As tomcat’s open port is 8080 by default to launch the web application, there is need to enter **localhost:8080/<name_of_war_file>** in the browser’s address bar, for example: **localhost:8080/golfnswap** .
 
-The “Golf’n Swap” project is running on the remote server as well. There is Amazon AWS service is used to deploy this system. The address for using project online is [http://52.214.71.85:8080/golfnswap](http://52.214.71.85:8080/golfnswap) .
+Golf’n Home Swap application is also running on a remote cloud server. Amazon AWS service was used to deploy this system. The address for using project online is [http://52.214.71.85:8080/golfnswap](http://52.214.71.85:8080/golfnswap) .
+
